@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bank Marketing Prediction</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+      <header class="header">
+        <div>
+          <div class="badge">MACHINE LEARNING APPLICATION</div>
+
+          <h1>Bank Marketing Prediction</h1>
+
+          <p>
+            Predict whether a client is likely to subscribe to a term deposit.
+          </p>
+        </div>
+      </header>
+
+      <!-- =====================================================
+         MAIN CARD
+         ===================================================== -->
+
+      <main class="card">
+        <form id="predictionForm">
+          <!-- =================================================
+                 CUSTOMER INFORMATION
+                 ================================================= -->
+
+          <section>
+            <div class="section-header">
+              <div class="section-number">01</div>
+
+              <div>
+                <h2>Customer Information</h2>
+
+                <p>Basic information about the client</p>
+              </div>
+            </div>
+
+            <div class="grid">
+              <!-- AGE -->
+
+              <div class="field">
+                <label for="age"> Age </label>
+
+                <input
+                  type="number"
+                  id="age"
+                  value="30"
+                  min="18"
+                  max="100"
+                  required
+                />
+              </div>
+
+              <!-- JOB -->
+
+              <div class="field">
+                <label for="job"> Job </label>
+
+                <select id="job">
+                  <option>admin.</option>
+                  <option>blue-collar</option>
+                  <option>entrepreneur</option>
+                  <option>housemaid</option>
+                  <option>management</option>
+                  <option>retired</option>
+                  <option>self-employed</option>
+                  <option>services</option>
+                  <option selected>student</option>
+                  <option>technician</option>
+                  <option>unemployed</option>
+                  <option>unknown</option>
+                </select>
+              </div>
+
+              <!-- MARITAL -->
+
+              <div class="field">
+                <label for="marital"> Marital Status </label>
+
+                <select id="marital">
+                  <option>married</option>
+
+                  <option selected>single</option>
+
+                  <option>divorced</option>
+                  <option>unknown</option>
+                </select>
+              </div>
+
+              <!-- EDUCATION -->
+
+              <div class="field">
+                <label for="education"> Education </label>
+
+                <select id="education">
+                  <option>basic.4y</option>
+                  <option>basic.6y</option>
+                  <option>basic.9y</option>
+
+                  <option selected>high.school</option>
+
+                  <option>illiterate</option>
+                  <option>professional.course</option>
+                  <option>university.degree</option>
+                  <option>unknown</option>
+                </select>
+              </div>
+
+              <!-- DEFAULT -->
+
+              <div class="field">
+                <label for="default"> Credit Default </label>
+
+                <select id="default">
+                  <option selected>no</option>
+                  <option>yes</option>
+                  <option>unknown</option>
+                </select>
+              </div>
+
+              <!-- HOUSING -->
+
+              <div class="field">
+                <label for="housing"> Housing Loan </label>
+
+                <select id="housing">
+                  <option selected>no</option>
+                  <option>yes</option>
+                  <option>unknown</option>
+                </select>
+              </div>
+
+              <!-- LOAN -->
+
+              <div class="field">
+                <label for="loan"> Personal Loan </label>
+
+                <select id="loan">
+                  <option selected>no</option>
+                  <option>yes</option>
+                  <option>unknown</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <!-- =================================================
+                 CAMPAIGN INFORMATION
+                 ================================================= -->
+
+          <section>
+            <div class="section-header">
+              <div class="section-number">02</div>
+
+              <div>
+                <h2>Campaign Information</h2>
+
+                <p>Information about the marketing campaign</p>
+              </div>
+            </div>
+
+            <div class="grid">
+              <!-- CONTACT -->
+
+              <div class="field">
+                <label for="contact"> Contact Type </label>
+
+                <select id="contact">
+                  <option selected>cellular</option>
+
+                  <option>telephone</option>
+                </select>
+              </div>
+
+              <!-- MONTH -->
+
+              <div class="field">
+                <label for="month"> Month </label>
+
+                <select id="month">
+                  <option>jan</option>
+                  <option>feb</option>
+
+                  <option selected>mar</option>
+
+                  <option>apr</option>
+                  <option>may</option>
+                  <option>jun</option>
+                  <option>jul</option>
+                  <option>aug</option>
+                  <option>sep</option>
+                  <option>oct</option>
+                  <option>nov</option>
+                  <option>dec</option>
+                </select>
+              </div>
+
+              <!-- DAY -->
+
+              <div class="field">
+                <label for="day_of_week"> Day of Week </label>
+
+                <select id="day_of_week">
+                  <option>mon</option>
+                  <option>tue</option>
+                  <option>wed</option>
+
+                  <option selected>thu</option>
+
+                  <option>fri</option>
+                </select>
+              </div>
+
+              <!-- CAMPAIGN -->
+
+              <div class="field">
+                <label for="campaign"> Campaign Contacts </label>
+
+                <input type="number" id="campaign" value="1" min="1" required />
+              </div>
+
+              <!-- PDAYS -->
+
+              <div class="field">
+                <label for="pdays"> Days Since Previous Contact </label>
+
+                <input type="number" id="pdays" value="999" min="0" required />
+              </div>
+
+              <!-- PREVIOUS -->
+
+              <div class="field">
+                <label for="previous"> Previous Contacts </label>
+
+                <input type="number" id="previous" value="0" min="0" required />
+              </div>
+
+              <!-- POUTCOME -->
+
+              <div class="field">
+                <label for="poutcome"> Previous Campaign Outcome </label>
+
+                <select id="poutcome">
+                  <option>failure</option>
+
+                  <option selected>success</option>
+
+                  <option>nonexistent</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <!-- =================================================
+                 ECONOMIC INFORMATION
+                 ================================================= -->
+
+          <section>
+            <div class="section-header">
+              <div class="section-number">03</div>
+
+              <div>
+                <h2>Economic Information</h2>
+
+                <p>Macroeconomic conditions at the time of contact</p>
+              </div>
+            </div>
+
+            <div class="grid">
+              <!-- EMP VAR RATE -->
+
+              <div class="field">
+                <label for="emp_var_rate"> Employment Variation Rate </label>
+
+                <input
+                  type="number"
+                  step="any"
+                  id="emp_var_rate"
+                  value="-3.0"
+                  required
+                />
+              </div>
+
+              <!-- CPI -->
+
+              <div class="field">
+                <label for="cons_price_idx"> Consumer Price Index </label>
+
+                <input
+                  type="number"
+                  step="any"
+                  id="cons_price_idx"
+                  value="92.0"
+                  required
+                />
+              </div>
+
+              <!-- CCI -->
+
+              <div class="field">
+                <label for="cons_conf_idx"> Consumer Confidence Index </label>
+
+                <input
+                  type="number"
+                  step="any"
+                  id="cons_conf_idx"
+                  value="-40.0"
+                  required
+                />
+              </div>
+
+              <!-- EURIBOR -->
+
+              <div class="field">
+                <label for="euribor3m"> Euribor 3 Month </label>
+
+                <input
+                  type="number"
+                  step="any"
+                  id="euribor3m"
+                  value="0.8"
+                  required
+                />
+              </div>
+
+              <!-- EMPLOYED -->
+
+              <div class="field">
+                <label for="nr_employed"> Number of Employees </label>
+
+                <input
+                  type="number"
+                  step="any"
+                  id="nr_employed"
+                  value="5000.0"
+                  required
+                />
+              </div>
+            </div>
+          </section>
+
+          <!-- =================================================
+                 ACTIONS
+                 ================================================= -->
+
+          <div class="actions">
+            <button type="button" class="secondary-button" id="resetButton">
+              Reset
+            </button>
+
+            <button type="submit" class="primary-button" id="predictButton">
+              Predict
+            </button>
+          </div>
+        </form>
+
+        <!-- =====================================================
+             RESULT
+             ===================================================== -->
+
+        <div id="result" class="result hidden">
+          <div class="result-icon">✓</div>
+
+          <div>
+            <div class="result-title">Prediction Result</div>
+
+            <div id="resultText" class="result-text"></div>
+          </div>
+        </div>
+
+        <!-- =====================================================
+             ERROR
+             ===================================================== -->
+
+        <div id="error" class="error hidden"></div>
+      </main>
+
+      <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+      <footer>
+        <span> Intelligent System Development </span>
+
+        <span> Bank Marketing Classification </span>
+      </footer>
+    </div>
+
+    <script>
+      const form = document.getElementById("predictionForm");
+
+      const predictButton = document.getElementById("predictButton");
+
+      const resetButton = document.getElementById("resetButton");
+
+      const result = document.getElementById("result");
+
+      const resultText = document.getElementById("resultText");
+
+      const errorBox = document.getElementById("error");
+
+      /* ==========================================================
+   PREDICT
+   ========================================================== */
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        // Hide previous result
+        result.classList.add("hidden");
+        errorBox.classList.add("hidden");
+
+        // Loading state
+        predictButton.disabled = true;
+
+        predictButton.textContent = "Predicting...";
+
+        // Build request
+        const data = {
+          age: Number(document.getElementById("age").value),
+
+          job: document.getElementById("job").value,
+
+          marital: document.getElementById("marital").value,
+
+          education: document.getElementById("education").value,
+
+          default: document.getElementById("default").value,
+
+          housing: document.getElementById("housing").value,
+
+          loan: document.getElementById("loan").value,
+
+          contact: document.getElementById("contact").value,
+
+          month: document.getElementById("month").value,
+
+          day_of_week: document.getElementById("day_of_week").value,
+
+          campaign: Number(document.getElementById("campaign").value),
+
+          pdays: Number(document.getElementById("pdays").value),
+
+          previous: Number(document.getElementById("previous").value),
+
+          poutcome: document.getElementById("poutcome").value,
+
+          "emp.var.rate": Number(document.getElementById("emp_var_rate").value),
+
+          "cons.price.idx": Number(
+            document.getElementById("cons_price_idx").value,
+          ),
+
+          "cons.conf.idx": Number(
+            document.getElementById("cons_conf_idx").value,
+          ),
+
+          euribor3m: Number(document.getElementById("euribor3m").value),
+
+          "nr.employed": Number(document.getElementById("nr_employed").value),
+        };
+
+        try {
+          const response = await fetch("/predict", {
+            method: "POST",
+
+            headers: {
+              "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify(data),
+          });
+
+          const responseData = await response.json();
+
+          if (!response.ok) {
+            throw new Error(responseData.error || "Prediction failed.");
+          }
+
+          // Show result
+          resultText.textContent = responseData.label;
+
+          result.classList.remove("hidden");
+        } catch (error) {
+          errorBox.textContent = error.message;
+
+          errorBox.classList.remove("hidden");
+        } finally {
+          predictButton.disabled = false;
+
+          predictButton.textContent = "Predict";
+        }
+      });
+
+      /* ==========================================================
+   RESET
+   ========================================================== */
+
+      resetButton.addEventListener("click", function () {
+        form.reset();
+
+        result.classList.add("hidden");
+
+        errorBox.classList.add("hidden");
+
+        predictButton.disabled = false;
+
+        predictButton.textContent = "Predict";
+      });
+    </script>
+  </body>
+</html>
