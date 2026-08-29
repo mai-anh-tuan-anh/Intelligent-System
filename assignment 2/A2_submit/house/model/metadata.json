@@ -1,0 +1,14 @@
+{
+    "dataset": "London House Price Data",
+    "dataset_source": "https://www.kaggle.com/datasets/jakewright/house-price-data",
+    "target": "history_price",
+    "selected_model": "Gradient Boosting Tuned",
+    "random_seed": 42,
+    "experiment_rows": 418194,
+    "train_rows": 292735,
+    "validation_rows": 62729,
+    "test_rows": 62730,
+    "original_feature_dimension": 16,
+    "final_feature_dimension": 205,
+    "model_path": "model\\house_price_model_pipeline.joblib"
+}

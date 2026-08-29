@@ -1,0 +1,16 @@
+{
+    "dataset_name": "Diabetes Health Indicators Dataset",
+    "dataset_url": "https://www.kaggle.com/datasets/mohankrishnathalla/diabetes-health-indicators-dataset",
+    "target": "diagnosed_diabetes",
+    "selected_model": "Decision Tree",
+    "random_seed": 42,
+    "python_version": "3.14.6",
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "pandas_version": "3.0.3",
+    "numpy_version": "2.4.6",
+    "train_rows": 70000,
+    "validation_rows": 15000,
+    "test_rows": 15000,
+    "original_feature_dimension": 28,
+    "final_feature_dimension": 46
+}

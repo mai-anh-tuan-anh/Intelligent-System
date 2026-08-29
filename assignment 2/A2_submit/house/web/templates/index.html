@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>London House Price Prediction</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="topbar-content">
+        <div>
+          <h1>London House Price</h1>
+
+          <p>Machine Learning Property Estimator</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- =====================================================
+         Main input card
+         ===================================================== -->
+
+      <section class="card">
+        <div class="card-header">
+          <div>
+            <h2>Property Details</h2>
+
+            <p>
+              Enter the property characteristics to estimate its historical
+              price.
+            </p>
+          </div>
+
+          <div class="header-actions">
+            <button type="button" id="sampleButton" class="secondary-button">
+              Load Sample
+            </button>
+
+            <button type="button" id="clearButton" class="secondary-button">
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <form id="predictionForm">
+          <div class="form-section">
+            <h3>Location</h3>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="latitude"> Latitude </label>
+
+                <input
+                  type="number"
+                  step="any"
+                  id="latitude"
+                  name="latitude"
+                  value="{{ defaults.latitude }}"
+                  data-default="{{ defaults.latitude }}"
+                  placeholder="e.g. 51.50"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="longitude"> Longitude </label>
+
+                <input
+                  type="number"
+                  step="any"
+                  id="longitude"
+                  name="longitude"
+                  value="{{ defaults.longitude }}"
+                  data-default="{{ defaults.longitude }}"
+                  placeholder="e.g. -0.12"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="outcode"> Outcode </label>
+
+                <input
+                  type="text"
+                  id="outcode"
+                  name="outcode"
+                  value="{{ defaults.outcode }}"
+                  data-default="{{ defaults.outcode }}"
+                  placeholder="e.g. SW1A"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Property Characteristics</h3>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="floorAreaSqM"> Floor Area </label>
+
+                <div class="input-with-unit">
+                  <input
+                    type="number"
+                    step="any"
+                    min="0"
+                    id="floorAreaSqM"
+                    name="floorAreaSqM"
+                    value="{{ defaults.floorAreaSqM }}"
+                    data-default="{{ defaults.floorAreaSqM }}"
+                    placeholder="e.g. 80"
+                    required
+                  />
+
+                  <span> m² </span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="bedrooms"> Bedrooms </label>
+
+                <input
+                  type="number"
+                  step="1"
+                  min="0"
+                  id="bedrooms"
+                  name="bedrooms"
+                  value="{{ defaults.bedrooms }}"
+                  data-default="{{ defaults.bedrooms }}"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="bathrooms"> Bathrooms </label>
+
+                <input
+                  type="number"
+                  step="1"
+                  min="0"
+                  id="bathrooms"
+                  name="bathrooms"
+                  value="{{ defaults.bathrooms }}"
+                  data-default="{{ defaults.bathrooms }}"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="livingRooms"> Living Rooms </label>
+
+                <input
+                  type="number"
+                  step="1"
+                  min="0"
+                  id="livingRooms"
+                  name="livingRooms"
+                  value="{{ defaults.livingRooms }}"
+                  data-default="{{ defaults.livingRooms }}"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="propertyType"> Property Type </label>
+
+                <select
+                  id="propertyType"
+                  name="propertyType"
+                  data-default="{{ defaults.propertyType }}"
+                  required
+                >
+                  {% for category in categories.propertyType %}
+
+                  <option value="{{ category }}">{{ category }}</option>
+
+                  {% endfor %}
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="tenure"> Tenure </label>
+
+                <select
+                  id="tenure"
+                  name="tenure"
+                  data-default="{{ defaults.tenure }}"
+                  required
+                >
+                  {% for category in categories.tenure %}
+
+                  <option value="{{ category }}">{{ category }}</option>
+
+                  {% endfor %}
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="currentEnergyRating"> Energy Rating </label>
+
+                <select
+                  id="currentEnergyRating"
+                  name="currentEnergyRating"
+                  data-default="{{ defaults.currentEnergyRating }}"
+                  required
+                >
+                  {% for category in categories.currentEnergyRating %}
+
+                  <option value="{{ category }}">{{ category }}</option>
+
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="predictButton" class="primary-button">
+              Estimate House Price
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- =====================================================
+         Result
+         ===================================================== -->
+
+      <section id="resultCard" class="result-card hidden">
+        <div class="result-title">
+          <span> Estimated Historical Price </span>
+
+          <h2 id="predictedPrice">£0.00</h2>
+        </div>
+
+        <div class="result-metrics">
+          <div class="metric highlight">
+            <span> Model Confidence Indicator </span>
+
+            <strong id="confidence"> 0.00% </strong>
+
+            <small> Based on validation R², not a probability. </small>
+          </div>
+
+          <div class="metric">
+            <span> Validation R² </span>
+
+            <strong id="r2"> 0.000 </strong>
+
+            <small> Explained variance </small>
+          </div>
+
+          <div class="metric">
+            <span> Validation MAE </span>
+
+            <strong id="mae"> £0 </strong>
+
+            <small> Typical absolute error </small>
+          </div>
+
+          <div class="metric">
+            <span> Validation RMSE </span>
+
+            <strong id="rmse"> £0 </strong>
+
+            <small> Sensitive to large errors </small>
+          </div>
+        </div>
+
+        <div class="result-footer">
+          <span> Model </span>
+
+          <strong id="modelName"> Gradient Boosting Tuned </strong>
+        </div>
+
+        <p class="disclaimer">
+          This estimate is produced by a machine-learning model and should not
+          be treated as a professional property valuation.
+        </p>
+      </section>
+
+      <!-- =====================================================
+         Error
+         ===================================================== -->
+
+      <section id="errorCard" class="error-card hidden">
+        <h3>Unable to generate prediction</h3>
+
+        <p id="errorMessage">-</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>London House Price Prediction System</p>
+    </footer>
+
+    <script>
+      // ============================================================
+      // DOM references
+      // ============================================================
+
+      const form = document.getElementById("predictionForm");
+
+      const sampleButton = document.getElementById("sampleButton");
+
+      const clearButton = document.getElementById("clearButton");
+
+      const predictButton = document.getElementById("predictButton");
+
+      const resultCard = document.getElementById("resultCard");
+
+      const errorCard = document.getElementById("errorCard");
+
+      const predictedPrice = document.getElementById("predictedPrice");
+
+      const confidence = document.getElementById("confidence");
+
+      const r2 = document.getElementById("r2");
+
+      const mae = document.getElementById("mae");
+
+      const rmse = document.getElementById("rmse");
+
+      const modelName = document.getElementById("modelName");
+
+      const errorMessage = document.getElementById("errorMessage");
+
+      // ============================================================
+      // Format currency
+      // ============================================================
+
+      function formatGBP(value) {
+        return new Intl.NumberFormat(
+          "en-GB",
+
+          {
+            style: "currency",
+
+            currency: "GBP",
+
+            maximumFractionDigits: 2,
+          },
+        ).format(value);
+      }
+
+      // ============================================================
+      // Load sample
+      // ============================================================
+
+      function loadSample() {
+        const fields = form.querySelectorAll("[data-default]");
+
+        fields.forEach(function (field) {
+          field.value = field.dataset.default;
+        });
+
+        const selects = form.querySelectorAll("select[data-default]");
+
+        selects.forEach(function (select) {
+          const value = select.dataset.default;
+
+          if (!value) {
+            return;
+          }
+
+          const option = Array.from(select.options).find(function (item) {
+            return item.value === value;
+          });
+
+          if (option) {
+            select.value = value;
+          }
+        });
+      }
+
+      // ============================================================
+      // Load sample automatically
+      // ============================================================
+
+      document.addEventListener(
+        "DOMContentLoaded",
+
+        function () {
+          loadSample();
+        },
+      );
+
+      // ============================================================
+      // Sample button
+      // ============================================================
+
+      sampleButton.addEventListener(
+        "click",
+
+        function () {
+          loadSample();
+        },
+      );
+
+      // ============================================================
+      // Clear
+      // ============================================================
+
+      clearButton.addEventListener(
+        "click",
+
+        function () {
+          form.reset();
+
+          resultCard.classList.add("hidden");
+
+          errorCard.classList.add("hidden");
+
+          predictedPrice.textContent = "£0.00";
+        },
+      );
+
+      // ============================================================
+      // Submit prediction
+      // ============================================================
+
+      form.addEventListener(
+        "submit",
+
+        async function (event) {
+          event.preventDefault();
+
+          resultCard.classList.add("hidden");
+
+          errorCard.classList.add("hidden");
+
+          predictButton.disabled = true;
+
+          predictButton.textContent = "Estimating...";
+
+          const formData = new FormData(form);
+
+          const payload = {};
+
+          formData.forEach(function (value, key) {
+            payload[key] = value;
+          });
+
+          try {
+            const response = await fetch(
+              "/house/v1/predict",
+
+              {
+                method: "POST",
+
+                headers: {
+                  "Content-Type": "application/json",
+                },
+
+                body: JSON.stringify(payload),
+              },
+            );
+
+            const result = await response.json();
+
+            if (!response.ok) {
+              throw new Error(result.error || "Prediction failed.");
+            }
+
+            // ------------------------------------------------
+            // Main result
+            // ------------------------------------------------
+
+            predictedPrice.textContent = result.predicted_price_formatted;
+
+            // ------------------------------------------------
+            // Model confidence indicator
+            // ------------------------------------------------
+
+            confidence.textContent = `${result.confidence_indicator.toFixed(2)}%`;
+
+            // ------------------------------------------------
+            // Validation metrics
+            // ------------------------------------------------
+
+            r2.textContent = result.validation_metrics.R2.toFixed(3);
+
+            mae.textContent = formatGBP(result.validation_metrics.MAE);
+
+            rmse.textContent = formatGBP(result.validation_metrics.RMSE);
+
+            modelName.textContent = result.model;
+
+            resultCard.classList.remove("hidden");
+
+            resultCard.scrollIntoView({
+              behavior: "smooth",
+
+              block: "center",
+            });
+          } catch (error) {
+            errorMessage.textContent = error.message;
+
+            errorCard.classList.remove("hidden");
+          } finally {
+            predictButton.disabled = false;
+
+            predictButton.textContent = "Estimate House Price";
+          }
+        },
+      );
+    </script>
+  </body>
+</html>

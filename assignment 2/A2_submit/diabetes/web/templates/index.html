@@ -1,0 +1,189 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Diabetes Prediction</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for(
+            'static',
+            filename='css/style.css'
+        ) }}"
+    />
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+      <header class="header">
+        <div>
+          <h1>Diabetes Prediction</h1>
+
+          <p>Machine Learning Based Health Assessment</p>
+        </div>
+      </header>
+
+      <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+      <main class="content">
+        <!-- =================================================
+             INPUT CARD
+             ================================================= -->
+
+        <section class="card">
+          <div class="section-title">
+            <h2>Patient Information</h2>
+
+            <p>
+              Enter the patient information below. Sample values can be loaded
+              automatically for testing.
+            </p>
+          </div>
+
+          <!-- =================================================
+                 FORM
+                 ================================================= -->
+
+          <form id="predictionForm">
+            <!-- Dynamic fields are generated from
+                     /diabetes/v1/schema -->
+
+            <div id="formGrid" class="form-grid">
+              <div class="loading">Loading model features...</div>
+            </div>
+
+            <!-- =================================================
+                     FORM BUTTONS
+                     ================================================= -->
+
+            <div class="button-group">
+              <button type="button" id="sampleButton" class="secondary-button">
+                Fill Sample Data
+              </button>
+
+              <button type="submit" id="predictButton" class="predict-button">
+                Predict Diabetes
+              </button>
+            </div>
+          </form>
+
+          <!-- =================================================
+                 ERROR MESSAGE
+                 ================================================= -->
+
+          <div id="errorBox" class="error-box"></div>
+        </section>
+
+        <!-- =================================================
+             RESULT CARD
+             ================================================= -->
+
+        <section id="resultCard" class="card result-card hidden">
+          <div class="section-title">
+            <h2>Prediction Result</h2>
+          </div>
+
+          <!-- =================================================
+                 DIAGNOSIS
+                 ================================================= -->
+
+          <div id="diagnosis" class="diagnosis">-</div>
+
+          <!-- =================================================
+                 METRICS
+                 ================================================= -->
+
+          <div class="metrics">
+            <!-- Confidence -->
+
+            <div class="metric">
+              <span class="metric-label"> Confidence </span>
+
+              <span id="confidence" class="metric-value"> - </span>
+            </div>
+
+            <!-- Diabetes probability -->
+
+            <div class="metric">
+              <span class="metric-label"> Diabetes Probability </span>
+
+              <span id="diabetesProbability" class="metric-value"> - </span>
+            </div>
+
+            <!-- No diabetes probability -->
+
+            <div class="metric">
+              <span class="metric-label"> No Diabetes Probability </span>
+
+              <span id="noDiabetesProbability" class="metric-value"> - </span>
+            </div>
+
+            <!-- Prediction class -->
+
+            <div class="metric">
+              <span class="metric-label"> Prediction Class </span>
+
+              <span id="predictionClass" class="metric-value"> - </span>
+            </div>
+
+            <!-- Model -->
+
+            <div class="metric">
+              <span class="metric-label"> Model </span>
+
+              <span id="modelName" class="metric-value small"> - </span>
+            </div>
+          </div>
+
+          <!-- =================================================
+                 PROBABILITY BAR
+                 ================================================= -->
+
+          <div class="probability-section">
+            <h3>Diabetes Probability</h3>
+
+            <div class="progress-container">
+              <div id="probabilityBar" class="progress-bar"></div>
+            </div>
+
+            <div class="probability-scale">
+              <span> 0% </span>
+
+              <span> 100% </span>
+            </div>
+          </div>
+
+          <!-- =================================================
+                 DISCLAIMER
+                 ================================================= -->
+
+          <div class="disclaimer">
+            This system is intended for educational demonstration only. The
+            prediction should not be interpreted as a medical diagnosis.
+          </div>
+        </section>
+      </main>
+
+      <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+      <footer class="footer">Diabetes Prediction System</footer>
+    </div>
+
+    <script src="{{ url_for(
+        'static',
+        filename='js/app.js'
+    ) }}"></script>
+  </body>
+</html>

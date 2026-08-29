@@ -1,0 +1,91 @@
+{
+  "dataset": "Brazilian E-Commerce Public Dataset by Olist",
+  "kaggle_url": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce",
+  "random_seed": 42,
+  "split": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "interest_task": "Predict customer product-category interest",
+  "behavior_task": "Predict target-order value segment",
+  "final_model": "Logistic Regression",
+  "final_representation": "Tabular + Review Text",
+  "numerical_features": [
+    "prior_order_count",
+    "total_spending",
+    "average_order_value",
+    "max_order_value",
+    "recency_days",
+    "history_duration_days",
+    "average_days_between_orders",
+    "min_days_between_orders",
+    "max_days_between_orders",
+    "total_items",
+    "average_item_price",
+    "average_freight_value",
+    "average_items_per_order",
+    "category_count__beleza_saude",
+    "category_count__brinquedos",
+    "category_count__cama_mesa_banho",
+    "category_count__esporte_lazer",
+    "category_count__fashion_bolsas_e_acessorios",
+    "category_count__ferramentas_jardim",
+    "category_count__informatica_acessorios",
+    "category_count__moveis_decoracao",
+    "category_count__perfumaria",
+    "category_count__relogios_presentes",
+    "category_count__telefonia",
+    "category_count__utilidades_domesticas",
+    "category_share__beleza_saude",
+    "category_share__brinquedos",
+    "category_share__cama_mesa_banho",
+    "category_share__esporte_lazer",
+    "category_share__fashion_bolsas_e_acessorios",
+    "category_share__ferramentas_jardim",
+    "category_share__informatica_acessorios",
+    "category_share__moveis_decoracao",
+    "category_share__perfumaria",
+    "category_share__relogios_presentes",
+    "category_share__telefonia",
+    "category_share__utilidades_domesticas",
+    "average_installments",
+    "average_payment_value",
+    "average_review_score",
+    "review_count",
+    "text_review_count"
+  ],
+  "categorical_features": [
+    "customer_state",
+    "dominant_payment_type"
+  ],
+  "text_features": [
+    "review_text"
+  ],
+  "interest_target_categories": [
+    "beleza_saude",
+    "brinquedos",
+    "cama_mesa_banho",
+    "esporte_lazer",
+    "fashion_bolsas_e_acessorios",
+    "informatica_acessorios",
+    "moveis_decoracao",
+    "other",
+    "relogios_presentes",
+    "telefonia",
+    "utilidades_domesticas"
+  ],
+  "behavior_classes": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "behavior_low_threshold": 72.67,
+  "behavior_high_threshold": 143.0,
+  "recommendation_score": {
+    "sales": 0.55,
+    "rating": 0.3,
+    "order": 0.15
+  },
+  "api_endpoint": "/predict"
+}

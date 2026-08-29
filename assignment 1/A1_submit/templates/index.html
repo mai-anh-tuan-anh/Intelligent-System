@@ -1,0 +1,759 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Diabetes Risk Intelligence Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for(
+            'static',
+            filename='style.css'
+        ) }}"
+    />
+  </head>
+
+  <body>
+    <div class="shell">
+      <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+      <header class="hero">
+        <div>
+          <div class="eyebrow">INTELLIGENT SYSTEM · ASSIGNMENT 01</div>
+
+          <h1>
+            Diabetes Risk
+            <span>Intelligence Dashboard</span>
+          </h1>
+
+          <p>
+            Explore dataset signals, model performance, and run a prediction
+            using the final model.
+          </p>
+        </div>
+
+        <div class="model-card">
+          <span class="status-dot"></span>
+
+          <div>
+            <small> FINAL MODEL </small>
+
+            <strong id="modelName"> Random Forest </strong>
+
+            <span id="modelDetail"> Loading model configuration... </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- =====================================================
+         TOP METRICS
+         ===================================================== -->
+
+      <section class="metric-grid" id="topMetrics"></section>
+
+      <!-- =====================================================
+         PERFORMANCE
+         ===================================================== -->
+
+      <section class="content-grid">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>Model Performance</h2>
+
+              <p>Cross-validation versus final hold-out test</p>
+            </div>
+          </div>
+
+          <canvas id="metricsChart"></canvas>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>Outcome Distribution</h2>
+
+              <p>Diabetes class distribution</p>
+            </div>
+          </div>
+
+          <canvas id="classChart"></canvas>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         CONFUSION MATRIX + FEATURES
+         ===================================================== -->
+
+      <section class="content-grid">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>Confusion Matrix</h2>
+
+              <p>Final test-set classification behaviour</p>
+            </div>
+          </div>
+
+          <div id="confusionMatrix" class="matrix"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>Feature Overview</h2>
+
+              <p>Average feature values in the dataset</p>
+            </div>
+          </div>
+
+          <canvas id="featureChart"></canvas>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         PREDICTION
+         ===================================================== -->
+
+      <section class="panel predictor">
+        <div class="panel-head">
+          <div>
+            <h2>Run a Prediction</h2>
+
+            <p>
+              Enter the eight measurements used by the final Random Forest
+              model.
+            </p>
+          </div>
+
+          <div class="pill">POST /api/predict</div>
+        </div>
+
+        <form id="predictionForm" class="form-grid">
+          <label>
+            Pregnancies
+
+            <input
+              name="Pregnancies"
+              type="number"
+              value="1"
+              min="0"
+              step="1"
+              required
+            />
+          </label>
+
+          <label>
+            Glucose
+
+            <input
+              name="Glucose"
+              type="number"
+              value="120"
+              step="0.1"
+              required
+            />
+          </label>
+
+          <label>
+            BloodPressure
+
+            <input
+              name="BloodPressure"
+              type="number"
+              value="70"
+              step="0.1"
+              required
+            />
+          </label>
+
+          <label>
+            SkinThickness
+
+            <input
+              name="SkinThickness"
+              type="number"
+              value="20"
+              step="0.1"
+              required
+            />
+          </label>
+
+          <label>
+            Insulin
+
+            <input
+              name="Insulin"
+              type="number"
+              value="79"
+              step="0.1"
+              required
+            />
+          </label>
+
+          <label>
+            BMI
+
+            <input name="BMI" type="number" value="25" step="0.1" required />
+          </label>
+
+          <label>
+            DiabetesPedigreeFunction
+
+            <input
+              name="DiabetesPedigreeFunction"
+              type="number"
+              value="0.35"
+              step="0.001"
+              required
+            />
+          </label>
+
+          <label>
+            Age
+
+            <input
+              name="Age"
+              type="number"
+              value="30"
+              min="1"
+              step="1"
+              required
+            />
+          </label>
+
+          <button type="submit" class="primary-btn">
+            Predict with Final Model
+          </button>
+        </form>
+
+        <!-- =================================================
+             PREDICTION RESULT
+             ================================================= -->
+
+        <div id="predictionResult" class="prediction-result hidden">
+          <div class="prediction-main">
+            <div id="predictionLabel" class="prediction-label"></div>
+
+            <div id="predictionText" class="prediction-text"></div>
+          </div>
+
+          <div class="prediction-visual">
+            <div class="prob-ring" id="probRing">
+              <div>
+                <strong id="probability"> 0% </strong>
+
+                <span> positive probability </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="prob-bars">
+            <div>
+              <span> No diabetes </span>
+
+              <strong id="negativeProb"> 0% </strong>
+
+              <div class="bar">
+                <i id="negativeBar"></i>
+              </div>
+            </div>
+
+            <div>
+              <span> Diabetes </span>
+
+              <strong id="positiveProb"> 0% </strong>
+
+              <div class="bar">
+                <i id="positiveBar"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+      <footer>
+        <span>
+          Structured Data → Feature Vector → Traditional ML → Application
+        </span>
+
+        <span> Test set reserved for final evaluation </span>
+      </footer>
+    </div>
+
+    <script>
+      // ============================================================
+      // GLOBAL VARIABLES
+      // ============================================================
+
+      let metricsChart = null;
+
+      let classChart = null;
+
+      let featureChart = null;
+
+      // ============================================================
+      // HELPERS
+      // ============================================================
+
+      function percent(value) {
+        return (value * 100).toFixed(1) + "%";
+      }
+
+      function createMetricCard(title, value, subtitle) {
+        return `
+
+        <div class="metric-card">
+
+            <small>
+                ${title}
+            </small>
+
+            <strong>
+                ${value}
+            </strong>
+
+            <span>
+                ${subtitle}
+            </span>
+
+        </div>
+    `;
+      }
+
+      // ============================================================
+      // CONFUSION MATRIX
+      // ============================================================
+
+      function renderConfusionMatrix(matrix) {
+        const tn = matrix[0][0];
+
+        const fp = matrix[0][1];
+
+        const fn = matrix[1][0];
+
+        const tp = matrix[1][1];
+
+        document.getElementById("confusionMatrix").innerHTML = `
+
+        <div class="matrix-grid">
+
+            <div class="matrix-corner"></div>
+
+            <div class="matrix-head">
+                Predicted 0
+            </div>
+
+            <div class="matrix-head">
+                Predicted 1
+            </div>
+
+
+            <div class="matrix-head side">
+                Actual 0
+            </div>
+
+            <div class="cell tn">
+                ${tn}
+            </div>
+
+            <div class="cell fp">
+                ${fp}
+            </div>
+
+
+            <div class="matrix-head side">
+                Actual 1
+            </div>
+
+            <div class="cell fn">
+                ${fn}
+            </div>
+
+            <div class="cell tp">
+                ${tp}
+            </div>
+
+        </div>
+
+
+        <div class="legend">
+
+            <span>
+                TN ${tn}
+            </span>
+
+            <span>
+                FP ${fp}
+            </span>
+
+            <span>
+                FN ${fn}
+            </span>
+
+            <span>
+                TP ${tp}
+            </span>
+
+        </div>
+
+    `;
+      }
+
+      // ============================================================
+      // LOAD DASHBOARD
+      // ============================================================
+
+      async function loadDashboard() {
+        const response = await fetch("/api/dashboard");
+
+        const data = await response.json();
+
+        // --------------------------------------------------------
+        // MODEL
+        // --------------------------------------------------------
+
+        document.getElementById("modelName").textContent = data.model;
+
+        document.getElementById("modelDetail").textContent = data.model_detail;
+
+        // --------------------------------------------------------
+        // TOP METRICS
+        // --------------------------------------------------------
+
+        document.getElementById("topMetrics").innerHTML = [
+          createMetricCard(
+            "TEST ACCURACY",
+            percent(data.test_metrics.accuracy),
+            "Final hold-out",
+          ),
+
+          createMetricCard(
+            "TEST PRECISION",
+            percent(data.test_metrics.precision),
+            "Positive prediction quality",
+          ),
+
+          createMetricCard(
+            "TEST RECALL",
+            percent(data.test_metrics.recall),
+            "Positive case coverage",
+          ),
+
+          createMetricCard(
+            "TEST F1",
+            percent(data.test_metrics.f1),
+            "Primary selection metric",
+          ),
+
+          createMetricCard(
+            "TEST ROC-AUC",
+            data.test_metrics.roc_auc.toFixed(3),
+            "Probability ranking",
+          ),
+
+          createMetricCard(
+            "DATASET",
+            data.rows.toLocaleString(),
+            `${data.features} features`,
+          ),
+        ].join("");
+
+        // --------------------------------------------------------
+        // PERFORMANCE CHART
+        // --------------------------------------------------------
+
+        metricsChart = new Chart(
+          document.getElementById("metricsChart"),
+
+          {
+            type: "bar",
+
+            data: {
+              labels: ["Accuracy", "Precision", "Recall", "F1", "ROC-AUC"],
+
+              datasets: [
+                {
+                  label: "Cross-validation",
+
+                  data: [
+                    data.cv_metrics.accuracy,
+
+                    data.cv_metrics.precision,
+
+                    data.cv_metrics.recall,
+
+                    data.cv_metrics.f1,
+
+                    data.cv_metrics.roc_auc,
+                  ],
+
+                  backgroundColor: "#a1afff",
+                },
+
+                {
+                  label: "Final test",
+
+                  data: [
+                    data.test_metrics.accuracy,
+
+                    data.test_metrics.precision,
+
+                    data.test_metrics.recall,
+
+                    data.test_metrics.f1,
+
+                    data.test_metrics.roc_auc,
+                  ],
+
+                  backgroundColor: "#4f6ff0",
+                },
+              ],
+            },
+
+            options: {
+              responsive: true,
+
+              scales: {
+                y: {
+                  min: 0,
+
+                  max: 1,
+                },
+              },
+            },
+          },
+        );
+
+        // --------------------------------------------------------
+        // CLASS DISTRIBUTION
+        // --------------------------------------------------------
+
+        classChart = new Chart(
+          document.getElementById("classChart"),
+
+          {
+            type: "doughnut",
+
+            data: {
+              labels: ["No Diabetes", "Diabetes"],
+
+              datasets: [
+                {
+                  data: [
+                    data.class_distribution["No Diabetes"],
+
+                    data.class_distribution["Diabetes"],
+                  ],
+
+                  backgroundColor: ["#d8dee9", "#4f6ff0"],
+                },
+              ],
+            },
+
+            options: {
+              responsive: true,
+
+              cutout: "68%",
+            },
+          },
+        );
+
+        // --------------------------------------------------------
+        // FEATURE MEANS
+        // --------------------------------------------------------
+
+        featureChart = new Chart(
+          document.getElementById("featureChart"),
+
+          {
+            type: "bar",
+
+            data: {
+              labels: Object.keys(data.feature_means),
+
+              datasets: [
+                {
+                  label: "Mean value",
+
+                  data: Object.values(data.feature_means),
+
+                  backgroundColor: "#7b8cf0",
+                },
+              ],
+            },
+
+            options: {
+              responsive: true,
+
+              plugins: {
+                legend: {
+                  display: false,
+                },
+              },
+
+              scales: {
+                x: {
+                  ticks: {
+                    maxRotation: 45,
+
+                    minRotation: 45,
+                  },
+                },
+              },
+            },
+          },
+        );
+
+        // --------------------------------------------------------
+        // CONFUSION MATRIX
+        // --------------------------------------------------------
+
+        renderConfusionMatrix(data.confusion_matrix);
+      }
+
+      // ============================================================
+      // PREDICTION FORM
+      // ============================================================
+
+      document.getElementById("predictionForm").addEventListener(
+        "submit",
+
+        async function (event) {
+          event.preventDefault();
+
+          const form = event.target;
+
+          const button = form.querySelector("button");
+
+          const result = document.getElementById("predictionResult");
+
+          // ----------------------------------------------------
+          // BUILD INPUT
+          // ----------------------------------------------------
+
+          const formData = new FormData(form);
+
+          const data = Object.fromEntries(formData.entries());
+
+          for (const key in data) {
+            data[key] = Number(data[key]);
+          }
+
+          // ----------------------------------------------------
+          // LOADING
+          // ----------------------------------------------------
+
+          button.disabled = true;
+
+          button.textContent = "Predicting...";
+
+          try {
+            const response = await fetch(
+              "/api/predict",
+
+              {
+                method: "POST",
+
+                headers: {
+                  "Content-Type": "application/json",
+                },
+
+                body: JSON.stringify(data),
+              },
+            );
+
+            const output = await response.json();
+
+            if (!response.ok) {
+              throw new Error(output.error || "Prediction failed.");
+            }
+
+            // ------------------------------------------------
+            // PROBABILITIES
+            // ------------------------------------------------
+
+            const positive = output.probability_positive;
+
+            const negative = output.probability_negative;
+
+            // ------------------------------------------------
+            // TEXT
+            // ------------------------------------------------
+
+            document.getElementById("predictionLabel").textContent =
+              output.prediction === 1 ? "Positive result" : "Negative result";
+
+            document.getElementById("predictionText").textContent =
+              output.label;
+
+            // ------------------------------------------------
+            // PROBABILITY
+            // ------------------------------------------------
+
+            document.getElementById("probability").textContent =
+              percent(positive);
+
+            document.getElementById("negativeProb").textContent =
+              percent(negative);
+
+            document.getElementById("positiveProb").textContent =
+              percent(positive);
+
+            document.getElementById("negativeBar").style.width =
+              percent(negative);
+
+            document.getElementById("positiveBar").style.width =
+              percent(positive);
+
+            // ------------------------------------------------
+            // DONUT
+            // ------------------------------------------------
+
+            document.getElementById("probRing").style.background = `
+
+                conic-gradient(
+
+                    #4f6ff0
+                    0deg
+                    ${positive * 360}deg,
+
+                    #e6eaf1
+                    ${positive * 360}deg
+                    360deg
+
+                )
+
+            `;
+
+            result.classList.remove("hidden");
+          } catch (error) {
+            alert(error.message);
+          } finally {
+            button.disabled = false;
+
+            button.textContent = "Predict with Final Model";
+          }
+        },
+      );
+
+      // ============================================================
+      // INITIALIZE DASHBOARD
+      // ============================================================
+
+      loadDashboard();
+    </script>
+  </body>
+</html>

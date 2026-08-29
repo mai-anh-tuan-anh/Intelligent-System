@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- ========================= -->
+        <!-- TITLE -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🏠 House Price Prediction"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vietnam Housing Dataset 2024"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+
+        <!-- ========================= -->
+        <!-- ADDRESS -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập địa chỉ"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:gravity="top"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- AREA -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Diện tích (m²)"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ví dụ: 84"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- FRONTAGE -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mặt tiền (m)"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtFrontage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Có thể để trống"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- ACCESS ROAD -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đường vào (m)"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtAccessRoad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Có thể để trống"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- HOUSE DIRECTION -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hướng nhà"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerHouseDirection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- BALCONY DIRECTION -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hướng ban công"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerBalconyDirection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- FLOORS -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Số tầng"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtFloors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ví dụ: 4"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- BEDROOMS -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phòng ngủ"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtBedrooms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Có thể để trống"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- BATHROOMS -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phòng tắm"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtBathrooms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Có thể để trống"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- LEGAL STATUS -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pháp lý"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerLegal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- FURNITURE STATE -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tình trạng nội thất"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerFurniture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- CITY -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tỉnh / Thành phố"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ví dụ: Hưng Yên"
+            android:inputType="text"
+            android:layout_marginBottom="14dp" />
+
+
+        <!-- ========================= -->
+        <!-- DISTRICT -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quận / Huyện"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtDistrict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ví dụ: Văn Giang"
+            android:inputType="text"
+            android:layout_marginBottom="20dp" />
+
+
+        <!-- ========================= -->
+        <!-- PREDICT -->
+        <!-- ========================= -->
+
+        <Button
+            android:id="@+id/btnPredict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DỰ ĐOÁN GIÁ"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+
+        <!-- ========================= -->
+        <!-- CLEAR -->
+        <!-- ========================= -->
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="XÓA DỮ LIỆU"
+            android:layout_marginTop="8dp" />
+
+
+        <!-- ========================= -->
+        <!-- LOADING -->
+        <!-- ========================= -->
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="16dp" />
+
+
+        <!-- ========================= -->
+        <!-- RESULT -->
+        <!-- ========================= -->
+
+        <TextView
+            android:id="@+id/txtResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giá dự đoán sẽ hiển thị ở đây"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="30dp" />
+
+    </LinearLayout>
+
+</ScrollView>
