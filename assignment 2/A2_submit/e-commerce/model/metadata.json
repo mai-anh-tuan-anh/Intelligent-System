@@ -9,8 +9,10 @@
   },
   "interest_task": "Predict customer product-category interest",
   "behavior_task": "Predict target-order value segment",
-  "final_model": "Logistic Regression",
+  "final_model": "SVM + Text",
   "final_representation": "Tabular + Review Text",
+  "model_selection_source": "Experiment 2 - Tabular + Review Text",
+  "validation_macro_f1": 0.45438607191499364,
   "numerical_features": [
     "prior_order_count",
     "total_spending",
@@ -62,6 +64,20 @@
   "text_features": [
     "review_text"
   ],
+  "text_representation": {
+    "word_tfidf": true,
+    "character_tfidf": true,
+    "word_max_features": 3000,
+    "character_max_features": 3000,
+    "word_ngram_range": [
+      1,
+      2
+    ],
+    "character_ngram_range": [
+      3,
+      5
+    ]
+  },
   "interest_target_categories": [
     "beleza_saude",
     "brinquedos",

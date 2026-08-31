@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Olist Customer Intelligence</title>
+
+    <link rel="stylesheet" href="/web/style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+      <header class="hero">
+        <div class="hero-content">
+          <div class="badge">OLIST E-COMMERCE INTELLIGENCE</div>
+
+          <h1>
+            Customer Insight
+            <span>&</span>
+            Recommendation
+          </h1>
+
+          <p>
+            Predict customer behavior and interests, analyze prediction
+            confidence, and discover the Top 5 products related to the predicted
+            preference.
+          </p>
+        </div>
+      </header>
+
+      <main class="container">
+        <!-- =================================================
+             MODEL INFORMATION
+             ================================================= -->
+
+        <section class="card">
+          <div class="section-title">
+            <div>
+              <h2>Model Information</h2>
+
+              <p>Information loaded directly from the saved ML pipeline.</p>
+            </div>
+
+            <span id="apiStatus" class="status pending"> Checking API... </span>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <span> Final Model </span>
+
+              <strong id="modelName"> - </strong>
+            </div>
+
+            <div class="info-item">
+              <span> Representation </span>
+
+              <strong id="representation"> - </strong>
+            </div>
+
+            <div class="info-item">
+              <span> Total Model Features </span>
+
+              <strong id="totalFeatureCount"> - </strong>
+            </div>
+
+            <div class="info-item">
+              <span> User Inputs </span>
+
+              <strong id="userInputCount"> - </strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================
+             CUSTOMER INPUT
+             ================================================= -->
+
+        <section class="card">
+          <div class="section-title">
+            <div>
+              <h2>Customer Input</h2>
+
+              <p>
+                Required inputs are shown first. Other model features are
+                optional.
+              </p>
+            </div>
+          </div>
+
+          <!-- =============================================
+                 SAMPLE / CLEAR
+                 ============================================= -->
+
+          <div class="button-row">
+            <button id="sampleButton" type="button" class="secondary-button">
+              Load Sample Customer
+            </button>
+
+            <button id="clearButton" type="button" class="secondary-button">
+              Clear
+            </button>
+          </div>
+
+          <form id="predictionForm">
+            <!-- =========================================
+                     REQUIRED INPUTS
+                     ========================================= -->
+
+            <div class="input-group">
+              <div class="group-header">
+                <div>
+                  <h3>Required Inputs</h3>
+
+                  <p>Core customer information used for prediction.</p>
+                </div>
+
+                <span class="required-badge"> REQUIRED </span>
+              </div>
+
+              <div id="requiredFields" class="form-grid"></div>
+            </div>
+
+            <!-- =========================================
+                     OTHER INPUTS
+                     ========================================= -->
+
+            <div class="input-group">
+              <div class="group-header">
+                <div>
+                  <h3>Other Model Inputs</h3>
+
+                  <p>
+                    Optional engineered features. Leave blank when unavailable.
+                  </p>
+                </div>
+
+                <span class="optional-badge"> OPTIONAL </span>
+              </div>
+
+              <div id="otherFields" class="form-grid"></div>
+            </div>
+
+            <!-- =========================================
+                     PREDICT
+                     ========================================= -->
+
+            <button id="predictButton" type="submit" class="primary-button">
+              Predict Customer
+            </button>
+          </form>
+        </section>
+
+        <!-- =================================================
+             ERROR
+             ================================================= -->
+
+        <section id="errorSection" class="error-card hidden">
+          <h3>Prediction Error</h3>
+
+          <p id="errorMessage"></p>
+        </section>
+
+        <!-- =================================================
+             RESULT
+             ================================================= -->
+
+        <section id="resultSection" class="hidden">
+          <!-- =============================================
+                 MAIN PREDICTIONS
+                 ============================================= -->
+
+          <div class="result-grid">
+            <!-- =========================================
+                     BEHAVIOR
+                     ========================================= -->
+
+            <div class="result-card">
+              <span class="result-label"> Customer Behavior </span>
+
+              <h2 id="behaviorResult">-</h2>
+
+              <p id="behaviorConfidence">Confidence: -</p>
+
+              <div class="confidence-track">
+                <div id="behaviorConfidenceBar" class="confidence-fill"></div>
+              </div>
+            </div>
+
+            <!-- =========================================
+                     INTEREST
+                     ========================================= -->
+
+            <div class="result-card">
+              <span class="result-label"> Customer Interest </span>
+
+              <h2 id="interestResult">-</h2>
+
+              <p id="interestConfidence">Confidence: -</p>
+
+              <div class="confidence-track">
+                <div id="interestConfidenceBar" class="confidence-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =============================================
+                 PROBABILITY DISTRIBUTION
+                 ============================================= -->
+
+          <section class="card">
+            <div class="section-title">
+              <div>
+                <h2>Interest Probability Distribution</h2>
+
+                <p>Probability assigned to each interest category.</p>
+              </div>
+            </div>
+
+            <div id="probabilityChart" class="probability-chart"></div>
+          </section>
+
+          <!-- =============================================
+                 CUSTOMER PROFILE
+                 ============================================= -->
+
+          <section class="card">
+            <div class="section-title">
+              <div>
+                <h2>Customer Profile</h2>
+
+                <p>Main customer information used by the prediction.</p>
+              </div>
+            </div>
+
+            <div id="profileGrid" class="profile-grid"></div>
+          </section>
+
+          <!-- =============================================
+                 TOP 5 RECOMMENDATIONS
+                 ============================================= -->
+
+          <section class="card">
+            <div class="section-title">
+              <div>
+                <h2>Top 5 Recommended Products</h2>
+
+                <p id="recommendationSubtitle">
+                  Products related to the predicted customer interest.
+                </p>
+              </div>
+            </div>
+
+            <div id="productGrid" class="product-grid"></div>
+          </section>
+        </section>
+      </main>
+
+      <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+      <footer>Intelligent System Development - Assignment 02</footer>
+    </div>
+
+    <script src="/web/script.js"></script>
+  </body>
+</html>
