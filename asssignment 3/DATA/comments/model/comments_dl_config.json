@@ -1,0 +1,35 @@
+{
+  "task": "ecommerce_product_interest_text_classification",
+  "architecture": {
+    "vocab_size": 4000,
+    "embedding_dim": 16,
+    "hidden1": 48,
+    "hidden2": 24,
+    "output_dim": 16,
+    "max_len": 40,
+    "padding_id": 0,
+    "unknown_id": 1
+  },
+  "learning_rate": 0.05,
+  "epochs": 6,
+  "batch_size": 512,
+  "deep_learning_framework": "None - NumPy only",
+  "class_order": [
+    "Cell Phones & Smartphones",
+    "Digital Cameras",
+    "Video Games",
+    "Headphones",
+    "Cordless Drills",
+    "Video Game Consoles",
+    "Monitors",
+    "Camcorders",
+    "Mice, Trackballs & Touchpads",
+    "Keyboards & Keypads",
+    "Smart Speakers",
+    "PC Laptops & Netbooks",
+    "Reciprocating Saws",
+    "Apple Laptops",
+    "Lenses",
+    "Other"
+  ]
+}

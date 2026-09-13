@@ -1,0 +1,44 @@
+{
+  "task": "multi_class_diabetes_risk_classification",
+  "model_name": "Deep Learning - NumPy MLP",
+  "input_dim": 17,
+  "hidden1": 64,
+  "hidden2": 32,
+  "output_dim": 3,
+  "learning_rate": 0.01,
+  "epochs": 300,
+  "activation_hidden": "ReLU",
+  "activation_output": "Softmax",
+  "loss": "Multiclass Cross-Entropy",
+  "classes": [
+    "Low",
+    "Moderate",
+    "High"
+  ],
+  "raw_features": [
+    "Age",
+    "BMI",
+    "Waist_Circumference_cm",
+    "Blood_Glucose",
+    "HbA1c",
+    "Fasting_Blood_Sugar",
+    "Insulin_Level",
+    "Blood_Pressure_Systolic",
+    "Blood_Pressure_Diastolic",
+    "Total_Cholesterol",
+    "HDL",
+    "Family_History_Diabetes",
+    "Hypertension",
+    "Heart_Disease",
+    "Diet_Quality",
+    "Physical_Activity_Level",
+    "Pulse_Pressure",
+    "Chol_HDL_Ratio"
+  ],
+  "engineered_features": [
+    "Pulse_Pressure",
+    "Chol_HDL_Ratio"
+  ],
+  "feature_selection_percentile": 70,
+  "random_seed": 42
+}

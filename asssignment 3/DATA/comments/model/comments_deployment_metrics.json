@@ -1,0 +1,41 @@
+{
+  "task": "multi_class_ecommerce_product_interest_text_classification",
+  "classes": [
+    "Cell Phones & Smartphones",
+    "Digital Cameras",
+    "Video Games",
+    "Headphones",
+    "Cordless Drills",
+    "Video Game Consoles",
+    "Monitors",
+    "Camcorders",
+    "Mice, Trackballs & Touchpads",
+    "Keyboards & Keypads",
+    "Smart Speakers",
+    "PC Laptops & Netbooks",
+    "Reciprocating Saws",
+    "Apple Laptops",
+    "Lenses",
+    "Other"
+  ],
+  "best_ml_model": "Linear SVM",
+  "best_ml_metrics": {
+    "Accuracy": 0.76660708966339,
+    "Precision_macro": 0.7998292520814534,
+    "Recall_macro": 0.6663859074428493,
+    "F1_macro": 0.7209115966081266,
+    "Balanced_Accuracy": 0.6663859074428493,
+    "ROC_AUC_OVR_macro": 0.9507904327326397
+  },
+  "deep_learning_metrics": {
+    "Accuracy": 0.26794757223711646,
+    "Precision_macro": 0.04906775294049412,
+    "Recall_macro": 0.0723006936921699,
+    "F1_macro": 0.04250827920254108,
+    "Balanced_Accuracy": 0.0723006936921699,
+    "ROC_AUC_OVR_macro": 0.5956005468633296
+  },
+  "framework": "Traditional ML: scikit-learn; Deep Learning: NumPy only",
+  "split": "70% train / 15% validation / 15% test",
+  "random_seed": 42
+}

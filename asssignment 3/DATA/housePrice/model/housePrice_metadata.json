@@ -1,0 +1,67 @@
+{
+  "task": "house_price_regression",
+  "target": "resale_price",
+  "best_machine_learning": {
+    "model": "HistGradientBoosting",
+    "metrics": {
+      "MAE": 23262.65571388304,
+      "RMSE": 31489.94023825802,
+      "R2": 0.9622858947438727,
+      "MAPE (%)": 5.064831819633117
+    }
+  },
+  "deep_learning": {
+    "model": "Deep Neural Network (NumPy)",
+    "metrics": {
+      "MAE": 53326.421043618495,
+      "RMSE": 72788.21538641976,
+      "R2": 0.7984966461507764,
+      "MAPE (%)": 11.438439024749924
+    }
+  },
+  "four_model_comparison": [
+    {
+      "Model": "Linear Regression",
+      "MAE": 47471.50298907267,
+      "RMSE": 60873.79949319229,
+      "R2": 0.8590643201114073,
+      "MAPE (%)": 10.817440112605738,
+      "RMSE_rank": 3.0,
+      "MAE_rank": 3.0,
+      "R2_rank": 3.0
+    },
+    {
+      "Model": "Random Forest",
+      "MAE": 26654.030914606272,
+      "RMSE": 37886.863017782816,
+      "R2": 0.9454069407809035,
+      "MAPE (%)": 5.783651135451203,
+      "RMSE_rank": 2.0,
+      "MAE_rank": 2.0,
+      "R2_rank": 2.0
+    },
+    {
+      "Model": "HistGradientBoosting",
+      "MAE": 23262.65571388304,
+      "RMSE": 31489.94023825802,
+      "R2": 0.9622858947438727,
+      "MAPE (%)": 5.064831819633117,
+      "RMSE_rank": 1.0,
+      "MAE_rank": 1.0,
+      "R2_rank": 1.0
+    },
+    {
+      "Model": "Deep Neural Network (NumPy)",
+      "MAE": 53326.421043618495,
+      "RMSE": 72788.21538641976,
+      "R2": 0.7984966461507764,
+      "MAPE (%)": 11.438439024749924,
+      "RMSE_rank": 4.0,
+      "MAE_rank": 4.0,
+      "R2_rank": 4.0
+    }
+  ],
+  "probability_output": false,
+  "probability_note": "HousePrice is a regression task. Regression models do not produce class probabilities with predict_proba().",
+  "random_seed": 42
+}

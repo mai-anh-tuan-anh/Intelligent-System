@@ -1,0 +1,136 @@
+{
+  "dataset": {
+    "name": "Diabetes Risk Prediction Dataset (50K Patients)",
+    "filename": "diabetes_risk_prediction_dataset.csv",
+    "rows": 50000,
+    "columns": 41
+  },
+  "task": {
+    "type": "multi_class_classification",
+    "target": "Diabetes_Risk",
+    "classes": [
+      "Low",
+      "Moderate",
+      "High"
+    ]
+  },
+  "representation": {
+    "raw_feature_count": 18,
+    "encoded_feature_count_before_selection": 25,
+    "final_model_input_dim": 17,
+    "train_shape": [
+      42500,
+      17
+    ],
+    "test_shape": [
+      7500,
+      17
+    ]
+  },
+  "feature_engineering": {
+    "dropped_columns": [
+      "Patient_ID",
+      "Diabetes_Risk_Score",
+      "AI_Health_Recommendation",
+      "Doctor_Consultation_Needed"
+    ],
+    "engineered_features": [
+      "Pulse_Pressure",
+      "Chol_HDL_Ratio"
+    ],
+    "selected_raw_features": [
+      "Age",
+      "BMI",
+      "Waist_Circumference_cm",
+      "Blood_Glucose",
+      "HbA1c",
+      "Fasting_Blood_Sugar",
+      "Insulin_Level",
+      "Blood_Pressure_Systolic",
+      "Blood_Pressure_Diastolic",
+      "Total_Cholesterol",
+      "HDL",
+      "Family_History_Diabetes",
+      "Hypertension",
+      "Heart_Disease",
+      "Diet_Quality",
+      "Physical_Activity_Level",
+      "Pulse_Pressure",
+      "Chol_HDL_Ratio"
+    ],
+    "selection_method": "Mutual information on training data after one-hot encoding",
+    "selection_percentile": 70
+  },
+  "best_machine_learning": {
+    "model": "HistGradientBoosting",
+    "metrics": {
+      "Accuracy": 0.864,
+      "Precision_macro": 0.6755010507402335,
+      "Recall_macro": 0.8270564457810665,
+      "F1_macro": 0.725862535815863,
+      "ROC_AUC_OVR_macro": 0.9630006049746672
+    },
+    "artifact": "model\\diabetes_best_ml_bundle.joblib"
+  },
+  "deep_learning": {
+    "model": "NumPy MLP",
+    "architecture": [
+      17,
+      64,
+      32,
+      3
+    ],
+    "learning_rate": 0.01,
+    "epochs": 300,
+    "metrics": {
+      "Accuracy": 0.8201333333333334,
+      "Precision_macro": 0.5188368462138954,
+      "Recall_macro": 0.48409619576373486,
+      "F1_macro": 0.4952884661765988,
+      "ROC_AUC_OVR_macro": 0.816629642304321,
+      "Final_Training_Loss": 0.4404132626851677
+    },
+    "weights": "model\\diabetes_dl_weights.npz",
+    "config": "model\\diabetes_dl_config.json"
+  },
+  "four_model_comparison": [
+    {
+      "Model": "HistGradientBoosting",
+      "Accuracy": 0.864,
+      "Precision_macro": 0.6755010507402335,
+      "Recall_macro": 0.8270564457810665,
+      "F1_macro": 0.725862535815863,
+      "ROC_AUC_OVR_macro": 0.9630006049746672,
+      "Training_Time_sec": 1.5155696999863721
+    },
+    {
+      "Model": "Random Forest",
+      "Accuracy": 0.8821333333333333,
+      "Precision_macro": 0.8062424589551566,
+      "Recall_macro": 0.6452760659139414,
+      "F1_macro": 0.6823739751583885,
+      "ROC_AUC_OVR_macro": 0.9641832675657204,
+      "Training_Time_sec": 2.0851959999999963
+    },
+    {
+      "Model": "Logistic Regression",
+      "Accuracy": 0.782,
+      "Precision_macro": 0.5574401655116884,
+      "Recall_macro": 0.7829494276741166,
+      "F1_macro": 0.5932944037590017,
+      "ROC_AUC_OVR_macro": 0.9133465020085447,
+      "Training_Time_sec": 0.1984527999884449
+    },
+    {
+      "Model": "Deep Learning - NumPy MLP",
+      "Accuracy": 0.8201333333333334,
+      "Precision_macro": 0.5188368462138954,
+      "Recall_macro": 0.48409619576373486,
+      "F1_macro": 0.4952884661765988,
+      "ROC_AUC_OVR_macro": 0.816629642304321,
+      "Training_Time_sec": NaN
+    }
+  ],
+  "visualizations_directory": "model\\figures",
+  "random_seed": 42
+}
