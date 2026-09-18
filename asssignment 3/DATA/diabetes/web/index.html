@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Diabetes Risk Intelligence</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+    <link rel="stylesheet" href="/web/styles.css" />
+  </head>
+
+  <body>
+    <div class="app-shell">
+      <!-- ================================================= -->
+      <!-- HEADER -->
+      <!-- ================================================= -->
+
+      <header class="hero">
+        <div>
+          <div class="eyebrow">ASSIGNMENT 3 • DIABETES RISK PREDICTION</div>
+
+          <h1>Diabetes Risk Intelligence</h1>
+
+          <p>
+            Compare the Best Machine Learning model with the NumPy Deep Learning
+            model using the exact saved preprocessing pipeline from the A3
+            notebook.
+          </p>
+        </div>
+
+        <div id="apiStatus" class="status">Checking API...</div>
+      </header>
+
+      <!-- ================================================= -->
+      <!-- DISCLAIMER -->
+      <!-- ================================================= -->
+
+      <div class="notice">
+        <strong> Educational / assignment demonstration </strong>
+
+        <span>
+          This system is a machine-learning demonstration and is not a medical
+          diagnosis or substitute for professional medical advice.
+        </span>
+      </div>
+
+      <!-- ================================================= -->
+      <!-- MAIN -->
+      <!-- ================================================= -->
+
+      <main>
+        <!-- ================================================= -->
+        <!-- PATIENT INPUT -->
+        <!-- ================================================= -->
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">INPUT</div>
+
+              <h2>Patient profile</h2>
+            </div>
+
+            <button id="sampleBtn" class="ghost-btn">Load sample</button>
+          </div>
+
+          <!-- --------------------------------------------- -->
+          <!-- PROFILE -->
+          <!-- --------------------------------------------- -->
+
+          <div class="group-title">Anthropometric profile</div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label> Age </label>
+
+              <input id="Age" type="number" step="0.1" value="42" />
+            </div>
+
+            <div class="field">
+              <label> BMI </label>
+
+              <input id="BMI" type="number" step="0.1" value="28.5" />
+            </div>
+
+            <div class="field">
+              <label> Waist circumference (cm) </label>
+
+              <input
+                id="Waist_Circumference_cm"
+                type="number"
+                step="0.1"
+                value="94"
+              />
+            </div>
+          </div>
+
+          <!-- --------------------------------------------- -->
+          <!-- METABOLIC -->
+          <!-- --------------------------------------------- -->
+
+          <div class="group-title">Glucose and metabolic indicators</div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label> Blood glucose </label>
+
+              <input id="Blood_Glucose" type="number" step="0.1" value="145" />
+            </div>
+
+            <div class="field">
+              <label> HbA1c </label>
+
+              <input id="HbA1c" type="number" step="0.1" value="7.2" />
+            </div>
+
+            <div class="field">
+              <label> Fasting blood sugar </label>
+
+              <input
+                id="Fasting_Blood_Sugar"
+                type="number"
+                step="0.1"
+                value="135"
+              />
+            </div>
+
+            <div class="field">
+              <label> Insulin level </label>
+
+              <input id="Insulin_Level" type="number" step="0.1" value="110" />
+            </div>
+
+            <div class="field">
+              <label> Total cholesterol </label>
+
+              <input
+                id="Total_Cholesterol"
+                type="number"
+                step="0.1"
+                value="220"
+              />
+            </div>
+
+            <div class="field">
+              <label> HDL </label>
+
+              <input id="HDL" type="number" step="0.1" value="50" />
+            </div>
+          </div>
+
+          <!-- --------------------------------------------- -->
+          <!-- CARDIOVASCULAR -->
+          <!-- --------------------------------------------- -->
+
+          <div class="group-title">
+            Blood pressure and cardiovascular indicators
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label> Systolic blood pressure </label>
+
+              <input
+                id="Blood_Pressure_Systolic"
+                type="number"
+                step="1"
+                value="140"
+              />
+            </div>
+
+            <div class="field">
+              <label> Diastolic blood pressure </label>
+
+              <input
+                id="Blood_Pressure_Diastolic"
+                type="number"
+                step="1"
+                value="90"
+              />
+            </div>
+          </div>
+
+          <!-- --------------------------------------------- -->
+          <!-- LIFESTYLE -->
+          <!-- --------------------------------------------- -->
+
+          <div class="group-title">Lifestyle and family history</div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label> Family history of diabetes </label>
+
+              <select id="Family_History_Diabetes">
+                <option value="Yes">Yes</option>
+
+                <option value="No">No</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label> Hypertension </label>
+
+              <select id="Hypertension">
+                <option value="Yes">Yes</option>
+
+                <option value="No">No</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label> Heart disease </label>
+
+              <select id="Heart_Disease">
+                <option value="Yes">Yes</option>
+
+                <option value="No">No</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label> Diet quality </label>
+
+              <select id="Diet_Quality">
+                <option value="Healthy">Healthy</option>
+
+                <option value="Average">Average</option>
+
+                <option value="Poor">Poor</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label> Physical activity level </label>
+
+              <select id="Physical_Activity_Level">
+                <option value="Low">Low</option>
+
+                <option value="Moderate">Moderate</option>
+
+                <option value="High">High</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ================================================= -->
+          <!-- COMPUTED FEATURES -->
+          <!-- ================================================= -->
+
+          <div class="derived-box">
+            <div class="derived-title">Automatically engineered features</div>
+
+            <div class="derived-grid">
+              <div>
+                <span> Pulse Pressure </span>
+
+                <strong id="pulsePressure"> — </strong>
+              </div>
+
+              <div>
+                <span> Cholesterol / HDL Ratio </span>
+
+                <strong id="cholRatio"> — </strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================================================= -->
+          <!-- ACTION -->
+          <!-- ================================================= -->
+
+          <div class="actions">
+            <button id="predictBtn" class="primary-btn">
+              Predict diabetes risk
+            </button>
+
+            <button id="resetBtn" class="ghost-btn">Reset</button>
+          </div>
+        </section>
+
+        <!-- ================================================= -->
+        <!-- RESULTS -->
+        <!-- ================================================= -->
+
+        <section id="results" class="hidden">
+          <div class="results-heading">
+            <div>
+              <div class="eyebrow">MODEL INFERENCE</div>
+
+              <h2>Dual-model prediction</h2>
+            </div>
+
+            <div id="agreement" class="agreement">—</div>
+          </div>
+
+          <!-- ================================================= -->
+          <!-- TWO MODEL RESULTS -->
+          <!-- ================================================= -->
+
+          <div class="model-grid">
+            <!-- BEST ML -->
+
+            <article class="model-card ml-card">
+              <div class="model-label">BEST MACHINE LEARNING</div>
+
+              <h3 id="mlName">HistGradientBoosting</h3>
+
+              <div class="result-label">Predicted risk</div>
+
+              <div id="mlPrediction" class="prediction">—</div>
+
+              <div class="confidence">
+                <span> Confidence </span>
+
+                <strong id="mlConfidence"> — </strong>
+              </div>
+
+              <div class="progress">
+                <span id="mlProgress"></span>
+              </div>
+
+              <div class="top-title">Class probabilities</div>
+
+              <div id="mlProbabilities" class="probabilities"></div>
+            </article>
+
+            <!-- DEEP LEARNING -->
+
+            <article class="model-card dl-card">
+              <div class="model-label">DEEP LEARNING</div>
+
+              <h3>NumPy MLP</h3>
+
+              <div class="architecture-mini">17 → 64 → 32 → 3</div>
+
+              <div class="result-label">Predicted risk</div>
+
+              <div id="dlPrediction" class="prediction">—</div>
+
+              <div class="confidence">
+                <span> Confidence </span>
+
+                <strong id="dlConfidence"> — </strong>
+              </div>
+
+              <div class="progress dl-progress">
+                <span id="dlProgress"></span>
+              </div>
+
+              <div class="top-title">Class probabilities</div>
+
+              <div id="dlProbabilities" class="probabilities"></div>
+            </article>
+          </div>
+
+          <!-- ================================================= -->
+          <!-- CHARTS -->
+          <!-- ================================================= -->
+
+          <div class="chart-grid">
+            <div class="panel chart-card">
+              <div class="card-title">Patient prediction probabilities</div>
+
+              <canvas id="probChart"></canvas>
+            </div>
+
+            <div class="panel chart-card">
+              <div class="card-title">Best ML vs Deep Learning</div>
+
+              <canvas id="metricChart"></canvas>
+            </div>
+
+            <div class="panel chart-card">
+              <div class="card-title">Metric profile</div>
+
+              <canvas id="radarChart"></canvas>
+            </div>
+          </div>
+
+          <!-- ================================================= -->
+          <!-- METRICS -->
+          <!-- ================================================= -->
+
+          <section class="panel">
+            <div class="card-title">Held-out test-set evaluation</div>
+
+            <div class="metrics-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+
+                    <th>Best ML</th>
+
+                    <th>Deep Learning</th>
+                  </tr>
+                </thead>
+
+                <tbody id="metricsBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- ================================================= -->
+          <!-- INPUT SUMMARY -->
+          <!-- ================================================= -->
+
+          <section class="panel">
+            <div class="card-title">Inference summary</div>
+
+            <div id="summary" class="summary-grid"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="/web/app.js"></script>
+  </body>
+</html>

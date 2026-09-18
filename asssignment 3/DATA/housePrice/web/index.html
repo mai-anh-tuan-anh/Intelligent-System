@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        HousePrice AI Lab
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/styles.css"
+    >
+
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                HP
+            </div>
+
+            <div>
+
+                <div class="brand-name">
+                    HousePrice
+                </div>
+
+                <div class="brand-subtitle">
+                    AI Evaluation Lab
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <button
+                class="nav-button active"
+                data-page="dashboard"
+            >
+                Dashboard
+            </button>
+
+            <button
+                class="nav-button"
+                data-page="predictor"
+            >
+                Predictor
+            </button>
+
+            <button
+                class="nav-button"
+                data-page="model-lab"
+            >
+                Model Lab
+            </button>
+
+            <button
+                class="nav-button"
+                data-page="data"
+            >
+                Data Explorer
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="status">
+
+                <span id="status-dot"></span>
+
+                <span id="status-text">
+                    Connecting...
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div>
+
+                <div class="eyebrow">
+                    MACHINE LEARNING DEPLOYMENT
+                </div>
+
+                <h1>
+                    House Price Intelligence
+                </h1>
+
+                <p>
+                    Evaluate and compare the deployed
+                    traditional machine-learning model
+                    and NumPy deep neural network.
+                </p>
+
+            </div>
+
+
+            <button
+                class="refresh-button"
+                id="refresh-button"
+            >
+                Refresh
+            </button>
+
+        </header>
+
+
+
+        <!-- ================================================= -->
+        <!-- DASHBOARD -->
+        <!-- ================================================= -->
+
+        <section
+            id="dashboard"
+            class="page active"
+        >
+
+
+            <!-- MODEL HERO -->
+
+            <div class="hero-grid">
+
+
+                <div class="hero ml">
+
+                    <div class="hero-label">
+                        BEST MACHINE LEARNING
+                    </div>
+
+                    <div
+                        id="hero-ml-name"
+                        class="hero-model"
+                    >
+                        —
+                    </div>
+
+                    <div class="hero-metrics">
+
+                        <div>
+
+                            <span>
+                                RMSE
+                            </span>
+
+                            <strong
+                                id="hero-ml-rmse"
+                            >
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                R²
+                            </span>
+
+                            <strong
+                                id="hero-ml-r2"
+                            >
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="hero dl">
+
+                    <div class="hero-label">
+                        DEEP LEARNING
+                    </div>
+
+                    <div
+                        id="hero-dl-name"
+                        class="hero-model"
+                    >
+                        —
+                    </div>
+
+                    <div class="hero-metrics">
+
+                        <div>
+
+                            <span>
+                                RMSE
+                            </span>
+
+                            <strong
+                                id="hero-dl-rmse"
+                            >
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                R²
+                            </span>
+
+                            <strong
+                                id="hero-dl-r2"
+                            >
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- METRICS -->
+
+            <div
+                id="metric-grid"
+                class="metric-grid"
+            ></div>
+
+
+
+            <!-- METRIC CHART -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            MODEL SCORECARD
+                        </div>
+
+                        <h2>
+                            Performance comparison
+                        </h2>
+
+                        <p>
+                            Lower MAE, MSE, RMSE and MAPE
+                            indicate smaller prediction errors.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="metric-chart"
+                    class="chart"
+                ></div>
+
+            </div>
+
+
+
+            <!-- ACTUAL VS PREDICTED -->
+
+            <div class="two-column">
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h2>
+                            Actual vs Predicted
+                        </h2>
+
+                        <p>
+                            The dashed line represents
+                            perfect predictions.
+                        </p>
+
+                    </div>
+
+                    <div
+                        id="scatter-chart"
+                        class="chart tall"
+                    ></div>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h2>
+                            MAE by Price Quartile
+                        </h2>
+
+                        <p>
+                            Compare performance from
+                            lower-price to higher-price houses.
+                        </p>
+
+                    </div>
+
+                    <div
+                        id="quartile-chart"
+                        class="chart tall"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- PREDICTOR -->
+        <!-- ================================================= -->
+
+        <section
+            id="predictor"
+            class="page"
+        >
+
+            <div class="page-heading">
+
+                <div class="eyebrow">
+                    LIVE INFERENCE
+                </div>
+
+                <h2>
+                    House Price Predictor
+                </h2>
+
+                <p>
+                    One input is passed through the same
+                    saved preprocessing pipeline and then
+                    evaluated by both deployed models.
+                </p>
+
+            </div>
+
+
+            <div class="predictor-grid">
+
+
+                <!-- FORM -->
+
+                <div class="card">
+
+                    <div
+                        id="form-grid"
+                        class="form-grid"
+                    ></div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            id="predict-button"
+                            class="primary-button"
+                        >
+                            Predict with Both Models
+                        </button>
+
+                        <button
+                            id="example-button"
+                            class="secondary-button"
+                        >
+                            Load Example
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RESULTS -->
+
+                <div class="result-column">
+
+
+                    <div class="prediction-card ml-result">
+
+                        <div class="result-label">
+                            BEST ML MODEL
+                        </div>
+
+                        <div
+                            id="result-ml-name"
+                            class="result-model"
+                        >
+                            —
+                        </div>
+
+                        <div
+                            id="result-ml-price"
+                            class="result-price"
+                        >
+                            —
+                        </div>
+
+                        <div class="result-description">
+                            Predicted resale price
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="prediction-card dl-result">
+
+                        <div class="result-label">
+                            DEEP LEARNING MODEL
+                        </div>
+
+                        <div
+                            id="result-dl-name"
+                            class="result-model"
+                        >
+                            —
+                        </div>
+
+                        <div
+                            id="result-dl-price"
+                            class="result-price"
+                        >
+                            —
+                        </div>
+
+                        <div class="result-description">
+                            Predicted resale price
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="agreement-card">
+
+                        <div>
+
+                            <div class="result-label">
+                                MODEL AGREEMENT
+                            </div>
+
+                            <div
+                                id="agreement-value"
+                                class="agreement-value"
+                            >
+                                —
+                            </div>
+
+                        </div>
+
+                        <div
+                            id="agreement-detail"
+                            class="agreement-detail"
+                        >
+                            Run a prediction to compare both models.
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- MODEL LAB -->
+        <!-- ================================================= -->
+
+        <section
+            id="model-lab"
+            class="page"
+        >
+
+            <div class="page-heading">
+
+                <div class="eyebrow">
+                    MODEL ENGINEERING
+                </div>
+
+                <h2>
+                    Model Lab
+                </h2>
+
+                <p>
+                    Architecture, training configuration
+                    and detailed regression metrics.
+                </p>
+
+            </div>
+
+
+
+            <div class="model-grid">
+
+
+                <!-- ML -->
+
+                <div class="model-card">
+
+                    <div class="model-tag">
+                        BEST TRADITIONAL MACHINE LEARNING
+                    </div>
+
+                    <h3
+                        id="lab-ml-name"
+                    >
+                        —
+                    </h3>
+
+                    <div
+                        id="lab-ml-parameters"
+                        class="parameter-grid"
+                    ></div>
+
+                    <div
+                        id="lab-ml-metrics"
+                        class="mini-metric-grid"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- DL -->
+
+                <div class="model-card dark">
+
+                    <div class="model-tag">
+                        DEEP LEARNING · NUMPY
+                    </div>
+
+                    <h3
+                        id="lab-dl-name"
+                    >
+                        —
+                    </h3>
+
+
+                    <div class="architecture">
+
+                        <span>
+                            INPUT
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
+                        <span>
+                            32
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
+                        <span>
+                            16
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
+                        <span>
+                            OUTPUT
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="lab-dl-parameters"
+                        class="parameter-grid"
+                    ></div>
+
+                    <div
+                        id="lab-dl-metrics"
+                        class="mini-metric-grid"
+                    ></div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RESIDUAL -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Residual Distribution
+                        </h2>
+
+                        <p>
+                            Residual = Actual − Predicted
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="residual-chart"
+                    class="chart"
+                ></div>
+
+            </div>
+
+
+
+            <!-- INFO -->
+
+            <div class="info-grid">
+
+
+                <div class="info-card">
+
+                    <span>
+                        FINAL FEATURES
+                    </span>
+
+                    <strong
+                        id="feature-count"
+                    >
+                        —
+                    </strong>
+
+                    <p>
+                        Features after preprocessing.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span>
+                        LOW CARDINALITY
+                    </span>
+
+                    <strong
+                        id="low-count"
+                    >
+                        —
+                    </strong>
+
+                    <p>
+                        One-hot encoded categorical fields.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span>
+                        HIGH CARDINALITY
+                    </span>
+
+                    <strong
+                        id="high-count"
+                    >
+                        —
+                    </strong>
+
+                    <p>
+                        Frequency encoded categorical fields.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- DATA -->
+        <!-- ================================================= -->
+
+        <section
+            id="data"
+            class="page"
+        >
+
+            <div class="page-heading">
+
+                <div class="eyebrow">
+                    EVALUATION DATA
+                </div>
+
+                <h2>
+                    Data Explorer
+                </h2>
+
+                <p>
+                    Preview of the saved deployment predictions.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <input
+                    id="table-search"
+                    class="search"
+                    type="text"
+                    placeholder="Search..."
+                >
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Actual
+                                </th>
+
+                                <th>
+                                    Best ML
+                                </th>
+
+                                <th>
+                                    Deep Learning
+                                </th>
+
+                                <th>
+                                    ML Error
+                                </th>
+
+                                <th>
+                                    DL Error
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody
+                            id="table-body"
+                        ></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<script src="/app.js"></script>
+
+</body>
+
+</html>

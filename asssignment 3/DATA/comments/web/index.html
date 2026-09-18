@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comments Interest Intelligence</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="/web/styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">A3 • TEXT REPRESENTATION • DEPLOYMENT</div>
+        <h1>Comments Interest Intelligence</h1>
+        <p>Professional dual-model inference dashboard for the final e-commerce interest-classification system.</p>
+      </div>
+      <div class="status-pill" id="health">Checking API…</div>
+    </header>
+
+    <main>
+      <section class="input-grid">
+        <div class="panel">
+          <div class="panel-title">Review input</div>
+          <label for="title">Review title</label>
+          <input id="title" maxlength="500" placeholder="e.g. Amazing battery life" />
+
+          <label for="content">Review content</label>
+          <textarea id="content" rows="8" maxlength="10000" placeholder="Describe the product, quality, features, delivery or customer experience..."></textarea>
+
+          <div class="rating-row">
+            <div>
+              <label for="rating">Customer rating</label>
+              <input id="rating" type="range" min="1" max="5" value="5" />
+            </div>
+            <div class="rating-value"><span id="ratingValue">5</span><small>/5</small></div>
+          </div>
+
+          <div class="action-row">
+            <button id="predictBtn">Analyze interest</button>
+            <button id="sampleBtn" class="secondary">Load sample</button>
+          </div>
+          <div class="hint">Deployment uses the saved preprocessing and trained parameters from the final A3 notebook. No retraining occurs during inference.</div>
+        </div>
+
+        <div class="panel overview-panel">
+          <div class="panel-title">System overview</div>
+          <div class="overview-grid">
+            <div class="kpi"><span>Classes</span><strong id="classCount">—</strong></div>
+            <div class="kpi"><span>Best ML</span><strong id="bestMlName">—</strong></div>
+            <div class="kpi"><span>ML Macro F1</span><strong id="bestMlF1">—</strong></div>
+            <div class="kpi"><span>DL Macro F1</span><strong id="dlF1">—</strong></div>
+          </div>
+          <div class="architecture">
+            <div class="arch-title">Inference pipeline</div>
+            <div class="pipeline"><span>Review</span><b>→</b><span>Cleaning</span><b>→</b><span>Representation</span><b>→</b><span>ML + DL</span><b>→</b><span>Prediction</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="hidden">
+        <div class="section-heading">
+          <div><div class="eyebrow">LIVE INFERENCE</div><h2>Two-model prediction</h2></div>
+          <div id="agreement" class="agreement">—</div>
+        </div>
+
+        <section class="result-grid">
+          <article class="prediction-card ml-card">
+            <div class="card-top"><span class="tag">BEST ML</span><span id="mlModelName">—</span></div>
+            <div class="prediction-label">Predicted interest category</div>
+            <h3 id="mlPrediction">—</h3>
+            <p id="mlScoreNote">—</p>
+            <div class="confidence-line"><div class="bar"><span id="mlBar"></span></div><b id="mlScore">—</b></div>
+            <div class="top-title">Top-5 candidates</div>
+            <div id="mlTop5" class="top5"></div>
+          </article>
+
+          <article class="prediction-card dl-card">
+            <div class="card-top"><span class="tag dl-tag">DEEP LEARNING</span><span>NumPy</span></div>
+            <div class="prediction-label">Predicted interest category</div>
+            <h3 id="dlPrediction">—</h3>
+            <p id="dlScoreNote">Softmax probability.</p>
+            <div class="confidence-line"><div class="bar dl-bar"><span id="dlBar"></span></div><b id="dlScore">—</b></div>
+            <div class="top-title">Top-5 candidates</div>
+            <div id="dlTop5" class="top5"></div>
+          </article>
+        </section>
+
+        <section class="charts-grid">
+          <div class="panel chart-panel"><div class="panel-title">Top-5 candidate comparison</div><canvas id="top5Chart"></canvas></div>
+          <div class="panel chart-panel"><div class="panel-title">Live confidence comparison</div><canvas id="confidenceChart"></canvas></div>
+          <div class="panel chart-panel"><div class="panel-title">Evaluation: ML vs Deep Learning</div><canvas id="metricsChart"></canvas></div>
+          <div class="panel chart-panel"><div class="panel-title">Evaluation radar</div><canvas id="radarChart"></canvas></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">Detailed evaluation metrics — held-out test set</div>
+          <div class="table-wrap"><table id="metricsTable"></table></div>
+        </section>
+
+        <section class="analysis-grid">
+          <div class="panel">
+            <div class="panel-title">Prediction diagnostics</div>
+            <div class="diagnostic-grid">
+              <div><span>Models agree</span><b id="agreementValue">—</b></div>
+              <div><span>ML score</span><b id="diagMl">—</b></div>
+              <div><span>DL probability</span><b id="diagDl">—</b></div>
+              <div><span>Top-1 gap</span><b id="diagGap">—</b></div>
+            </div>
+            <div class="explain-box" id="diagnosticText">Run a prediction to inspect the two-model behavior.</div>
+          </div>
+          <div class="panel">
+            <div class="panel-title">Deployment notes</div>
+            <ul class="notes">
+              <li>ML score is a normalized Linear SVM decision score, not a calibrated probability.</li>
+              <li>Deep Learning confidence is the Softmax probability from the NumPy network.</li>
+              <li>Both models use the same input review and are evaluated independently.</li>
+              <li>The API loads saved artifacts; it does not retrain in production.</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="/web/app.js"></script>
+</body>
+</html>
