@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Vision Lab - Assignment 04</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">AI</div><div><div class="brand-title">Vision Lab</div><div class="brand-sub">Assignment 04</div></div></div>
+    <nav>
+      <button class="nav active" data-view="dashboard">Dashboard</button>
+      <button class="nav" data-view="mnist">MNIST</button>
+      <button class="nav" data-view="cifar">CIFAR-10</button>
+      <button class="nav" data-view="diabetes">Diabetes</button>
+      <button class="nav" data-view="comparison">Comparison</button>
+    </nav>
+    <div class="side-foot">
+      <div class="small-caps">CORE IDEA</div>
+      <p>Understand the data, model, functions and framework before comparing implementations.</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <div>
+        <div class="eyebrow">Deep Learning as Function Composition</div>
+        <h1 id="title">AI Model Demonstration</h1>
+        <p id="subtitle">Prediction, probability and evaluation for the Assignment 04 models.</p>
+      </div>
+      <div class="status" id="status">Checking...</div>
+    </header>
+
+    <section class="view active" id="dashboard">
+      <div class="hero">
+        <div>
+          <span class="badge">3 DATASETS</span>
+          <h2>One project, multiple representations</h2>
+          <p>MNIST and CIFAR-10 use CNNs. Diabetes uses an MLP because it is tabular data. The demo loads the trained artifacts created by the Jupyter Notebook.</p>
+        </div>
+        <div class="flow"><span>Input</span><i>→</i><span>Features</span><i>→</i><span>Classifier</span><i>→</i><span>Probability</span></div>
+      </div>
+
+      <div class="cards3">
+        <button class="dataset" data-goto="mnist"><div class="icon">28</div><div><strong>MNIST</strong><small>Grayscale digit images</small></div><b>→</b></button>
+        <button class="dataset" data-goto="cifar"><div class="icon">32</div><div><strong>CIFAR-10</strong><small>RGB image classification</small></div><b>→</b></button>
+        <button class="dataset" data-goto="diabetes"><div class="icon">MLP</div><div><strong>Diabetes</strong><small>Tabular classification</small></div><b>→</b></button>
+      </div>
+
+      <div class="section-title"><div><span class="badge">RESULTS</span><h2>Model overview</h2></div></div>
+      <div class="card table-wrap"><table id="overview"><thead><tr><th>Dataset</th><th>Framework</th><th>Accuracy</th><th>Macro F1</th><th>Parameters</th><th>Time</th></tr></thead><tbody></tbody></table></div>
+    </section>
+
+    <section class="view" id="mnist">
+      <div class="section-title"><div><span class="badge">IMAGE CLASSIFICATION</span><h2>MNIST</h2><p>Input: 1 × 28 × 28. Ten digit classes.</p></div></div>
+      <div class="demo-grid">
+        <div class="card">
+          <div class="card-head"><h3>Prediction demo</h3><select id="mnist-fw"><option>PyTorch</option><option>Keras</option><option>Scratch</option></select></div>
+          <label class="upload"><input id="mnist-file" type="file" accept="image/*"><span class="upload-plus">+</span><strong>Choose a digit image</strong><small>Prefer a white digit on a dark background to match MNIST.</small></label>
+          <div class="preview"><img id="mnist-preview"></div>
+          <button class="primary" id="mnist-run">Run prediction</button><div class="error" id="mnist-error"></div>
+        </div>
+        <div class="card result"><div id="mnist-main" class="result-main"><span>Upload an image to begin.</span></div><div id="mnist-prob" class="prob-list"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="card"><div class="card-head"><h3>Confusion matrix</h3><select id="mnist-cf"><option>PyTorch</option><option>Keras</option><option>Scratch</option></select></div><div id="mnist-cm" class="matrix-box"></div></div>
+        <div class="card chart-card"><h3>Accuracy and Macro F1</h3><canvas id="mnist-chart"></canvas></div>
+      </div>
+    </section>
+
+    <section class="view" id="cifar">
+      <div class="section-title"><div><span class="badge">IMAGE CLASSIFICATION</span><h2>CIFAR-10</h2><p>Input: 3 × 32 × 32. Ten image classes.</p></div></div>
+      <div class="demo-grid">
+        <div class="card">
+          <div class="card-head"><h3>Prediction demo</h3><select id="cifar-fw"><option>PyTorch</option><option>Keras</option><option>Scratch</option></select></div>
+          <label class="upload"><input id="cifar-file" type="file" accept="image/*"><span class="upload-plus">+</span><strong>Choose an RGB image</strong><small>The demo resizes your image to 32 × 32.</small></label>
+          <div class="preview"><img id="cifar-preview"></div>
+          <button class="primary" id="cifar-run">Run prediction</button><div class="error" id="cifar-error"></div>
+        </div>
+        <div class="card result"><div id="cifar-main" class="result-main"><span>Upload an image to begin.</span></div><div id="cifar-prob" class="prob-list"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="card"><div class="card-head"><h3>Confusion matrix</h3><select id="cifar-cf"><option>PyTorch</option><option>Keras</option><option>Scratch</option></select></div><div id="cifar-cm" class="matrix-box"></div></div>
+        <div class="card chart-card"><h3>Accuracy and Macro F1</h3><canvas id="cifar-chart"></canvas></div>
+      </div>
+    </section>
+
+    <section class="view" id="diabetes">
+      <div class="section-title"><div><span class="badge">TABULAR CLASSIFICATION</span><h2>Diabetes</h2><p>Feature vector input. The project uses MLP models for this dataset.</p></div></div>
+      <div class="card">
+        <div class="card-head"><div><h3>Feature vector</h3><p>Fields start from training-data medians so the demo is immediately usable.</p></div><select id="diabetes-fw"><option>PyTorch</option><option>Keras</option><option>Scratch</option></select></div>
+        <div id="diabetes-fields" class="features"></div>
+        <button class="primary" id="diabetes-run">Run prediction</button><div class="error" id="diabetes-error"></div>
+      </div>
+      <div class="demo-grid lower-gap">
+        <div class="card result"><div id="diabetes-main" class="result-main"><span>Run a prediction to view the class probabilities.</span></div><div id="diabetes-prob" class="prob-list"></div></div>
+        <div class="card"><h3>Class interpretation</h3><div class="legend"><p><b>0</b> No diabetes / only during pregnancy</p><p><b>1</b> Prediabetes</p><p><b>2</b> Diabetes</p></div></div>
+      </div>
+      <div class="grid2">
+        <div class="card"><div class="card-head"><h3>Confusion matrix</h3><select id="diabetes-cf"><option>PyTorch</option><option>Keras</option><option>Scratch</option></select></div><div id="diabetes-cm" class="matrix-box"></div></div>
+        <div class="card chart-card"><h3>Accuracy and Macro F1</h3><canvas id="diabetes-chart"></canvas></div>
+      </div>
+    </section>
+
+    <section class="view" id="comparison">
+      <div class="section-title"><div><span class="badge">FRAMEWORK COMPARISON</span><h2>Scratch vs PyTorch vs Keras</h2><p>Same learning idea, different abstraction levels.</p></div></div>
+      <div class="grid2"><div class="card chart-card"><h3>Accuracy</h3><canvas id="accuracy-chart"></canvas></div><div class="card chart-card"><h3>Macro F1</h3><canvas id="f1-chart"></canvas></div></div>
+      <div class="grid2"><div class="card chart-card"><h3>Parameter count</h3><canvas id="parameter-chart"></canvas></div><div class="card chart-card"><h3>Training time</h3><canvas id="time-chart"></canvas></div></div>
+      <div class="card framework-cards">
+        <div><span class="fw">Scratch</span><strong>Maximum visibility</strong><p>Low-level convolution, pooling, forward/backward operations and updates are visible.</p></div>
+        <div><span class="fw">PyTorch</span><strong>Modular + explicit</strong><p>Model structure and training flow are visible while autograd handles gradients.</p></div>
+        <div><span class="fw">Keras</span><strong>High-level abstraction</strong><p>Layers and training are compact, with more work hidden behind the API.</p></div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "accuracy": 0.979,
+  "precision_macro": 0.978987334593528,
+  "recall_macro": 0.97888260306602,
+  "f1_macro": 0.9788309767063825,
+  "precision_weighted": 0.9791393117831388,
+  "recall_weighted": 0.979,
+  "f1_weighted": 0.9789670225849689,
+  "mean_confidence": 0.9743347764015198,
+  "parameters": 31530,
+  "training_time_seconds": 139.4938017000004,
+  "epochs": 5
+}
