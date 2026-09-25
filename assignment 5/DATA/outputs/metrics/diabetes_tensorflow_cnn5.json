@@ -1,0 +1,17 @@
+{
+  "accuracy": 0.5066326029281714,
+  "precision_macro": 0.4198880008814166,
+  "recall_macro": 0.4302193775994028,
+  "f1_macro": 0.41208312499616806,
+  "precision_weighted": 0.5195600506597768,
+  "recall_weighted": 0.5066326029281714,
+  "f1_weighted": 0.5040010511246863,
+  "log_loss": 1.0218180418014526,
+  "mean_confidence": 0.42509809136390686,
+  "ece": 0.08168339090917977,
+  "dataset": "diabetes",
+  "framework": "tensorflow",
+  "conv_layers": 5,
+  "parameters": 143939,
+  "training_seconds": 69.05223600000318
+}

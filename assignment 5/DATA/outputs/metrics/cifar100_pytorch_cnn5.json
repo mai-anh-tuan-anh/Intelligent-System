@@ -1,0 +1,18 @@
+{
+  "accuracy": 0.4981,
+  "precision_macro": 0.5288412921653692,
+  "recall_macro": 0.4981000000000001,
+  "f1_macro": 0.4914199244167755,
+  "precision_weighted": 0.5288412921653691,
+  "recall_weighted": 0.4981,
+  "f1_weighted": 0.49141992441677557,
+  "log_loss": 1.841280221939087,
+  "mean_confidence": 0.4999910295009613,
+  "ece": 0.013711654743552204,
+  "top5_accuracy": 0.8003,
+  "dataset": "cifar100",
+  "framework": "pytorch",
+  "conv_layers": 5,
+  "parameters": 441924,
+  "training_seconds": 1678.6032987999934
+}

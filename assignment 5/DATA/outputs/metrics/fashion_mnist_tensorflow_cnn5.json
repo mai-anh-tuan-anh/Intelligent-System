@@ -1,0 +1,18 @@
+{
+  "accuracy": 0.9181,
+  "precision_macro": 0.91856234832211,
+  "recall_macro": 0.9180999999999999,
+  "f1_macro": 0.9181719232880541,
+  "precision_weighted": 0.9185623483221101,
+  "recall_weighted": 0.9181,
+  "f1_weighted": 0.9181719232880541,
+  "log_loss": 0.22928264737129211,
+  "mean_confidence": 0.9349511861801147,
+  "ece": 0.017132248732447616,
+  "top5_accuracy": 0.9992,
+  "dataset": "fashion_mnist",
+  "framework": "tensorflow",
+  "conv_layers": 5,
+  "parameters": 427882,
+  "training_seconds": 604.0812516000005
+}

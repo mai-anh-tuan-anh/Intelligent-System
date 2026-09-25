@@ -1,0 +1,18 @@
+{
+  "accuracy": 0.5134,
+  "precision_macro": 0.5366827610489442,
+  "recall_macro": 0.5134000000000001,
+  "f1_macro": 0.5120105364886519,
+  "precision_weighted": 0.5366827610489441,
+  "recall_weighted": 0.5134,
+  "f1_weighted": 0.512010536488652,
+  "log_loss": 1.7967699766159058,
+  "mean_confidence": 0.5232699513435364,
+  "ece": 0.011540041374415158,
+  "top5_accuracy": 0.8112,
+  "dataset": "cifar100",
+  "framework": "tensorflow",
+  "conv_layers": 5,
+  "parameters": 442948,
+  "training_seconds": 784.5615476999956
+}

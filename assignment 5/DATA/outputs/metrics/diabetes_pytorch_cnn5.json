@@ -1,0 +1,17 @@
+{
+  "accuracy": 0.5108578166453769,
+  "precision_macro": 0.43906219270476415,
+  "recall_macro": 0.451917745329305,
+  "f1_macro": 0.4332921556519003,
+  "precision_weighted": 0.5440096608777735,
+  "recall_weighted": 0.5108578166453769,
+  "f1_weighted": 0.5213586918799396,
+  "log_loss": 0.9946173429489136,
+  "mean_confidence": 0.4778030514717102,
+  "ece": 0.03660661400014576,
+  "dataset": "diabetes",
+  "framework": "pytorch",
+  "conv_layers": 5,
+  "parameters": 142915,
+  "training_seconds": 355.620783499995
+}

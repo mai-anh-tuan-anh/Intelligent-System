@@ -1,0 +1,18 @@
+{
+  "accuracy": 0.9214,
+  "precision_macro": 0.9223554161014542,
+  "recall_macro": 0.9214,
+  "f1_macro": 0.9205657516717253,
+  "precision_weighted": 0.9223554161014543,
+  "recall_weighted": 0.9214,
+  "f1_weighted": 0.9205657516717253,
+  "log_loss": 0.23249006271362305,
+  "mean_confidence": 0.9451361298561096,
+  "ece": 0.023736089491844185,
+  "top5_accuracy": 0.9994,
+  "dataset": "fashion_mnist",
+  "framework": "pytorch",
+  "conv_layers": 5,
+  "parameters": 426858,
+  "training_seconds": 1537.7015051000053
+}

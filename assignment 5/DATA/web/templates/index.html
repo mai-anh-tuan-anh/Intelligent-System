@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A5 CNN Studio</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    :root {
+      --bg: #f5f7fb; --panel: #ffffff; --ink: #172033; --muted: #6b7280;
+      --line: #e5e7eb; --accent: #4f46e5; --accent-2: #0ea5e9; --good: #16a34a;
+      --warn: #d97706; --danger: #dc2626; --shadow: 0 12px 35px rgba(15,23,42,.07);
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); }
+    .shell { display:grid; grid-template-columns:260px 1fr; min-height:100vh; }
+    aside { background:#101526; color:#eef2ff; padding:24px 18px; position:sticky; top:0; height:100vh; }
+    .brand { font-size:20px; font-weight:800; letter-spacing:.2px; margin-bottom:6px; }
+    .subtitle { color:#aab3c6; font-size:12px; margin-bottom:24px; }
+    nav button { width:100%; border:0; background:transparent; color:#cbd5e1; text-align:left; padding:11px 12px; border-radius:10px; margin:3px 0; cursor:pointer; font-size:14px; }
+    nav button.active, nav button:hover { background:#222b45; color:#fff; }
+    .side-note { margin-top:24px; padding:12px; border:1px solid #2a3552; border-radius:12px; color:#aab3c6; font-size:12px; line-height:1.5; }
+    main { padding:28px; max-width:1700px; width:100%; margin:auto; }
+    .hero { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:24px; }
+    .hero h1 { margin:0 0 8px; font-size:30px; }
+    .hero p { margin:0; color:var(--muted); max-width:860px; line-height:1.55; }
+    .badge { padding:8px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; box-shadow:var(--shadow); font-size:12px; }
+    .tab { display:none; }
+    .tab.active { display:block; }
+    .cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-bottom:18px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:18px; }
+    .metric-label { color:var(--muted); font-size:12px; margin-bottom:8px; }
+    .metric { font-size:28px; font-weight:800; }
+    .small { color:var(--muted); font-size:12px; }
+    .grid2 { display:grid; grid-template-columns:1.15fr .85fr; gap:18px; }
+    .grid3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:18px; margin-bottom:18px; }
+    .panel h2 { margin:0 0 5px; font-size:18px; }
+    .panel p.lead { margin:0 0 16px; color:var(--muted); font-size:13px; line-height:1.5; }
+    .controls { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-bottom:14px; }
+    label { display:block; font-size:12px; font-weight:700; margin-bottom:6px; }
+    select,input[type=file],input[type=text],input[type=number] { width:100%; border:1px solid #d8deea; border-radius:9px; padding:9px 10px; background:#fff; color:var(--ink); }
+    button.primary { background:var(--accent); color:#fff; border:0; padding:10px 14px; border-radius:9px; cursor:pointer; font-weight:700; }
+    button.secondary { background:#fff; color:var(--ink); border:1px solid var(--line); padding:10px 14px; border-radius:9px; cursor:pointer; font-weight:700; }
+    button.primary:disabled, button.secondary:disabled { opacity:.55; cursor:not-allowed; }
+    .result { display:none; }
+    .result.show { display:block; }
+    .prediction-card { display:flex; gap:14px; align-items:center; padding:16px; border:1px solid var(--line); border-radius:14px; background:#fbfcff; }
+    .pred-icon { width:56px; height:56px; border-radius:14px; display:grid; place-items:center; background:#ecebff; color:var(--accent); font-weight:900; font-size:24px; }
+    .pred-label { font-size:22px; font-weight:800; }
+    .confidence { color:var(--good); font-weight:800; font-size:13px; }
+    .table-wrap { overflow:auto; border:1px solid var(--line); border-radius:12px; }
+    table { width:100%; border-collapse:collapse; min-width:760px; }
+    th,td { padding:10px 12px; border-bottom:1px solid var(--line); font-size:12px; text-align:left; white-space:nowrap; }
+    th { background:#fafbfe; position:sticky; top:0; }
+    .status { display:inline-flex; align-items:center; gap:6px; padding:5px 8px; border-radius:999px; font-size:11px; font-weight:800; }
+    .status.ok { background:#eaf8ef; color:#15803d; } .status.miss { background:#fff2f2; color:#b91c1c; }
+    .chip { display:inline-block; padding:5px 8px; border-radius:999px; background:#eef2ff; color:#4338ca; font-size:11px; font-weight:700; margin:2px; }
+    .architecture { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background:#0f172a; color:#e2e8f0; border-radius:12px; padding:15px; line-height:1.8; overflow:auto; }
+    .feature-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+    .feature-card { border:1px solid var(--line); border-radius:10px; padding:10px; background:#fcfdff; }
+    .feature-card .small { margin-top:3px; }
+    .feature-card input { margin-top:6px; }
+    .feature-card .meta { color:var(--muted); font-size:10px; }
+    .empty { padding:24px; text-align:center; color:var(--muted); border:1px dashed var(--line); border-radius:12px; }
+    .footer { color:var(--muted); font-size:11px; padding:8px 2px 24px; }
+    .mini-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .figure-card img { width:100%; border-radius:10px; border:1px solid var(--line); background:#fff; }
+    .notice { padding:12px 14px; background:#fff8e8; border:1px solid #f5d78b; border-radius:10px; color:#854d0e; font-size:12px; line-height:1.5; }
+    @media(max-width:1100px){ .shell{grid-template-columns:1fr} aside{position:static;height:auto} .cards{grid-template-columns:repeat(2,1fr)} .grid2,.grid3{grid-template-columns:1fr} .controls{grid-template-columns:1fr 1fr} .feature-grid{grid-template-columns:1fr 1fr} }
+    @media(max-width:680px){ main{padding:16px} .cards{grid-template-columns:1fr} .controls{grid-template-columns:1fr} .feature-grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <aside>
+    <div class="brand">A5 CNN Studio</div>
+    <div class="subtitle">Interactive dashboard for the final notebook</div>
+    <nav>
+      <button class="navbtn active" data-tab="overview">Overview</button>
+      <button class="navbtn" data-tab="models">Model Lab</button>
+      <button class="navbtn" data-tab="diabetes">Diabetes Lab</button>
+      <button class="navbtn" data-tab="experiments">Experiments</button>
+      <button class="navbtn" data-tab="artifacts">Artifacts</button>
+      <button class="navbtn" data-tab="method">How it works</button>
+    </nav>
+    <div class="side-note">
+      Demo follows the notebook's artifact names, model family, metrics, and preprocessing pipeline. Predictions are for educational demonstration only and are not clinical advice.
+    </div>
+  </aside>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Visual CNN dashboard</h1>
+        <p>Explore the 12 A5 experiments, inspect model trade-offs, run image predictions, and test the saved Diabetes pipeline without opening the notebook.</p>
+      </div>
+      <div class="badge">Local app · <span id="serverRoot">{{ project_root }}</span></div>
+    </div>
+
+    <section id="overview" class="tab active">
+      <div class="cards">
+        <div class="card"><div class="metric-label">Experiments recorded</div><div class="metric">{{ summary.experiments }}</div><div class="small">Expected: 12 controlled runs</div></div>
+        <div class="card"><div class="metric-label">Datasets</div><div class="metric">{{ summary.datasets }}</div><div class="small">Fashion-MNIST, CIFAR-100, Diabetes</div></div>
+        <div class="card"><div class="metric-label">Frameworks</div><div class="metric">2</div><div class="small">TensorFlow/Keras + PyTorch</div></div>
+        <div class="card"><div class="metric-label">Average accuracy</div><div class="metric">{% if summary.mean_accuracy is not none %}{{ '%.1f'|format(summary.mean_accuracy*100) }}%{% else %}—{% endif %}</div><div class="small">Across the saved 12-row table</div></div>
+      </div>
+
+      <div class="grid2">
+        <div class="panel"><h2>Accuracy by dataset and model</h2><p class="lead">The comparison should be read within each dataset, matching the notebook's interpretation rules.</p><div id="overviewAccuracy" style="height:390px"></div></div>
+        <div class="panel"><h2>Macro F1 by dataset</h2><p class="lead">Macro F1 treats each class more evenly than raw accuracy.</p><div id="overviewF1" style="height:390px"></div></div>
+      </div>
+
+      <div class="grid3">
+        {% for key,d in datasets.items() %}
+        <div class="panel"><h2>{{ d.name }}</h2><p class="lead">{{ d.description }}</p><span class="chip">{{ d.input_shape }}</span><span class="chip">{{ d.classes }} classes</span><span class="chip">CNN3 / CNN5</span></div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="models" class="tab">
+      <div class="panel">
+        <h2>Image model playground</h2>
+        <p class="lead">Upload an image and run one of the saved Fashion-MNIST or CIFAR-100 models. The app applies the same basic 0–1 image scaling used in the notebook, then shows the top predictions and confidence.</p>
+        <div class="controls">
+          <div><label>Dataset</label><select id="imageDataset"><option value="fashion_mnist">Fashion-MNIST</option><option value="cifar100">CIFAR-100</option></select></div>
+          <div><label>Framework</label><select id="imageFramework"><option value="tensorflow">TensorFlow / Keras</option><option value="pytorch">PyTorch</option></select></div>
+          <div><label>CNN depth</label><select id="imageDepth"><option value="3">CNN3</option><option value="5" selected>CNN5</option></select></div>
+          <div><label>Image file</label><input id="imageFile" type="file" accept="image/*"></div>
+        </div>
+        <button class="primary" id="predictImageBtn">Run prediction</button>
+        <div class="result" id="imageResult" style="margin-top:16px">
+          <div class="grid2">
+            <div class="panel" style="margin-bottom:0"><h2>Prediction</h2><div id="imagePredictionSummary"></div><div id="imageInputPreview" style="margin-top:14px;text-align:center"></div></div>
+            <div class="panel" style="margin-bottom:0"><h2>Top probabilities</h2><div id="imageProbChart" style="height:330px"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="panel"><h2>CNN3 architecture</h2><p class="lead">Three convolutional layers. The notebook does not count BatchNorm, ReLU, pooling, dropout, or the classifier as convolutional depth.</p><div class="architecture">Input
+  ↓
+Conv 32 → BatchNorm → ReLU → Pool
+  ↓
+Conv 64 → BatchNorm → ReLU → Pool
+  ↓
+Conv 128 → BatchNorm → ReLU
+  ↓
+Global Average Pooling
+  ↓
+Dropout(0.30)
+  ↓
+Dense / Linear classifier</div></div>
+        <div class="panel"><h2>CNN5 architecture</h2><p class="lead">Adds two more convolutional transformations and one extra pooling stage.</p><div class="architecture">Input
+  ↓
+Conv 32 → BatchNorm → ReLU → Pool
+  ↓
+Conv 64 → BatchNorm → ReLU → Pool
+  ↓
+Conv 128 → BatchNorm → ReLU
+  ↓
+Conv 128 → BatchNorm → ReLU → Pool
+  ↓
+Conv 160 → BatchNorm → ReLU
+  ↓
+Global Average Pooling
+  ↓
+Dropout(0.30)
+  ↓
+Dense / Linear classifier</div></div>
+      </div>
+    </section>
+
+    <section id="diabetes" class="tab">
+      <div class="panel">
+        <h2>Diabetes Conv1D demo</h2>
+        <p class="lead">This form mirrors the saved preprocessing artifact: 45 processed input features are passed through the assignment's Conv1D model. Identifiers such as <code>patient_nbr</code> are intentionally not model inputs.</p>
+        <div class="notice">Educational demo only. The notebook explicitly treats Diabetes Conv1D as an assignment-driven architectural adaptation of tabular features; it is not a clinical deployment tool or medical decision system.</div>
+        <div class="controls" style="margin-top:14px">
+          <div><label>Framework</label><select id="diabFramework"><option value="tensorflow">TensorFlow / Keras</option><option value="pytorch">PyTorch</option></select></div>
+          <div><label>CNN depth</label><select id="diabDepth"><option value="3">CNN3</option><option value="5" selected>CNN5</option></select></div>
+          <div style="display:flex;align-items:end"><button class="secondary" id="sampleBtn">Fill sample encounter</button></div>
+          <div style="display:flex;align-items:end"><button class="primary" id="predictDiabBtn">Run Diabetes prediction</button></div>
+        </div>
+        <div id="diabStatus" class="small" style="margin:4px 0 12px"></div>
+        <div id="diabFeatures" class="feature-grid"></div>
+        <div class="result" id="diabResult" style="margin-top:18px">
+          <div class="grid2">
+            <div class="panel" style="margin-bottom:0"><h2>Prediction</h2><div id="diabPredictionSummary"></div></div>
+            <div class="panel" style="margin-bottom:0"><h2>Class probabilities</h2><div id="diabProbChart" style="height:320px"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiments" class="tab">
+      <div class="panel">
+        <h2>Experiment explorer</h2>
+        <p class="lead">All rows below come directly from <code>outputs/metrics/all_experiments_summary.csv</code>. Filter by dataset, framework, or depth and inspect the charts.</p>
+        <div class="controls">
+          <div><label>Dataset</label><select id="metricDataset"><option value="all">All</option><option value="fashion_mnist">Fashion-MNIST</option><option value="cifar100">CIFAR-100</option><option value="diabetes">Diabetes</option></select></div>
+          <div><label>Framework</label><select id="metricFramework"><option value="all">All</option><option value="tensorflow">TensorFlow</option><option value="pytorch">PyTorch</option></select></div>
+          <div><label>Depth</label><select id="metricDepth"><option value="all">All</option><option value="3">CNN3</option><option value="5">CNN5</option></select></div>
+          <div><label>Metric</label><select id="metricSelect"><option value="accuracy">Accuracy</option><option value="f1_macro">Macro F1</option><option value="f1_weighted">Weighted F1</option><option value="ece">ECE</option><option value="log_loss">Log loss</option></select></div>
+        </div>
+        <div class="grid2">
+          <div><div id="metricChart" style="height:430px"></div></div>
+          <div><div id="costChart" style="height:430px"></div></div>
+        </div>
+        <div class="table-wrap" style="margin-top:12px"><table id="resultsTable"><thead><tr><th>Dataset</th><th>Framework</th><th>Depth</th><th>Accuracy</th><th>Macro F1</th><th>Weighted F1</th><th>Log loss</th><th>ECE</th><th>Parameters</th><th>Training time</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+
+    <section id="artifacts" class="tab">
+      <div class="panel"><h2>Saved artifacts</h2><p class="lead">The dashboard discovers the same model and output filenames created by the notebook.</p>
+        <div class="table-wrap"><table><thead><tr><th>Dataset</th><th>Framework</th><th>Depth</th><th>File</th><th>Status</th><th>Size</th></tr></thead><tbody>
+          {% for a in artifacts if a.framework != '-' %}
+          <tr><td>{{ a.dataset_name }}</td><td>{{ a.framework_name }}</td><td>{% if a.depth %}CNN{{ a.depth }}{% else %}—{% endif %}</td><td><code>{{ a.filename }}</code></td><td><span class="status {{ 'ok' if a.exists else 'miss' }}">{{ 'Ready' if a.exists else 'Missing' }}</span></td><td>{% if a.size_mb is not none %}{{ a.size_mb }} MB{% else %}—{% endif %}</td></tr>
+          {% endfor %}
+        </tbody></table></div>
+        <div style="margin-top:14px" class="table-wrap"><table><thead><tr><th>Supporting file</th><th>Status</th><th>Size</th></tr></thead><tbody>
+          {% for a in artifacts if a.framework == '-' %}
+          <tr><td><code>{{ a.filename }}</code></td><td><span class="status {{ 'ok' if a.exists else 'miss' }}">{{ 'Ready' if a.exists else 'Missing' }}</span></td><td>{% if a.size_mb is not none %}{{ a.size_mb }} MB{% else %}—{% endif %}</td></tr>
+          {% endfor %}
+        </tbody></table></div>
+      </div>
+      <div class="grid2">
+        <div class="panel"><h2>Run configuration</h2><pre style="background:#0f172a;color:#e2e8f0;padding:14px;border-radius:10px;overflow:auto">{{ run_config|tojson(indent=2) }}</pre></div>
+        <div class="panel"><h2>Saved figures</h2><div class="mini-grid">
+          {% for f in figures[:12] %}<div class="figure-card"><img src="{{ url_for('figures', filename=f) }}" alt="{{ f }}"><div class="small" style="margin-top:6px">{{ f }}</div></div>{% endfor %}
+        </div></div>
+      </div>
+    </section>
+
+    <section id="method" class="tab">
+      <div class="grid2">
+        <div class="panel"><h2>The data flow</h2><div class="architecture">Raw data
+   ↓
+Audit + validation
+   ↓
+Cleaning / normalization
+   ↓
+Train / validation / test split
+   ↓
+CNN3 or CNN5
+   ↓
+Loss + backpropagation + optimizer
+   ↓
+Best validation checkpoint
+   ↓
+Test evaluation
+   ↓
+Metrics + confusion + confidence + calibration</div></div>
+        <div class="panel"><h2>Why the three datasets?</h2><p class="lead"><b>Fashion-MNIST</b> shows a compact grayscale image task. <b>CIFAR-100</b> stresses the same CNN family with RGB input and 100 classes. <b>Diabetes</b> is tabular, so the notebook uses Conv1D as an assignment-driven adaptation after missing-value handling, categorical encoding, scaling, patient-group splitting, and class weighting.</p><p class="lead">The dashboard intentionally preserves these distinctions instead of treating the 12 runs as one universal leaderboard.</p></div>
+      </div>
+      <div class="grid3">
+        <div class="panel"><h2>TensorFlow/Keras</h2><p class="lead"><code>compile()</code> and <code>fit()</code> provide a higher-level training API. The dashboard can load the saved <code>.keras</code> checkpoints for inference.</p></div>
+        <div class="panel"><h2>PyTorch</h2><p class="lead"><code>nn.Module</code>, <code>forward()</code>, <code>backward()</code>, and <code>optimizer.step()</code> expose more of the training loop. The dashboard loads the saved <code>.pth</code> state dictionaries.</p></div>
+        <div class="panel"><h2>Evaluation</h2><p class="lead">Accuracy is shown together with macro F1, weighted F1, log loss, ECE, parameter count, and training time so the demo follows the notebook's broader evidence model.</p></div>
+      </div>
+      <div class="footer">Built as a local educational demo around the final A5 notebook. No retraining occurs inside the web app.</div>
+    </section>
+  </main>
+</div>
+
+<script>
+const RESULTS = {{ results|tojson }};
+
+function formatPct(v){ return v == null || Number.isNaN(Number(v)) ? '—' : (Number(v)*100).toFixed(2)+'%'; }
+function formatNum(v){ return v == null || Number.isNaN(Number(v)) ? '—' : Number(v).toLocaleString(); }
+function datasetLabel(k){ return ({fashion_mnist:'Fashion-MNIST', cifar100:'CIFAR-100', diabetes:'Diabetes'})[k] || k; }
+function frameworkLabel(k){ return ({tensorflow:'TensorFlow', pytorch:'PyTorch'})[k] || k; }
+
+function showTab(id){
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.navbtn').forEach(x=>x.classList.toggle('active', x.dataset.tab===id));
+  if(id==='experiments') renderExperiments();
+  if(id==='overview') renderOverview();
+}
+document.querySelectorAll('.navbtn').forEach(btn=>btn.addEventListener('click',()=>showTab(btn.dataset.tab)));
+
+function filteredResults(){
+  const ds = document.getElementById('metricDataset').value;
+  const fw = document.getElementById('metricFramework').value;
+  const depth = document.getElementById('metricDepth').value;
+  return RESULTS.filter(r => (ds==='all'||r.dataset===ds) && (fw==='all'||r.framework===fw) && (depth==='all'||String(r.conv_layers)===depth));
+}
+
+function renderOverview(){
+  const data = RESULTS;
+  const colors = ['#4f46e5','#0ea5e9','#16a34a','#d97706'];
+  const x = data.map(r => `${frameworkLabel(r.framework)} CNN${r.conv_layers}`);
+  Plotly.react('overviewAccuracy',[{x,y:data.map(r=>r.accuracy),type:'bar',marker:{color:colors.slice(0,x.length)}}],{margin:{t:20,l:50,r:20,b:90},yaxis:{range:[0,1],tickformat:'.0%'},xaxis:{tickangle:-25},paper_bgcolor:'transparent',plot_bgcolor:'transparent'} ,{displayModeBar:false});
+  Plotly.react('overviewF1',[{x,y:data.map(r=>r.f1_macro),type:'bar',marker:{color:colors.slice(0,x.length)}}],{margin:{t:20,l:50,r:20,b:90},yaxis:{range:[0,1],tickformat:'.0%'},xaxis:{tickangle:-25},paper_bgcolor:'transparent',plot_bgcolor:'transparent'} ,{displayModeBar:false});
+}
+
+function renderExperiments(){
+  const rows = filteredResults();
+  const metric = document.getElementById('metricSelect').value;
+  const labels = rows.map(r=>`${datasetLabel(r.dataset)} · ${frameworkLabel(r.framework)} · CNN${r.conv_layers}`);
+  const vals = rows.map(r=>r[metric]);
+  Plotly.react('metricChart',[{x:labels,y:vals,type:'bar'}],{margin:{t:20,l:60,r:20,b:130},yaxis:{tickformat: metric==='log_loss' ? '.3f' : metric==='ece' ? '.3f' : '.0%'},paper_bgcolor:'transparent',plot_bgcolor:'transparent',title:metric.replaceAll('_',' ')} ,{displayModeBar:false});
+  Plotly.react('costChart',[{x:rows.map(r=>`${frameworkLabel(r.framework)} CNN${r.conv_layers}`),y:rows.map(r=>r.training_seconds),type:'bar',name:'seconds'}, {x:rows.map(r=>`${frameworkLabel(r.framework)} CNN${r.conv_layers}`),y:rows.map(r=>Number(r.parameters)/1e6),type:'bar',name:'parameters (M)',yaxis:'y2'}],{barmode:'group',margin:{t:20,l:55,r:55,b:100},yaxis:{title:'Training seconds'},yaxis2:{title:'Parameters (M)',overlaying:'y',side:'right'},paper_bgcolor:'transparent',plot_bgcolor:'transparent'}, {displayModeBar:false});
+  const body = document.querySelector('#resultsTable tbody'); body.innerHTML='';
+  rows.forEach(r=>{ const tr=document.createElement('tr'); tr.innerHTML=`<td>${datasetLabel(r.dataset)}</td><td>${frameworkLabel(r.framework)}</td><td>CNN${r.conv_layers}</td><td>${formatPct(r.accuracy)}</td><td>${formatPct(r.f1_macro)}</td><td>${formatPct(r.f1_weighted)}</td><td>${Number(r.log_loss).toFixed(4)}</td><td>${Number(r.ece).toFixed(4)}</td><td>${formatNum(r.parameters)}</td><td>${Number(r.training_seconds).toFixed(1)} s</td>`; body.appendChild(tr); });
+}
+['metricDataset','metricFramework','metricDepth','metricSelect'].forEach(id=>document.getElementById(id).addEventListener('change',renderExperiments));
+
+async function postForm(url, form){ const r=await fetch(url,{method:'POST',body:form}); const d=await r.json(); if(!r.ok) throw new Error(d.error||'Request failed'); return d; }
+
+const imageBtn=document.getElementById('predictImageBtn');
+imageBtn.addEventListener('click', async()=>{
+  const file=document.getElementById('imageFile').files[0]; if(!file){alert('Choose an image first.');return;}
+  const form=new FormData(); form.append('dataset',document.getElementById('imageDataset').value); form.append('framework',document.getElementById('imageFramework').value); form.append('depth',document.getElementById('imageDepth').value); form.append('image',file);
+  imageBtn.disabled=true; imageBtn.textContent='Running…';
+  try{ const d=await postForm('/api/predict/image',form); document.getElementById('imageResult').classList.add('show');
+    document.getElementById('imagePredictionSummary').innerHTML=`<div class="prediction-card"><div class="pred-icon">✓</div><div><div class="pred-label">${d.predicted_label}</div><div class="confidence">Confidence ${(d.confidence*100).toFixed(2)}%</div><div class="small">${d.dataset_name} · ${d.framework_name} · CNN${d.depth} · input ${d.input_shape}</div></div></div>`;
+    document.getElementById('imageInputPreview').innerHTML=`<img src="${d.image_data_url}" style="max-width:240px;image-rendering:auto;border:1px solid #e5e7eb;border-radius:12px;padding:6px;background:#fff">`;
+    Plotly.react('imageProbChart',[{y:d.top_predictions.map(x=>x.label).reverse(),x:d.top_predictions.map(x=>x.probability).reverse(),type:'bar',orientation:'h'}],{margin:{t:20,l:130,r:20,b:40},xaxis:{range:[0,1],tickformat:'.0%'},paper_bgcolor:'transparent',plot_bgcolor:'transparent'}, {displayModeBar:false});
+  }catch(e){alert(e.message)} finally{imageBtn.disabled=false;imageBtn.textContent='Run prediction';}
+});
+
+async function buildDiabetesForm(){
+  const box=document.getElementById('diabFeatures'); box.innerHTML='<div class="small">Loading saved preprocessing metadata…</div>';
+  try{ const r=await fetch('/api/diabetes/schema'); const d=await r.json(); if(d.error) throw new Error(d.error); box.innerHTML='';
+    d.features.forEach(f=>{const div=document.createElement('div');div.className='feature-card'; const title=document.createElement('div');title.innerHTML=`<strong>${f.name}</strong><div class="meta">${f.kind} · ${f.dtype}</div>`;div.appendChild(title);
+      const input=document.createElement('input'); input.type='text';input.name=f.name;input.dataset.feature=f.name;input.placeholder=String(f.default??'');input.value=String(f.default??'');
+      if(f.options && f.options.length){ const dl=document.createElement('datalist');dl.id='list_'+f.name;f.options.forEach(o=>{const op=document.createElement('option');op.value=o;dl.appendChild(op)});input.setAttribute('list',dl.id);div.appendChild(input);div.appendChild(dl); } else div.appendChild(input);
+      box.appendChild(div); });
+    document.getElementById('diabStatus').textContent=`Loaded ${d.features.length} processed input features from diabetes_preprocessor.joblib.`;
+  }catch(e){ document.getElementById('diabStatus').textContent=e.message; }
+}
+
+document.getElementById('sampleBtn').addEventListener('click',async()=>{ try{const r=await fetch('/api/diabetes/sample');const sample=await r.json();if(sample.error)throw new Error(sample.error);Object.entries(sample).forEach(([k,v])=>{const el=document.querySelector(`[data-feature="${CSS.escape(k)}"]`);if(el)el.value=(v==null?'':String(v));});document.getElementById('diabStatus').textContent='Filled from the first raw encounter in the local Diabetes CSV.';}catch(e){alert(e.message)}});
+
+document.getElementById('predictDiabBtn').addEventListener('click',async()=>{ const form=new FormData(); document.querySelectorAll('#diabFeatures input[data-feature]').forEach(el=>form.append(el.name,el.value)); form.append('framework',document.getElementById('diabFramework').value);form.append('depth',document.getElementById('diabDepth').value);
+  const btn=document.getElementById('predictDiabBtn');btn.disabled=true;btn.textContent='Running…';try{const d=await postForm('/api/predict/diabetes',form);document.getElementById('diabResult').classList.add('show');document.getElementById('diabPredictionSummary').innerHTML=`<div class="prediction-card"><div class="pred-icon">AI</div><div><div class="pred-label">${d.predicted_label}</div><div class="confidence">Confidence ${(d.confidence*100).toFixed(2)}%</div><div class="small">${d.framework_name} · CNN${d.depth} · processed tensor ${d.processed_shape.join(' × ')}</div></div></div>`;Plotly.react('diabProbChart',[{x:d.predictions.map(x=>x.label),y:d.predictions.map(x=>x.probability),type:'bar'}],{margin:{t:20,l:50,r:20,b:50},yaxis:{range:[0,1],tickformat:'.0%'},paper_bgcolor:'transparent',plot_bgcolor:'transparent'},{displayModeBar:false});}catch(e){alert(e.message)}finally{btn.disabled=false;btn.textContent='Run Diabetes prediction';}
+});
+
+buildDiabetesForm();
+renderOverview();
+</script>
+</body>
+</html>
