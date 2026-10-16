@@ -1,0 +1,8 @@
+{
+  "raw_ticker_rows": 1259,
+  "clean_rows": 1259,
+  "start": "2013-02-08 00:00:00",
+  "end": "2018-02-07 00:00:00",
+  "large_move_count": 0,
+  "dropped_missing_rows": 0
+}

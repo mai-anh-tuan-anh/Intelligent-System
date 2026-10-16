@@ -1,0 +1,146 @@
+{
+  "text_pytorch_rnn_s42": {
+    "framework": "PyTorch",
+    "task": "text",
+    "kind": "RNN",
+    "config": {
+      "task": "text",
+      "kind": "RNN",
+      "layers": 5,
+      "hidden": 32,
+      "embedding": 48,
+      "head_dropout": 0.15,
+      "vocab_size": 9986,
+      "input_dim": 11,
+      "lookback": 30,
+      "max_len": 80
+    },
+    "filename": "text_pytorch_rnn_s42.pt"
+  },
+  "text_pytorch_lstm_s42": {
+    "framework": "PyTorch",
+    "task": "text",
+    "kind": "LSTM",
+    "config": {
+      "task": "text",
+      "kind": "LSTM",
+      "layers": 5,
+      "hidden": 32,
+      "embedding": 48,
+      "head_dropout": 0.15,
+      "vocab_size": 9986,
+      "input_dim": 11,
+      "lookback": 30,
+      "max_len": 80
+    },
+    "filename": "text_pytorch_lstm_s42.pt"
+  },
+  "text_keras_rnn_s42": {
+    "framework": "Keras",
+    "task": "text",
+    "kind": "RNN",
+    "config": {
+      "task": "text",
+      "kind": "RNN",
+      "layers": 5,
+      "hidden": 32,
+      "embedding": 48,
+      "head_dropout": 0.15,
+      "vocab_size": 9986,
+      "input_dim": 11,
+      "lookback": 30,
+      "max_len": 80
+    },
+    "filename": "text_keras_rnn_s42.keras"
+  },
+  "text_keras_lstm_s42": {
+    "framework": "Keras",
+    "task": "text",
+    "kind": "LSTM",
+    "config": {
+      "task": "text",
+      "kind": "LSTM",
+      "layers": 5,
+      "hidden": 32,
+      "embedding": 48,
+      "head_dropout": 0.15,
+      "vocab_size": 9986,
+      "input_dim": 11,
+      "lookback": 30,
+      "max_len": 80
+    },
+    "filename": "text_keras_lstm_s42.keras"
+  },
+  "stock_pytorch_rnn_s42": {
+    "framework": "PyTorch",
+    "task": "stock",
+    "kind": "RNN",
+    "config": {
+      "task": "stock",
+      "kind": "RNN",
+      "layers": 5,
+      "hidden": 32,
+      "embedding": 48,
+      "head_dropout": 0.15,
+      "vocab_size": 9986,
+      "input_dim": 11,
+      "lookback": 30,
+      "max_len": 80
+    },
+    "filename": "stock_pytorch_rnn_s42.pt"
+  },
+  "stock_pytorch_lstm_s42": {
+    "framework": "PyTorch",
+    "task": "stock",
+    "kind": "LSTM",
+    "config": {
+      "task": "stock",
+      "kind": "LSTM",
+      "layers": 5,
+      "hidden": 32,
+      "embedding": 48,
+      "head_dropout": 0.15,
+      "vocab_size": 9986,
+      "input_dim": 11,
+      "lookback": 30,
+      "max_len": 80
+    },
+    "filename": "stock_pytorch_lstm_s42.pt"
+  },
+  "stock_keras_rnn_s42": {
+    "framework": "Keras",
+    "task": "stock",
+    "kind": "RNN",
+    "config": {
+      "task": "stock",
+      "kind": "RNN",
+      "layers": 5,
+      "hidden": 32,
+      "embedding": 48,
+      "head_dropout": 0.15,
+      "vocab_size": 9986,
+      "input_dim": 11,
+      "lookback": 30,
+      "max_len": 80
+    },
+    "filename": "stock_keras_rnn_s42.keras"
+  },
+  "stock_keras_lstm_s42": {
+    "framework": "Keras",
+    "task": "stock",
+    "kind": "LSTM",
+    "config": {
+      "task": "stock",
+      "kind": "LSTM",
+      "layers": 5,
+      "hidden": 32,
+      "embedding": 48,
+      "head_dropout": 0.15,
+      "vocab_size": 9986,
+      "input_dim": 11,
+      "lookback": 30,
+      "max_len": 80
+    },
+    "filename": "stock_keras_lstm_s42.keras"
+  }
+}

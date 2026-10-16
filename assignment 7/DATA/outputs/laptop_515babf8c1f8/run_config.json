@@ -1,0 +1,39 @@
+{
+  "revision": "A7-v1.0",
+  "preset": "laptop",
+  "config": {
+    "hidden": 32,
+    "embedding": 48,
+    "vocab": 10000,
+    "max_len": 80,
+    "lookback": 30,
+    "epochs": 15,
+    "max_train_text": 10000,
+    "layers": 5,
+    "batch": 32,
+    "lr": 0.001,
+    "adam_eps": 1e-07,
+    "clip": 1.0,
+    "head_dropout": 0.15,
+    "patience": 4,
+    "min_delta": 1e-05,
+    "ticker": "AAPL"
+  },
+  "seeds": [
+    42
+  ],
+  "split_seed": 42,
+  "hashes": {
+    "reviews": "bd93cc515747ad1f87b8bc863c9e40da758509e6db6506a96d06976e61e36ee0",
+    "stock": "6aea253cd19de60b568143991aaf1fa482456565c389205658d236e595e716cf"
+  },
+  "versions": {
+    "python": "3.11.16",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "torch": "2.6.0+cpu",
+    "tensorflow": "2.18.1",
+    "sklearn": "1.6.1",
+    "keras": "3.8.0"
+  }
+}

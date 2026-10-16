@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RNN Forecast Lab</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <div><h1>RNN Forecast Lab</h1><p>Interactive time-series prediction · E-commerce and AAPL</p></div>
+    <span class="badge">Scratch · Keras · PyTorch</span>
+  </header>
+  <main>
+    <p class="intro">Sửa cửa sổ lịch sử rồi bấm <b>Predict</b>. Web dùng mô hình đã huấn luyện để dự đoán bước tiếp theo; không huấn luyện lại khi bạn bấm nút.</p>
+    <div id="banner" class="banner hidden" role="status"></div>
+    <div class="topgrid">
+      <section class="panel">
+        <h2>Đầu vào dự đoán</h2>
+        <p class="sub">Các hàng theo thứ tự cũ → mới. Bạn có thể sửa giá trị hoặc nạp CSV.</p>
+        <div class="toolbar">
+          <div class="field"><label for="dataset">Dataset</label><select id="dataset"><option value="ecommerce">E-commerce service</option><option value="stock">AAPL stock</option></select></div>
+          <div class="field"><label for="framework">Mô hình</label><select id="framework"><option>Scratch</option><option>Keras</option><option>PyTorch</option></select></div>
+        </div>
+        <div id="tablewrap" class="tablewrap"><p class="sub loading">Đang tải cấu hình...</p></div>
+        <div class="buttons">
+          <button id="predict">Predict</button><button id="reset" class="secondary">Khôi phục cửa sổ mẫu</button>
+          <label class="uploadbtn light">Tải CSV<input id="csv" type="file" accept=".csv,text/csv"></label>
+          <span class="tiny">CSV gồm các cột đặc trưng và đúng số dòng lookback.</span>
+        </div>
+        <p class="footnote">Giá trị nhập theo đơn vị gốc; backend chuẩn hóa bằng scaler đã lưu từ notebook.</p>
+      </section>
+      <section class="panel">
+        <h2>Kết quả dự đoán</h2><p id="resultSub" class="sub">Chọn dataset, mô hình và nhấn Predict.</p>
+        <div id="prediction"><div class="forecast"><div class="value">—</div><div class="label">Chưa có dự đoán mới</div></div></div>
+        <h3 class="compare-title">So sánh trên tập test</h3><div id="comparison" class="sub">Metrics sẽ được đọc từ kết quả notebook.</div>
+        <div class="errnote">MAE là sai số tuyệt đối trung bình trên tập test, chỉ dùng làm mốc tham khảo. Đây không phải xác suất hay khoảng tin cậy được đảm bảo.</div>
+      </section>
+    </div>
+    <div class="sectiongrid">
+      <section class="panel chartbox"><h2>Lịch sử dự đoán trên tập test</h2><p class="sub">Giá trị thực tế và dự đoán của mô hình được chọn.</p><canvas id="historyChart" class="chart"></canvas><div class="legend"><span><i class="dot actual"></i>Thực tế</span><span><i class="dot predicted"></i>Dự đoán</span></div></section>
+      <section class="panel chartbox"><div class="charthead"><div><h2>Đặc trưng đầu vào</h2><p class="sub">Một đặc trưng qua các bước trong cửa sổ.</p></div><select id="featureSelect" aria-label="Chọn đặc trưng"></select></div><canvas id="inputChart" class="chart"></canvas></section>
+      <section class="panel"><h2>Bản đồ đầu vào</h2><p class="sub">Màu biểu thị thấp/cao tương đối trong mỗi đặc trưng.</p><div id="heatmap" class="heatwrap"></div></section>
+      <section class="panel chartbox"><h2>Lịch sử huấn luyện</h2><p class="sub">Loss qua các epoch của mô hình được chọn.</p><canvas id="lossChart" class="chart"></canvas><div class="legend"><span><i class="dot predicted"></i>Train loss</span><span><i class="dot validation"></i>Validation loss</span></div></section>
+    </div>
+    <details><summary>Demo xử lý dữ liệu như thế nào?</summary><p>Form nhận đúng LOOKBACK × số đặc trưng. Backend kiểm tra kích thước và giá trị, chuẩn hóa bằng feature scaler, chạy mô hình Scratch/Keras/PyTorch, rồi đổi dự đoán về đơn vị gốc bằng target scaler. Metrics và lịch sử biểu đồ là kết quả đã xuất từ notebook; dự đoán trên form là inference mới.</p></details>
+  </main>
+</body>
+</html>

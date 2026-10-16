@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+joblib
+yfinance
+tensorflow
+# Install a PyTorch build appropriate for your CPU/CUDA environment if needed.
+torch
+flask
+jupyter
+nbformat

@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "key": "text_pytorch_rnn_s42",
+  "task": "text",
+  "framework": "PyTorch",
+  "kind": "RNN",
+  "seed": 42,
+  "parameters": 490499,
+  "epochs_run": 5,
+  "best_epoch": 1,
+  "training_seconds": 189.16252480000185,
+  "inference_ms_per_sample": 0.9232847467606398,
+  "validation_metrics": {
+    "accuracy": 0.7072164948453609,
+    "balanced_accuracy": 0.3284389515220621,
+    "macro_f1": 0.30669866516704947,
+    "weighted_f1": 0.6517184264466828,
+    "log_loss": 1.0558420555824173,
+    "roc_auc_macro_ovr": 0.5318386247291481,
+    "average_precision_macro": 0.34854099203411143
+  },
+  "metrics": {
+    "accuracy": 0.709658421672556,
+    "balanced_accuracy": 0.3360318754704322,
+    "macro_f1": 0.31463863064336495,
+    "weighted_f1": 0.6539863393308117,
+    "log_loss": 1.0561406534958522,
+    "roc_auc_macro_ovr": 0.5265414699670322,
+    "average_precision_macro": 0.34139967441194113
+  },
+  "config": {
+    "task": "text",
+    "kind": "RNN",
+    "layers": 5,
+    "hidden": 32,
+    "embedding": 48,
+    "head_dropout": 0.15,
+    "vocab_size": 9986,
+    "input_dim": 11,
+    "lookback": 30,
+    "max_len": 80
+  },
+  "checkpoint": "models/laptop_515babf8c1f8/text_pytorch_rnn_s42.pt",
+  "predictions_csv": "outputs/laptop_515babf8c1f8/predictions/text_pytorch_rnn_s42.csv"
+}

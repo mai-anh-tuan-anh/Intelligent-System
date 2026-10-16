@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "key": "stock_keras_rnn_s42",
+  "task": "stock",
+  "framework": "Keras",
+  "kind": "RNN",
+  "seed": 42,
+  "parameters": 21553,
+  "epochs_run": 21,
+  "best_epoch": 15,
+  "training_seconds": 20.854935499999556,
+  "inference_ms_per_sample": 8.179699462362482,
+  "validation_metrics": {
+    "MAE": 3.9363075551679065,
+    "RMSE": 5.4860564215898675,
+    "MAPE_percent": 2.9867888607590256,
+    "R2": 0.8502703377896803,
+    "directional_accuracy": 0.510752688172043,
+    "median_AE": 2.6764469909668023,
+    "p95_AE": 11.062413024902348
+  },
+  "metrics": {
+    "MAE": 23.12636737454322,
+    "RMSE": 24.948463223883238,
+    "MAPE_percent": 14.09329004706367,
+    "R2": -5.151702928009737,
+    "directional_accuracy": 0.4838709677419355,
+    "median_AE": 21.79226196289062,
+    "p95_AE": 37.262727355957026
+  },
+  "config": {
+    "task": "stock",
+    "kind": "RNN",
+    "layers": 5,
+    "hidden": 48,
+    "embedding": 64,
+    "head_dropout": 0.25,
+    "vocab_size": 12093,
+    "input_dim": 11,
+    "lookback": 30,
+    "max_len": 120
+  },
+  "checkpoint": "models/full_1fea63a4c1b4/stock_keras_rnn_s42.keras",
+  "predictions_csv": "outputs/full_1fea63a4c1b4/predictions/stock_keras_rnn_s42.csv"
+}

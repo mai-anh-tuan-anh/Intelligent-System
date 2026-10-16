@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "key": "text_keras_rnn_s42",
+  "task": "text",
+  "framework": "Keras",
+  "kind": "RNN",
+  "seed": 42,
+  "parameters": 798147,
+  "epochs_run": 11,
+  "best_epoch": 5,
+  "training_seconds": 904.7643351000006,
+  "inference_ms_per_sample": 43.91368315665495,
+  "validation_metrics": {
+    "accuracy": 0.7808541973490427,
+    "balanced_accuracy": 0.5730086582512962,
+    "macro_f1": 0.5678059349995893,
+    "weighted_f1": 0.7882581229179098,
+    "log_loss": 0.5569165797087109,
+    "roc_auc_macro_ovr": 0.8602672215597239,
+    "average_precision_macro": 0.5780818745688839
+  },
+  "metrics": {
+    "accuracy": 0.7770906949352179,
+    "balanced_accuracy": 0.5455012628407654,
+    "macro_f1": 0.5377725191864893,
+    "weighted_f1": 0.7827963366789811,
+    "log_loss": 0.5528570327395885,
+    "roc_auc_macro_ovr": 0.8584775061898783,
+    "average_precision_macro": 0.5536306570504853
+  },
+  "config": {
+    "task": "text",
+    "kind": "RNN",
+    "layers": 5,
+    "hidden": 48,
+    "embedding": 64,
+    "head_dropout": 0.25,
+    "vocab_size": 12093,
+    "input_dim": 11,
+    "lookback": 30,
+    "max_len": 120
+  },
+  "checkpoint": "models/full_1fea63a4c1b4/text_keras_rnn_s42.keras",
+  "predictions_csv": "outputs/full_1fea63a4c1b4/predictions/text_keras_rnn_s42.csv"
+}

@@ -1,0 +1,7 @@
+# No additional packages are needed for the local HTTP server or charts.
+# For model inference, use the same Anaconda environment as the A7 notebook:
+numpy==1.26.4
+pandas==2.2.3
+joblib==1.4.2
+torch==2.6.0
+tensorflow==2.18.1

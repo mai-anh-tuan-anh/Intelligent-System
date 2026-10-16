@@ -1,0 +1,38 @@
+[
+  {
+    "task": "text",
+    "model": "Majority",
+    "training_seconds": 0.0,
+    "accuracy": 0.7706124852767963,
+    "balanced_accuracy": 0.3333333333333333,
+    "macro_f1": 0.29014912134819004,
+    "weighted_f1": 0.6707776065090224,
+    "log_loss": 3.69729005756672,
+    "roc_auc_macro_ovr": 0.5,
+    "average_precision_macro": 0.3333333333333333
+  },
+  {
+    "task": "text",
+    "model": "TFIDF_LogReg",
+    "training_seconds": 3.189017500000773,
+    "accuracy": 0.7950530035335689,
+    "balanced_accuracy": 0.6578614795165322,
+    "macro_f1": 0.6273105816092289,
+    "weighted_f1": 0.8102423082243884,
+    "log_loss": 0.5180679019915468,
+    "roc_auc_macro_ovr": 0.8956433453101749,
+    "average_precision_macro": 0.6425954702613085
+  },
+  {
+    "task": "stock",
+    "model": "Persistence",
+    "training_seconds": 0.0,
+    "MAE": 1.4639784946236565,
+    "RMSE": 2.0767012717391515,
+    "MAPE_percent": 0.9151375935393024,
+    "R2": 0.9573758418738612,
+    "directional_accuracy": 0.005376344086021506,
+    "median_AE": 0.9599999999999937,
+    "p95_AE": 4.054999999999993
+  }
+]

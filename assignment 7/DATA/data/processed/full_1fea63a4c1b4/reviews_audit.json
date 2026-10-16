@@ -1,0 +1,9 @@
+{
+  "raw_rows": 23486,
+  "clean_rows": 22634,
+  "conflicting_texts": 0,
+  "original_train_rows": 15843,
+  "used_train_rows": 15843,
+  "validation_rows": 3395,
+  "test_rows": 3396
+}

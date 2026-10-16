@@ -1,0 +1,90 @@
+[
+  {
+    "dataset": "AAPL stock",
+    "framework": "Keras",
+    "model": "SimpleRNN",
+    "parameters": 4801,
+    "training_time_s": 26.004194500001176,
+    "MAE": 18.62676239013672,
+    "RMSE": 21.58953736834805,
+    "MAPE_percent": 8.297693252563477,
+    "R2": 0.49285364151000977
+  },
+  {
+    "dataset": "AAPL stock",
+    "framework": "Persistence",
+    "model": "Last-value baseline",
+    "parameters": 0,
+    "training_time_s": 0.0,
+    "MAE": 3.5394182205200195,
+    "RMSE": 5.077913720063889,
+    "MAPE_percent": 1.6891069412231445,
+    "R2": 0.9719445705413818
+  },
+  {
+    "dataset": "AAPL stock",
+    "framework": "PyTorch",
+    "model": "nn.RNN",
+    "parameters": 4865,
+    "training_time_s": 13.256151900000987,
+    "MAE": 17.62743377685547,
+    "RMSE": 20.61356513034105,
+    "MAPE_percent": 7.833569526672363,
+    "R2": 0.5376691818237305
+  },
+  {
+    "dataset": "AAPL stock",
+    "framework": "Scratch",
+    "model": "Vanilla RNN",
+    "parameters": 4801,
+    "training_time_s": 4.29051249999975,
+    "MAE": 19.743017196655273,
+    "RMSE": 23.450454753053297,
+    "MAPE_percent": 8.716382026672363,
+    "R2": 0.40165841579437256
+  },
+  {
+    "dataset": "E-commerce service process",
+    "framework": "Keras",
+    "model": "SimpleRNN",
+    "parameters": 4673,
+    "training_time_s": 9.727681000000302,
+    "MAE": 12.102605819702148,
+    "RMSE": 26.998669626874094,
+    "MAPE_percent": 40.49662780761719,
+    "R2": -0.13858187198638916
+  },
+  {
+    "dataset": "E-commerce service process",
+    "framework": "Persistence",
+    "model": "Last-value baseline",
+    "parameters": 0,
+    "training_time_s": 0.0,
+    "MAE": 5.937878608703613,
+    "RMSE": 14.176669250913795,
+    "MAPE_percent": 25.840547561645508,
+    "R2": 0.6860735416412354
+  },
+  {
+    "dataset": "E-commerce service process",
+    "framework": "PyTorch",
+    "model": "nn.RNN",
+    "parameters": 4737,
+    "training_time_s": 1.5114147999993293,
+    "MAE": 11.934927940368652,
+    "RMSE": 25.24720431421257,
+    "MAPE_percent": 49.18069839477539,
+    "R2": 0.004351258277893066
+  },
+  {
+    "dataset": "E-commerce service process",
+    "framework": "Scratch",
+    "model": "Vanilla RNN",
+    "parameters": 4673,
+    "training_time_s": 0.2884200000007695,
+    "MAE": 12.474786758422852,
+    "RMSE": 26.56863555057977,
+    "MAPE_percent": 47.320350646972656,
+    "R2": -0.10260009765625
+  }
+]

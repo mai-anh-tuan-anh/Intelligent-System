@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "key": "text_pytorch_lstm_s42",
+  "task": "text",
+  "framework": "PyTorch",
+  "kind": "LSTM",
+  "seed": 42,
+  "parameters": 871251,
+  "epochs_run": 10,
+  "best_epoch": 4,
+  "training_seconds": 2486.367674699999,
+  "inference_ms_per_sample": 2.9623606596010417,
+  "validation_metrics": {
+    "accuracy": 0.7761413843888071,
+    "balanced_accuracy": 0.6200434053860548,
+    "macro_f1": 0.5992430108461494,
+    "weighted_f1": 0.7943222265555303,
+    "log_loss": 0.5491136991661751,
+    "roc_auc_macro_ovr": 0.8717350422252058,
+    "average_precision_macro": 0.5947273888923947
+  },
+  "metrics": {
+    "accuracy": 0.7747349823321554,
+    "balanced_accuracy": 0.6166364271671224,
+    "macro_f1": 0.5949005519507381,
+    "weighted_f1": 0.7939579014620863,
+    "log_loss": 0.5355474949743333,
+    "roc_auc_macro_ovr": 0.8797960962364568,
+    "average_precision_macro": 0.6024775122332174
+  },
+  "config": {
+    "task": "text",
+    "kind": "LSTM",
+    "layers": 5,
+    "hidden": 48,
+    "embedding": 64,
+    "head_dropout": 0.25,
+    "vocab_size": 12093,
+    "input_dim": 11,
+    "lookback": 30,
+    "max_len": 120
+  },
+  "checkpoint": "models/full_1fea63a4c1b4/text_pytorch_lstm_s42.pt",
+  "predictions_csv": "outputs/full_1fea63a4c1b4/predictions/text_pytorch_lstm_s42.csv"
+}

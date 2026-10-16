@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RNN Next-Word Prediction Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">RNN</div>
+        <div>
+          <h1>Sequence Lab</h1>
+          <p>Next-word prediction</p>
+        </div>
+      </div>
+
+      <nav>
+        <button class="nav-btn active" data-target="overview">Tổng quan</button>
+        <button class="nav-btn" data-target="predict">Dự đoán từ tiếp theo</button>
+        <button class="nav-btn" data-target="generate">Sinh văn bản</button>
+        <button class="nav-btn" data-target="model">Model & tham số</button>
+        <button class="nav-btn" data-target="data">Dataset & phân phối</button>
+        <button class="nav-btn" data-target="training">Training & metrics</button>
+      </nav>
+
+      <div class="sidebar-note">
+        <strong>CPU demo</strong>
+        <span>PyTorch RNN · WikiText-103</span>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      {% if startup_error %}
+      <section class="alert danger">
+        <strong>Không thể khởi động model:</strong>
+        <span>{{ startup_error }}</span>
+        <div class="diagnostic-box">Kiểm tra nhanh: chạy <code>/api/health</code> hoặc xem đường dẫn model/data trong terminal.</div>
+      </section>
+      {% endif %}
+
+      <header class="topbar">
+        <div>
+          <span class="eyebrow">PYTORCH · LANGUAGE MODELING</span>
+          <h2>RNN Next-Word Prediction Demo</h2>
+          <p>Quan sát model từ dữ liệu đầu vào đến probability distribution, uncertainty và generated sequence. Biểu đồ chạy hoàn toàn local, không phụ thuộc CDN.</p>
+        </div>
+        <div class="device-pill"><span class="dot"></span> CPU inference</div>
+      </header>
+
+      <section id="overview" class="page-section active">
+        <div class="metric-grid" id="overviewCards"></div>
+
+        <div class="grid-2">
+          <article class="panel chart-panel">
+            <div class="panel-head">
+              <div><span class="eyebrow">MODEL BEHAVIOR</span><h3>Training / Validation Loss</h3></div>
+              <span class="badge">Cross-Entropy</span>
+            </div>
+            <canvas id="lossChart"></canvas>
+            <div id="lossEmpty" class="empty-state hidden">Chưa có training_history.json. Hãy export history từ notebook để hiển thị biểu đồ training.</div>
+          </article>
+
+          <article class="panel chart-panel">
+            <div class="panel-head">
+              <div><span class="eyebrow">LANGUAGE MODELING</span><h3>Perplexity</h3></div>
+              <span class="badge">Lower is better</span>
+            </div>
+            <canvas id="pplChart"></canvas>
+            <div id="pplEmpty" class="empty-state hidden">Chưa có perplexity history.</div>
+          </article>
+        </div>
+
+        <div class="grid-3">
+          <article class="panel mini-chart"><div class="panel-head"><h3>Top token frequency</h3></div><canvas id="tokenChart"></canvas></article>
+          <article class="panel mini-chart"><div class="panel-head"><h3>Parameter composition</h3></div><canvas id="parameterChart"></canvas></article>
+          <article class="panel mini-chart"><div class="panel-head"><h3>Dataset split size</h3></div><canvas id="splitChart"></canvas></article>
+        </div>
+      </section>
+
+      <section id="predict" class="page-section">
+        <div class="section-intro">
+          <span class="eyebrow">INTERACTIVE INFERENCE</span>
+          <h2>Dự đoán từ tiếp theo</h2>
+          <p>Nhập một context. Model sẽ dùng tối đa 32 token gần nhất, chạy qua Embedding → RNN → Linear và trả về probability distribution trên vocabulary.</p>
+        </div>
+
+        <div class="panel control-panel">
+          <label>Seed text</label>
+          <textarea id="seedInput" rows="3">the history of</textarea>
+          <div class="control-row">
+            <div class="control-group">
+              <label for="topK">Top-k <span id="topKValue">10</span></label>
+              <input id="topK" type="range" min="3" max="20" value="10">
+            </div>
+            <div class="control-group">
+              <label for="temperature">Temperature <span id="temperatureValue">1.00</span></label>
+              <input id="temperature" type="range" min="0.2" max="2.0" step="0.05" value="1.0">
+            </div>
+            <button id="predictBtn" class="primary-btn">Predict next word</button>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel">
+            <div class="panel-head"><div><span class="eyebrow">PROBABILITY DISTRIBUTION</span><h3>Top-k candidates</h3></div><span id="predictLatency" class="badge">—</span></div>
+            <canvas id="predictionChart"></canvas>
+            <div id="predictionTable" class="table-wrap"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-head"><div><span class="eyebrow">MODEL UNCERTAINTY</span><h3>Inference statistics</h3></div></div>
+            <div id="predictionStats" class="stat-list"></div>
+            <div class="context-box"><div class="context-title">Context actually used</div><div id="contextTokens" class="token-row"></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="generate" class="page-section">
+        <div class="section-intro">
+          <span class="eyebrow">AUTOREGRESSIVE DEMO</span>
+          <h2>Sinh văn bản từng bước</h2>
+          <p>Model dự đoán một token, nối token đó vào context rồi lặp lại. Đây là phần trực quan nhất để giải thích autoregressive language modeling.</p>
+        </div>
+
+        <div class="panel control-panel">
+          <label>Seed text</label>
+          <textarea id="generationSeed" rows="3">the future of artificial</textarea>
+          <div class="control-row generation-controls">
+            <div class="control-group"><label for="genWords">Số từ <span id="genWordsValue">30</span></label><input id="genWords" type="range" min="5" max="80" value="30"></div>
+            <div class="control-group"><label for="genTemperature">Temperature <span id="genTemperatureValue">0.80</span></label><input id="genTemperature" type="range" min="0.2" max="1.8" step="0.05" value="0.8"></div>
+            <div class="control-group"><label for="genTopK">Sampling top-k <span id="genTopKValue">20</span></label><input id="genTopK" type="range" min="1" max="100" value="20"></div>
+            <select id="generationMode"><option value="sampling">Top-k sampling</option><option value="greedy">Greedy</option></select>
+            <button id="generateBtn" class="primary-btn">Generate continuation</button>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel generated-panel">
+            <div class="panel-head"><div><span class="eyebrow">OUTPUT</span><h3>Generated text</h3></div><span id="generationSpeed" class="badge">—</span></div>
+            <div id="generatedText" class="generated-text">Chưa có kết quả.</div>
+          </article>
+          <article class="panel">
+            <div class="panel-head"><div><span class="eyebrow">STEP-BY-STEP</span><h3>Probability and hidden-state behavior</h3></div></div>
+            <canvas id="generationChart"></canvas>
+          </article>
+        </div>
+      </section>
+
+      <section id="model" class="page-section">
+        <div class="section-intro"><span class="eyebrow">MODEL INSPECTION</span><h2>Kiến trúc & thông số</h2><p>Các con số dưới đây được đọc trực tiếp từ checkpoint hoặc cấu hình training tương ứng.</p></div>
+        <div class="grid-2">
+          <article class="panel"><div class="panel-head"><h3>Architecture</h3></div><div id="architectureView" class="architecture"></div></article>
+          <article class="panel"><div class="panel-head"><h3>Parameter breakdown</h3></div><canvas id="parameterDetailChart"></canvas><div id="parameterTable" class="table-wrap"></div></article>
+        </div>
+        <div class="grid-3" id="hyperCards"></div>
+      </section>
+
+      <section id="data" class="page-section">
+        <div class="section-intro"><span class="eyebrow">DATA AUDIT</span><h2>Dataset & token distribution</h2><p>Dashboard này tái hiện những thống kê quan trọng từ WikiText-103 và vocabulary đang được model sử dụng.</p></div>
+        <div class="grid-2">
+          <article class="panel"><div class="panel-head"><h3>Top 20 tokens</h3><span class="badge">Train corpus</span></div><canvas id="topTokensChart"></canvas></article>
+          <article class="panel"><div class="panel-head"><h3>Split & file statistics</h3></div><div id="datasetTable" class="table-wrap"></div></article>
+        </div>
+        <article class="panel"><div class="panel-head"><h3>Data-quality interpretation</h3></div><div class="insight-grid" id="dataInsights"></div></article>
+      </section>
+
+      <section id="training" class="page-section">
+        <div class="section-intro"><span class="eyebrow">EXPERIMENT ANALYSIS</span><h2>Training & evaluation metrics</h2><p>Training history được đọc từ `outputs/metrics/training_history.json`, còn final test metrics từ `test_metrics.json` nếu bạn export chúng từ notebook.</p></div>
+        <div class="metric-grid" id="trainingCards"></div>
+        <div class="grid-2">
+          <article class="panel chart-panel"><div class="panel-head"><h3>Learning rate</h3></div><canvas id="lrChart"></canvas><div id="lrEmpty" class="empty-state hidden">Chưa có learning-rate history.</div></article>
+          <article class="panel"><div class="panel-head"><h3>Final test metrics</h3></div><div id="testMetricTable" class="table-wrap"></div></article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    window.RNN_DASHBOARD = {{ dashboard|tojson }};
+    window.RNN_STARTUP_ERROR = {{ startup_error|tojson }};
+  </script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

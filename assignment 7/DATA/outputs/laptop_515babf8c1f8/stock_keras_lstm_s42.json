@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "key": "stock_keras_lstm_s42",
+  "task": "stock",
+  "framework": "Keras",
+  "kind": "LSTM",
+  "seed": 42,
+  "parameters": 38945,
+  "epochs_run": 10,
+  "best_epoch": 6,
+  "training_seconds": 21.99146539999856,
+  "inference_ms_per_sample": 12.029120430104017,
+  "validation_metrics": {
+    "MAE": 8.262604201121997,
+    "RMSE": 9.932128750990591,
+    "MAPE_percent": 6.348898223376058,
+    "R2": 0.5092368033609336,
+    "directional_accuracy": 0.45698924731182794,
+    "median_AE": 8.619822845458984,
+    "p95_AE": 17.265139389038083
+  },
+  "metrics": {
+    "MAE": 27.518678388698127,
+    "RMSE": 29.05271365740601,
+    "MAPE_percent": 16.83986870183394,
+    "R2": -7.3422108799570776,
+    "directional_accuracy": 0.4838709677419355,
+    "median_AE": 26.164657287597663,
+    "p95_AE": 41.84080383300781
+  },
+  "config": {
+    "task": "stock",
+    "kind": "LSTM",
+    "layers": 5,
+    "hidden": 32,
+    "embedding": 48,
+    "head_dropout": 0.15,
+    "vocab_size": 9986,
+    "input_dim": 11,
+    "lookback": 30,
+    "max_len": 80
+  },
+  "checkpoint": "models/laptop_515babf8c1f8/stock_keras_lstm_s42.keras",
+  "predictions_csv": "outputs/laptop_515babf8c1f8/predictions/stock_keras_lstm_s42.csv"
+}

@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "key": "text_keras_lstm_s42",
+  "task": "text",
+  "framework": "Keras",
+  "kind": "LSTM",
+  "seed": 42,
+  "parameters": 870291,
+  "epochs_run": 11,
+  "best_epoch": 5,
+  "training_seconds": 1654.4623563999994,
+  "inference_ms_per_sample": 62.739998910483585,
+  "validation_metrics": {
+    "accuracy": 0.7911634756995581,
+    "balanced_accuracy": 0.605955632513818,
+    "macro_f1": 0.5995495353803593,
+    "weighted_f1": 0.799078633109862,
+    "log_loss": 0.574209273605703,
+    "roc_auc_macro_ovr": 0.8691354134763437,
+    "average_precision_macro": 0.6068578388320559
+  },
+  "metrics": {
+    "accuracy": 0.8030035335689046,
+    "balanced_accuracy": 0.6308231857747301,
+    "macro_f1": 0.6231934387687427,
+    "weighted_f1": 0.8107202030090624,
+    "log_loss": 0.5327879693486801,
+    "roc_auc_macro_ovr": 0.8837285656803555,
+    "average_precision_macro": 0.6314525234875313
+  },
+  "config": {
+    "task": "text",
+    "kind": "LSTM",
+    "layers": 5,
+    "hidden": 48,
+    "embedding": 64,
+    "head_dropout": 0.25,
+    "vocab_size": 12093,
+    "input_dim": 11,
+    "lookback": 30,
+    "max_len": 120
+  },
+  "checkpoint": "models/full_1fea63a4c1b4/text_keras_lstm_s42.keras",
+  "predictions_csv": "outputs/full_1fea63a4c1b4/predictions/text_keras_lstm_s42.csv"
+}

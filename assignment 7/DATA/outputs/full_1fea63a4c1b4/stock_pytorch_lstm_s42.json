@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "key": "stock_pytorch_lstm_s42",
+  "task": "stock",
+  "framework": "PyTorch",
+  "kind": "LSTM",
+  "seed": 42,
+  "parameters": 87025,
+  "epochs_run": 9,
+  "best_epoch": 3,
+  "training_seconds": 15.672949100000551,
+  "inference_ms_per_sample": 0.26332526883174245,
+  "validation_metrics": {
+    "MAE": 8.782978089035199,
+    "RMSE": 10.686392605609893,
+    "MAPE_percent": 6.691936906530466,
+    "R2": 0.43186760120975254,
+    "directional_accuracy": 0.4731182795698925,
+    "median_AE": 8.152382049560543,
+    "p95_AE": 17.547601852416996
+  },
+  "metrics": {
+    "MAE": 24.59070118565713,
+    "RMSE": 25.950256035586555,
+    "MAPE_percent": 15.0534830211928,
+    "R2": -5.655658814319678,
+    "directional_accuracy": 0.4838709677419355,
+    "median_AE": 23.731369934082025,
+    "p95_AE": 38.07488296508789
+  },
+  "config": {
+    "task": "stock",
+    "kind": "LSTM",
+    "layers": 5,
+    "hidden": 48,
+    "embedding": 64,
+    "head_dropout": 0.25,
+    "vocab_size": 12093,
+    "input_dim": 11,
+    "lookback": 30,
+    "max_len": 120
+  },
+  "checkpoint": "models/full_1fea63a4c1b4/stock_pytorch_lstm_s42.pt",
+  "predictions_csv": "outputs/full_1fea63a4c1b4/predictions/stock_pytorch_lstm_s42.csv"
+}

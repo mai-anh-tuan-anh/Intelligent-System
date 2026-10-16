@@ -1,0 +1,147 @@
+{
+  "text": "the history of the city 's original series was originally to be the most productive in the process of the hindu epic of parliament in this area , which was built in a tropical cyclone of 1 @,@ 000 men",
+  "generated_tokens": [
+    {
+      "word": "'s",
+      "sampling_probability": 0.23196300864219666
+    },
+    {
+      "word": "original",
+      "sampling_probability": 0.03183058276772499
+    },
+    {
+      "word": "series",
+      "sampling_probability": 0.11797337234020233
+    },
+    {
+      "word": "was",
+      "sampling_probability": 0.12244659662246704
+    },
+    {
+      "word": "originally",
+      "sampling_probability": 0.030979782342910767
+    },
+    {
+      "word": "to",
+      "sampling_probability": 0.14240306615829468
+    },
+    {
+      "word": "be",
+      "sampling_probability": 0.41332316398620605
+    },
+    {
+      "word": "the",
+      "sampling_probability": 0.17861689627170563
+    },
+    {
+      "word": "most",
+      "sampling_probability": 0.27467843890190125
+    },
+    {
+      "word": "productive",
+      "sampling_probability": 0.0068133180029690266
+    },
+    {
+      "word": "in",
+      "sampling_probability": 0.057355109602212906
+    },
+    {
+      "word": "the",
+      "sampling_probability": 0.5617608428001404
+    },
+    {
+      "word": "process",
+      "sampling_probability": 0.0241441261023283
+    },
+    {
+      "word": "of",
+      "sampling_probability": 0.219590425491333
+    },
+    {
+      "word": "the",
+      "sampling_probability": 0.5808332562446594
+    },
+    {
+      "word": "hindu",
+      "sampling_probability": 0.022873008623719215
+    },
+    {
+      "word": "epic",
+      "sampling_probability": 0.6660825610160828
+    },
+    {
+      "word": "of",
+      "sampling_probability": 0.018542058765888214
+    },
+    {
+      "word": "parliament",
+      "sampling_probability": 0.005926431156694889
+    },
+    {
+      "word": "in",
+      "sampling_probability": 0.0548272542655468
+    },
+    {
+      "word": "this",
+      "sampling_probability": 0.01829669252038002
+    },
+    {
+      "word": "area",
+      "sampling_probability": 0.012299628928303719
+    },
+    {
+      "word": ",",
+      "sampling_probability": 0.28602883219718933
+    },
+    {
+      "word": "which",
+      "sampling_probability": 0.1811702996492386
+    },
+    {
+      "word": "was",
+      "sampling_probability": 0.19255784153938293
+    },
+    {
+      "word": "built",
+      "sampling_probability": 0.027907419949769974
+    },
+    {
+      "word": "in",
+      "sampling_probability": 0.3362385332584381
+    },
+    {
+      "word": "a",
+      "sampling_probability": 0.12435890734195709
+    },
+    {
+      "word": "tropical",
+      "sampling_probability": 0.04842747375369072
+    },
+    {
+      "word": "cyclone",
+      "sampling_probability": 0.12501046061515808
+    },
+    {
+      "word": "of",
+      "sampling_probability": 0.058920908719301224
+    },
+    {
+      "word": "1",
+      "sampling_probability": 0.05203276872634888
+    },
+    {
+      "word": "@,@",
+      "sampling_probability": 0.4462527930736542
+    },
+    {
+      "word": "000",
+      "sampling_probability": 0.27790600061416626
+    },
+    {
+      "word": "men",
+      "sampling_probability": 0.03274960443377495
+    }
+  ],
+  "temperature": 1.0,
+  "sample_top_k": 30
+}

@@ -1,0 +1,66 @@
+{
+  "config": {
+    "lookback": 14,
+    "hidden_size": 64,
+    "dropout": 0.0,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "max_epochs": 40,
+    "early_stopping_patience": 6,
+    "lr_patience": 2,
+    "lr_factor": 0.5,
+    "min_learning_rate": 1e-05,
+    "gradient_clip_norm": 1.0,
+    "device": "CPU",
+    "split": {
+      "train": 0.7,
+      "validation": 0.15,
+      "test": 0.15
+    }
+  },
+  "datasets": {
+    "ecommerce": {
+      "display_name": "E-commerce service process",
+      "feature_columns": [
+        "delivered_order_count",
+        "avg_approval_hours",
+        "avg_carrier_hours",
+        "avg_promised_days",
+        "late_rate",
+        "days_since_previous_service_day",
+        "previous_avg_delivery_days"
+      ],
+      "target": "avg_delivery_days",
+      "target_transform": "log1p_nonnegative",
+      "lookback": 14,
+      "hidden_size": 64,
+      "keras_model": "models/ecommerce/keras_rnn.keras",
+      "pytorch_model": "models/ecommerce/pytorch_rnn.pt",
+      "scratch_model": "models/ecommerce/scratch_rnn.npz",
+      "feature_scaler": "models/ecommerce/feature_scaler.joblib",
+      "target_scaler": "models/ecommerce/target_scaler.joblib"
+    },
+    "stock": {
+      "display_name": "AAPL stock",
+      "feature_columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume",
+        "Return_1d",
+        "HL_range_pct",
+        "OC_change_pct",
+        "Volume_change_pct"
+      ],
+      "target": "Close",
+      "lookback": 14,
+      "hidden_size": 64,
+      "keras_model": "models/stock/keras_rnn.keras",
+      "pytorch_model": "models/stock/pytorch_rnn.pt",
+      "scratch_model": "models/stock/scratch_rnn.npz",
+      "feature_scaler": "models/stock/feature_scaler.joblib",
+      "target_scaler": "models/stock/target_scaler.joblib"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "key": "stock_pytorch_rnn_s42",
+  "task": "stock",
+  "framework": "PyTorch",
+  "kind": "RNN",
+  "seed": 42,
+  "parameters": 9921,
+  "epochs_run": 9,
+  "best_epoch": 5,
+  "training_seconds": 10.454129800000374,
+  "inference_ms_per_sample": 0.3000408602039447,
+  "validation_metrics": {
+    "MAE": 5.579981549991074,
+    "RMSE": 7.395024120316788,
+    "MAPE_percent": 4.235242302273541,
+    "R2": 0.7279388716418935,
+    "directional_accuracy": 0.489247311827957,
+    "median_AE": 4.414315490722657,
+    "p95_AE": 14.52522766113281
+  },
+  "metrics": {
+    "MAE": 28.898580479775706,
+    "RMSE": 30.47445152459455,
+    "MAPE_percent": 17.689553643754074,
+    "R2": -8.178665700361899,
+    "directional_accuracy": 0.4838709677419355,
+    "median_AE": 27.521328124999997,
+    "p95_AE": 43.21987197875976
+  },
+  "config": {
+    "task": "stock",
+    "kind": "RNN",
+    "layers": 5,
+    "hidden": 32,
+    "embedding": 48,
+    "head_dropout": 0.15,
+    "vocab_size": 9986,
+    "input_dim": 11,
+    "lookback": 30,
+    "max_len": 80
+  },
+  "checkpoint": "models/laptop_515babf8c1f8/stock_pytorch_rnn_s42.pt",
+  "predictions_csv": "outputs/laptop_515babf8c1f8/predictions/stock_pytorch_rnn_s42.csv"
+}

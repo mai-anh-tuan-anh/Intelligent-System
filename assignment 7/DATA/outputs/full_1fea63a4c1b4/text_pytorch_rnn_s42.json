@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "key": "text_pytorch_rnn_s42",
+  "task": "text",
+  "framework": "PyTorch",
+  "kind": "RNN",
+  "seed": 42,
+  "parameters": 798387,
+  "epochs_run": 8,
+  "best_epoch": 2,
+  "training_seconds": 888.0272543999963,
+  "inference_ms_per_sample": 1.8400588928151356,
+  "validation_metrics": {
+    "accuracy": 0.7602356406480117,
+    "balanced_accuracy": 0.5270557457579743,
+    "macro_f1": 0.5006170993693372,
+    "weighted_f1": 0.7537990219957497,
+    "log_loss": 0.5973555150304142,
+    "roc_auc_macro_ovr": 0.828533663788991,
+    "average_precision_macro": 0.5345941943960646
+  },
+  "metrics": {
+    "accuracy": 0.7647232037691402,
+    "balanced_accuracy": 0.5298919335823982,
+    "macro_f1": 0.5059396604084294,
+    "weighted_f1": 0.7561483984094886,
+    "log_loss": 0.5879708646453292,
+    "roc_auc_macro_ovr": 0.8337536248027487,
+    "average_precision_macro": 0.5500669845580944
+  },
+  "config": {
+    "task": "text",
+    "kind": "RNN",
+    "layers": 5,
+    "hidden": 48,
+    "embedding": 64,
+    "head_dropout": 0.25,
+    "vocab_size": 12093,
+    "input_dim": 11,
+    "lookback": 30,
+    "max_len": 120
+  },
+  "checkpoint": "models/full_1fea63a4c1b4/text_pytorch_rnn_s42.pt",
+  "predictions_csv": "outputs/full_1fea63a4c1b4/predictions/text_pytorch_rnn_s42.csv"
+}
