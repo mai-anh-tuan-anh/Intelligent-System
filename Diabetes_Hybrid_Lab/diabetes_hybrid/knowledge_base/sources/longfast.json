@@ -1,0 +1,36 @@
+{
+  "source": {
+    "id": "longfast",
+    "publisher": "FPT Long Chau",
+    "title": "Does diabetes testing require fasting?",
+    "title_vi": "Trước khi xét nghiệm tiểu đường có cần nhịn ăn?",
+    "url": "https://nhathuoclongchau.com.vn/bai-viet/truoc-khi-xet-nghiem-tieu-duong-co-can-nhin-an-hay-khong.html",
+    "tier": "Supplementary",
+    "kind": "Web",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "fasting"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p20",
+      "claims": ["a1c.standard_test.fasting_required=no", "fpg.standard_test.fasting_required=yes"],
+      "source": "longfast",
+      "about": [
+        "fasting",
+        "a1c",
+        "glucose"
+      ],
+      "focus": [
+        "fasting"
+      ],
+      "title": "Whether fasting is required depends on the test",
+      "text": "HbA1c normally requires no fasting. Fasting plasma glucose does require fasting. Confirm the exact test and preparation with the testing site.",
+      "title_vi": "Nhịn ăn tùy theo loại xét nghiệm",
+      "text_vi": "Xét nghiệm HbA1c thường không cần nhịn ăn. Xét nghiệm glucose huyết tương lúc đói cần nhịn ăn. Hãy xác nhận tên xét nghiệm và cách chuẩn bị với cơ sở thực hiện."
+    }
+  ],
+  "relationships": []
+}

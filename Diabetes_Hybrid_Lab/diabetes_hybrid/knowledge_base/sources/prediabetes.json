@@ -1,0 +1,41 @@
+{
+  "source": {
+    "id": "prediabetes",
+    "publisher": "NIDDK / NIH",
+    "title": "Insulin Resistance & Prediabetes",
+    "kind": "Web",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/prediabetes-insulin-resistance",
+    "title_vi": "Insulin Resistance & Prediabetes",
+    "tier": "Public health",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "prediabetes"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p11",
+      "source": "prediabetes",
+      "about": [
+        "prediabetes",
+        "type2"
+      ],
+      "focus": [
+        "prediabetes"
+      ],
+      "title": "What is prediabetes?",
+      "text": "Prediabetes means blood glucose is higher than usual but below the diabetes range. It is associated with a higher chance of developing type 2 diabetes.",
+      "title_vi": "Tiền đái tháo đường",
+      "text_vi": "Tiền đái tháo đường là tình trạng glucose máu cao hơn mức bình thường nhưng chưa đạt mức dùng để chẩn đoán đái tháo đường. Tình trạng này liên quan đến nguy cơ tiến triển thành típ 2."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "prediabetes",
+      "to": "type2",
+      "kind": "ASSOCIATED_WITH",
+      "passage": "p11"
+    }
+  ]
+}

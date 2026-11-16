@@ -1,0 +1,41 @@
+{
+  "source": {
+    "id": "gesttests",
+    "publisher": "NIDDK / NIH",
+    "title": "Tests & Diagnosis for Gestational Diabetes",
+    "title_vi": "Xét nghiệm đái tháo đường thai kỳ",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/gestational/tests-diagnosis",
+    "tier": "Public health",
+    "kind": "Web",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "gestational"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p18",
+      "source": "gesttests",
+      "about": [
+        "gestational",
+        "glucose"
+      ],
+      "focus": [
+        "gestational"
+      ],
+      "title": "Testing during pregnancy",
+      "text": "NIDDK describes routine gestational diabetes testing around weeks 24–28. Testing may occur earlier in selected patients. The test method and interpretation are determined by the prenatal care team.",
+      "title_vi": "Xét nghiệm tiểu đường thai kỳ khi nào?",
+      "text_vi": "NIDDK mô tả việc sàng lọc tiểu đường thai kỳ thường diễn ra ở tuần 24–28. Một số trường hợp được đánh giá sớm hơn. Nhóm chăm sóc thai kỳ quyết định loại xét nghiệm và diễn giải kết quả."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "gestational",
+      "to": "glucose",
+      "kind": "ASSESSED_BY",
+      "passage": "p18"
+    }
+  ]
+}

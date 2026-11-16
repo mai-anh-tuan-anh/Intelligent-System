@@ -1,0 +1,53 @@
+{
+  "source": {
+    "id": "risk",
+    "publisher": "NIDDK / NIH",
+    "title": "Risk Factors for Type 2 Diabetes",
+    "kind": "Web",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/risk-factors-type-2-diabetes",
+    "title_vi": "Risk Factors for Type 2 Diabetes",
+    "tier": "Public health",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "risk",
+      "activity",
+      "family"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p05",
+      "source": "risk",
+      "about": [
+        "type2",
+        "risk",
+        "activity",
+        "family"
+      ],
+      "focus": [
+        "risk",
+        "activity",
+        "family"
+      ],
+      "title": "Type 2 diabetes risk factors",
+      "text": "Family history, overweight or obesity, and low physical activity are associated with type 2 diabetes. A risk factor alone cannot determine whether someone has diabetes.",
+      "title_vi": "Yếu tố nguy cơ típ 2",
+      "text_vi": "Các yếu tố liên quan tới nguy cơ típ 2 gồm tiền sử gia đình, thừa cân hoặc béo phì và ít hoạt động thể chất. Một yếu tố nguy cơ riêng lẻ không xác định một người có mắc bệnh hay không."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "type2",
+      "to": "activity",
+      "kind": "HAS_RISK_FACTOR",
+      "passage": "p05"
+    },
+    {
+      "from": "type2",
+      "to": "family",
+      "kind": "HAS_RISK_FACTOR",
+      "passage": "p05"
+    }
+  ]
+}

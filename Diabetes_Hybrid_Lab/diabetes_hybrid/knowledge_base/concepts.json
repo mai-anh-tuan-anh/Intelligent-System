@@ -1,0 +1,316 @@
+[
+  {
+    "id": "type1",
+    "name": "Type 1 diabetes",
+    "kind": "Disease",
+    "aliases": [
+      "típ 1",
+      "type 1",
+      "tiểu đường 1",
+      "đái tháo đường 1",
+      "loại 1",
+      "type one",
+      "type one diabetes"
+    ],
+    "name_vi": "Đái tháo đường típ 1"
+  },
+  {
+    "id": "type2",
+    "name": "Type 2 diabetes",
+    "kind": "Disease",
+    "aliases": [
+      "típ 2",
+      "type 2",
+      "tiểu đường 2",
+      "đái tháo đường 2",
+      "loại 2",
+      "type two",
+      "type two diabetes"
+    ],
+    "name_vi": "Đái tháo đường típ 2"
+  },
+  {
+    "id": "prediabetes",
+    "name": "Prediabetes",
+    "kind": "Condition",
+    "aliases": [
+      "tiền tiểu đường",
+      "tiền đái tháo đường",
+      "prediabetes",
+      "kháng insulin",
+      "insulin resistance"
+    ],
+    "name_vi": "Tiền đái tháo đường"
+  },
+  {
+    "id": "risk",
+    "name": "Type 2 risk factors",
+    "kind": "Topic",
+    "aliases": [
+      "nguy cơ",
+      "yếu tố nguy cơ",
+      "risk factors",
+      "dễ mắc",
+      "nguy cơ mắc",
+      "rủi ro",
+      "risk",
+      "at risk"
+    ],
+    "name_vi": "Yếu tố nguy cơ típ 2"
+  },
+  {
+    "id": "activity",
+    "name": "Physical activity",
+    "kind": "Factor",
+    "aliases": [
+      "ít vận động",
+      "vận động",
+      "tập thể dục",
+      "hoạt động thể chất",
+      "physical activity",
+      "exercise"
+    ],
+    "name_vi": "Hoạt động thể chất"
+  },
+  {
+    "id": "family",
+    "name": "Family history",
+    "kind": "Factor",
+    "aliases": [
+      "di truyền",
+      "tiền sử gia đình",
+      "gia đình có người",
+      "family history"
+    ],
+    "name_vi": "Tiền sử gia đình"
+  },
+  {
+    "id": "prevention",
+    "name": "Type 2 prevention",
+    "kind": "Topic",
+    "aliases": [
+      "phòng ngừa",
+      "phòng bệnh",
+      "ngăn ngừa",
+      "phòng tránh",
+      "dự phòng",
+      "lối sống",
+      "giảm nguy cơ",
+      "prevent",
+      "prevention",
+      "preventing",
+      "delay"
+    ],
+    "name_vi": "Phòng ngừa típ 2"
+  },
+  {
+    "id": "a1c",
+    "name": "HbA1c",
+    "kind": "Test",
+    "aliases": [
+      "a1c",
+      "hba1c",
+      "hemoglobin glycat hóa",
+      "đường huyết trung bình",
+      "glycated hemoglobin",
+      "average blood sugar"
+    ],
+    "name_vi": "HbA1c"
+  },
+  {
+    "id": "glucose",
+    "name": "Blood glucose testing",
+    "kind": "Test",
+    "aliases": [
+      "xét nghiệm",
+      "đường huyết lúc đói",
+      "glucose huyết tương",
+      "xét nghiệm glucose",
+      "dung nạp glucose",
+      "chẩn đoán",
+      "blood tests",
+      "glucose test",
+      "fasting plasma glucose",
+      "blood glucose test",
+      "diagnosis",
+      "diagnose",
+      "diagnosed",
+      "how is it diagnosed"
+    ],
+    "name_vi": "Xét nghiệm glucose máu"
+  },
+  {
+    "id": "antibody",
+    "name": "Autoantibodies",
+    "kind": "Test",
+    "aliases": [
+      "tự kháng thể",
+      "kháng thể",
+      "autoantibody",
+      "autoantibodies"
+    ],
+    "name_vi": "Tự kháng thể"
+  },
+  {
+    "id": "symptom",
+    "name": "Symptoms",
+    "kind": "Topic",
+    "aliases": [
+      "triệu chứng",
+      "dấu hiệu",
+      "khát nước",
+      "tiểu nhiều",
+      "sụt cân",
+      "symptom",
+      "symptoms",
+      "signs",
+      "thirst",
+      "frequent urination",
+      "đi tiểu nhiều",
+      "mờ mắt"
+    ],
+    "name_vi": "Triệu chứng"
+  },
+  {
+    "id": "complication",
+    "name": "Complications",
+    "kind": "Topic",
+    "aliases": [
+      "biến chứng",
+      "ảnh hưởng đến mắt",
+      "bệnh thận",
+      "tổn thương thần kinh",
+      "complications",
+      "kidney disease"
+    ],
+    "name_vi": "Biến chứng"
+  },
+  {
+    "id": "survey",
+    "name": "BRFSS 2015 survey label",
+    "kind": "Dataset",
+    "aliases": [
+      "brfss",
+      "khảo sát",
+      "diabetes_012",
+      "nhãn mô hình",
+      "nhãn 0",
+      "nhãn 1",
+      "nhãn 2",
+      "tự báo cáo",
+      "diabete3",
+      "survey label",
+      "self reported",
+      "label 2"
+    ],
+    "name_vi": "Nhãn khảo sát BRFSS 2015"
+  },
+  {
+    "id": "diabetes",
+    "name": "Diabetes",
+    "kind": "Topic",
+    "aliases": [
+      "đái tháo đường",
+      "tiểu đường",
+      "diabetes"
+    ],
+    "name_vi": "Đái tháo đường"
+  },
+  {
+    "id": "gestational",
+    "name": "Gestational diabetes",
+    "name_vi": "Đái tháo đường thai kỳ",
+    "kind": "Condition",
+    "aliases": [
+      "thai kỳ",
+      "tiểu đường thai kỳ",
+      "đái tháo đường thai kỳ",
+      "tiểu đường khi mang thai",
+      "gestational",
+      "pregnancy"
+    ]
+  },
+  {
+    "id": "hypoglycemia",
+    "name": "Hypoglycemia",
+    "name_vi": "Hạ đường huyết",
+    "kind": "Complication",
+    "aliases": [
+      "hạ đường huyết",
+      "tụt đường huyết",
+      "đường huyết thấp",
+      "hypoglycemia",
+      "low blood sugar"
+    ]
+  },
+  {
+    "id": "dka",
+    "name": "Diabetic ketoacidosis",
+    "name_vi": "Nhiễm toan ceton do đái tháo đường",
+    "kind": "Complication",
+    "aliases": [
+      "nhiễm toan ceton",
+      "toan ceton",
+      "toan xeton",
+      "dka",
+      "ketoacidosis"
+    ]
+  },
+  {
+    "id": "foot",
+    "name": "Diabetes-related foot problems",
+    "name_vi": "Biến chứng bàn chân",
+    "kind": "Complication",
+    "aliases": [
+      "bàn chân",
+      "loét chân",
+      "loét bàn chân",
+      "diabetic foot",
+      "foot care",
+      "foot ulcer"
+    ]
+  },
+  {
+    "id": "fasting",
+    "name": "Preparation for glucose testing",
+    "name_vi": "Chuẩn bị xét nghiệm",
+    "kind": "Topic",
+    "aliases": [
+      "nhịn ăn",
+      "chuẩn bị xét nghiệm",
+      "fasting before",
+      "need to fast",
+      "fast before",
+      "test preparation"
+    ]
+  },
+  {
+    "id": "threshold",
+    "name": "Diagnostic thresholds",
+    "name_vi": "Ngưỡng xét nghiệm chẩn đoán",
+    "kind": "Topic",
+    "aliases": [
+      "ngưỡng",
+      "tiêu chuẩn",
+      "bao nhiêu là tiểu đường",
+      "bao nhiêu là tiền tiểu đường",
+      "threshold",
+      "cutoff",
+      "diagnostic criteria"
+    ]
+  },
+  {
+    "id": "followup",
+    "name": "Routine diabetes monitoring",
+    "name_vi": "Theo dõi định kỳ",
+    "kind": "Topic",
+    "aliases": [
+      "theo dõi định kỳ",
+      "theo dõi ngoài đường huyết",
+      "theo dõi những gì",
+      "khám định kỳ",
+      "routine monitoring",
+      "regular checks"
+    ]
+  }
+]

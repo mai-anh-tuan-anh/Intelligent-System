@@ -1,0 +1,80 @@
+{
+  "baseline": {
+    "episodes": 5000,
+    "steps_per_episode": 20,
+    "alpha": 0.1,
+    "gamma": 0.9,
+    "epsilon_start": 0.2,
+    "epsilon_min": 0.02,
+    "epsilon_decay": 0.995,
+    "price": 10.0,
+    "unit_cost": 5.0,
+    "discount_rate": 0.2,
+    "low_demand_customers": 10,
+    "high_demand_customers": 20,
+    "seed": 42,
+    "evaluation_episodes": 500,
+    "output_dir": "agent02_results"
+  },
+  "robustness_variant": {
+    "episodes": 5000,
+    "steps_per_episode": 20,
+    "alpha": 0.1,
+    "gamma": 0.9,
+    "epsilon_start": 0.2,
+    "epsilon_min": 0.02,
+    "epsilon_decay": 0.995,
+    "price": 10.0,
+    "unit_cost": 5.0,
+    "discount_rate": 0.1,
+    "low_demand_customers": 10,
+    "high_demand_customers": 20,
+    "seed": 42,
+    "evaluation_episodes": 500,
+    "output_dir": "agent02_results"
+  },
+  "baseline_training_seed": 42,
+  "baseline_evaluation_seed": 500042,
+  "training_episodes": 5000,
+  "steps_per_episode": 20,
+  "evaluation_episodes": 500,
+  "evaluation_protocol": {
+    "epsilon_greedy": false,
+    "q_updates": false
+  },
+  "learning_rate_values": [
+    0.01,
+    0.1,
+    0.5
+  ],
+  "exploration_settings": [
+    [
+      "low",
+      0.05,
+      0.02,
+      0.999
+    ],
+    [
+      "baseline",
+      0.2,
+      0.02,
+      0.995
+    ],
+    [
+      "high",
+      0.5,
+      0.05,
+      0.995
+    ]
+  ],
+  "multi_seed_values": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "python_version": "3.14.6",
+  "numpy_version": "2.4.6",
+  "matplotlib_version": "3.11.0"
+}

@@ -1,0 +1,35 @@
+{
+  "source": {
+    "id": "overview",
+    "publisher": "NIDDK / NIH",
+    "title": "What Is Diabetes?",
+    "kind": "Web",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes",
+    "title_vi": "What Is Diabetes?",
+    "tier": "Public health",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "diabetes"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p14",
+      "source": "overview",
+      "about": [
+        "diabetes",
+        "type1",
+        "type2"
+      ],
+      "focus": [
+        "diabetes"
+      ],
+      "title": "What is diabetes?",
+      "text": "Diabetes refers to conditions involving elevated blood glucose. Insulin helps glucose enter cells. Glucose can rise when insulin is insufficient or less effective.",
+      "title_vi": "Đái tháo đường là gì?",
+      "text_vi": "Đái tháo đường là một nhóm tình trạng có mức glucose trong máu cao. Insulin giúp glucose từ máu đi vào tế bào. Mức glucose có thể tăng khi cơ thể không tạo đủ insulin hoặc không sử dụng insulin hiệu quả."
+    }
+  ],
+  "relationships": []
+}

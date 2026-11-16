@@ -1,0 +1,44 @@
+{
+  "source": {
+    "id": "prevention",
+    "publisher": "NIDDK / NIH",
+    "title": "Your Game Plan to Prevent Type 2 Diabetes",
+    "kind": "Web",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes/game-plan",
+    "title_vi": "Your Game Plan to Prevent Type 2 Diabetes",
+    "tier": "Public health",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "prevention",
+      "activity"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p06",
+      "source": "prevention",
+      "about": [
+        "type2",
+        "prevention",
+        "activity"
+      ],
+      "focus": [
+        "prevention",
+        "activity"
+      ],
+      "title": "Preventing or delaying type 2 diabetes",
+      "text": "Lifestyle changes, including greater physical activity and changes in eating habits, can lower the chance of developing type 2 diabetes in some people at risk.",
+      "title_vi": "Phòng ngừa hoặc trì hoãn típ 2",
+      "text_vi": "Thay đổi lối sống, bao gồm tăng hoạt động thể chất và điều chỉnh chế độ ăn, có thể giúp một số người có nguy cơ giảm khả năng tiến triển thành đái tháo đường típ 2."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "type2",
+      "to": "prevention",
+      "kind": "HAS_PREVENTION_TOPIC",
+      "passage": "p06"
+    }
+  ]
+}

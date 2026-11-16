@@ -1,0 +1,187 @@
+[
+  {
+    "dataset": "Diabetes A2",
+    "source": "https://www.kaggle.com/datasets/mohankrishnathalla/diabetes-health-indicators-dataset",
+    "input_sha256": "72ced87cdffdbc2dd594aa214a11c3561498200980def2958e2610413eb29bef",
+    "rows": 100000,
+    "features": [
+      "age",
+      "physical_activity_minutes_per_week",
+      "bmi",
+      "family_history_diabetes",
+      "hypertension_history",
+      "cardiovascular_history",
+      "sleep_hours_per_day",
+      "waist_to_hip_ratio",
+      "gender",
+      "smoking_status"
+    ],
+    "encoded_dimension": 14,
+    "best_epoch": 7,
+    "validation_macro_f1": 0.6044811731796644,
+    "seed": 42,
+    "splits": {
+      "train": {
+        "rows": 69999,
+        "positive": 42004
+      },
+      "validation": {
+        "rows": 15001,
+        "positive": 9069
+      },
+      "test": {
+        "rows": 15000,
+        "positive": 8925
+      }
+    },
+    "test": {
+      "MLP": {
+        "accuracy": 0.6081333333333333,
+        "balanced_accuracy": 0.6150347546425978,
+        "macro_f1": 0.6055752451311603,
+        "positive_recall": 0.5787114845938376,
+        "roc_auc": 0.6632326359350325,
+        "average_precision": 0.7403778490668096,
+        "confusion_matrix": [
+          [
+            3957,
+            2118
+          ],
+          [
+            3760,
+            5165
+          ]
+        ]
+      },
+      "Logistic Regression": {
+        "accuracy": 0.6034,
+        "balanced_accuracy": 0.614316146211571,
+        "macro_f1": 0.6020020170494067,
+        "positive_recall": 0.5568627450980392,
+        "roc_auc": 0.6645342094039263,
+        "average_precision": 0.7414748865499037,
+        "confusion_matrix": [
+          [
+            4081,
+            1994
+          ],
+          [
+            3955,
+            4970
+          ]
+        ]
+      },
+      "Majority": {
+        "accuracy": 0.595,
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.3730407523510972,
+        "positive_recall": 1.0,
+        "roc_auc": 0.5,
+        "average_precision": 0.595,
+        "confusion_matrix": [
+          [
+            0,
+            6075
+          ],
+          [
+            0,
+            8925
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "dataset": "UCI 130-US Hospitals",
+    "source": "https://doi.org/10.24432/C5230J",
+    "input_sha256": "f82ac129da2ddd2299391ff6fbae3a6a58b3edcf59ac9d7bd480c00fe453112a",
+    "rows": 101766,
+    "features": [
+      "time_in_hospital",
+      "num_lab_procedures",
+      "num_procedures",
+      "num_medications",
+      "number_outpatient",
+      "number_emergency",
+      "number_inpatient",
+      "number_diagnoses",
+      "age",
+      "admission_type_id",
+      "admission_source_id"
+    ],
+    "encoded_dimension": 43,
+    "best_epoch": 3,
+    "validation_macro_f1": 0.5225180802833459,
+    "seed": 42,
+    "splits": {
+      "train": {
+        "rows": 71395,
+        "positive": 8019
+      },
+      "validation": {
+        "rows": 15263,
+        "positive": 1696
+      },
+      "test": {
+        "rows": 15108,
+        "positive": 1642
+      }
+    },
+    "test": {
+      "MLP": {
+        "accuracy": 0.6886417791898332,
+        "balanced_accuracy": 0.5863036115860345,
+        "macro_f1": 0.522710451097118,
+        "positive_recall": 0.45554202192448234,
+        "roc_auc": 0.6306376477918042,
+        "average_precision": 0.18483640416732083,
+        "confusion_matrix": [
+          [
+            9656,
+            3810
+          ],
+          [
+            894,
+            748
+          ]
+        ]
+      },
+      "Logistic Regression": {
+        "accuracy": 0.6798384961609744,
+        "balanced_accuracy": 0.5808304960044632,
+        "macro_f1": 0.5166225811589874,
+        "positive_recall": 0.4543239951278928,
+        "roc_auc": 0.6278569494190539,
+        "average_precision": 0.18379126132891593,
+        "confusion_matrix": [
+          [
+            9525,
+            3941
+          ],
+          [
+            896,
+            746
+          ]
+        ]
+      },
+      "Majority": {
+        "accuracy": 0.8913158591474716,
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.4712675859172675,
+        "positive_recall": 0.0,
+        "roc_auc": 0.5,
+        "average_precision": 0.10868414085252846,
+        "confusion_matrix": [
+          [
+            13466,
+            0
+          ],
+          [
+            1642,
+            0
+          ]
+        ]
+      }
+    }
+  }
+]

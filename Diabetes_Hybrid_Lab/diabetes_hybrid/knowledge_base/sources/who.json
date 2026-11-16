@@ -1,0 +1,78 @@
+{
+  "source": {
+    "id": "who",
+    "publisher": "WHO",
+    "title": "Diabetes",
+    "title_vi": "Đái tháo đường · WHO",
+    "url": "https://www.who.int/news-room/fact-sheets/detail/diabetes",
+    "tier": "Public health",
+    "kind": "Web",
+    "checked": "2026-11-10",
+    "published_or_reviewed": "2026-11-03",
+    "scope": [
+      "symptom",
+      "prevention",
+      "complication",
+      "followup"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p15",
+      "source": "who",
+      "about": [
+        "diabetes",
+        "symptom",
+        "type2"
+      ],
+      "focus": [
+        "symptom"
+      ],
+      "title": "Why symptoms may go unnoticed",
+      "text": "WHO notes that type 2 symptoms may be mild. Thirst, frequent urination, blurred vision, or unplanned weight loss can occur. Clinical testing is needed to distinguish diabetes from other causes.",
+      "title_vi": "Vì sao triệu chứng có thể khó nhận biết?",
+      "text_vi": "Theo WHO, triệu chứng típ 2 có thể nhẹ. Người bệnh có thể khát nhiều, tiểu nhiều, nhìn mờ hoặc sụt cân ngoài ý muốn. Cần đánh giá y tế để phân biệt với các nguyên nhân khác."
+    },
+    {
+      "id": "p16",
+      "source": "who",
+      "about": [
+        "type2",
+        "prevention",
+        "activity"
+      ],
+      "focus": [
+        "prevention"
+      ],
+      "title": "Preventing or delaying type 2",
+      "text": "WHO describes physical activity, a healthy diet, maintaining a healthy weight, and avoiding tobacco as ways to help prevent or delay type 2 diabetes.",
+      "title_vi": "Phòng ngừa hoặc trì hoãn típ 2",
+      "text_vi": "WHO nêu vận động thường xuyên, ăn uống lành mạnh, duy trì cân nặng phù hợp và tránh thuốc lá là các cách giúp phòng ngừa hoặc trì hoãn típ 2."
+    },
+    {
+      "id": "p17",
+      "source": "who",
+      "about": [
+        "diabetes",
+        "complication",
+        "followup"
+      ],
+      "focus": [
+        "complication",
+        "followup"
+      ],
+      "title": "Why regular checks matter",
+      "text": "Persistent high blood glucose can harm blood vessels and nerves. Regular screening and management can help detect or delay complications affecting the heart, eyes, kidneys, or feet.",
+      "title_vi": "Vì sao cần theo dõi định kỳ?",
+      "text_vi": "Đường huyết cao kéo dài có thể gây tổn thương mạch máu và thần kinh. Theo dõi và chăm sóc định kỳ giúp phát hiện hoặc làm chậm biến chứng ở tim, mắt, thận hoặc bàn chân."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "diabetes",
+      "to": "followup",
+      "kind": "HAS_MONITORING_TOPIC",
+      "passage": "p17"
+    }
+  ]
+}

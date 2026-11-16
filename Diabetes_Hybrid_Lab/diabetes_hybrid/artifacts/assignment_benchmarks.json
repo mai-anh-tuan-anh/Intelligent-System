@@ -1,0 +1,88 @@
+[
+  {
+    "dataset": "MNIST",
+    "rows": 70000,
+    "test": 10000,
+    "model": "CNN · NumPy",
+    "accuracy": 0.979,
+    "metric_name": "Macro-F1",
+    "metric": 0.9788309767063825,
+    "origin": "assignment 4/DATA/outputs/metrics/mnist_scratch_metrics.json",
+    "source": "https://www.tensorflow.org/datasets/catalog/mnist"
+  },
+  {
+    "dataset": "MNIST",
+    "rows": 70000,
+    "test": 10000,
+    "model": "CNN · PyTorch",
+    "accuracy": 0.9753,
+    "metric_name": "Macro-F1",
+    "metric": 0.9752054177974152,
+    "origin": "assignment 4/DATA/outputs/metrics/mnist_pytorch_metrics.json",
+    "source": "https://www.tensorflow.org/datasets/catalog/mnist"
+  },
+  {
+    "dataset": "MNIST",
+    "rows": 70000,
+    "test": 10000,
+    "model": "CNN · Keras",
+    "accuracy": 0.978,
+    "metric_name": "Macro-F1",
+    "metric": 0.9779312265090834,
+    "origin": "assignment 4/DATA/outputs/metrics/mnist_keras_metrics.json",
+    "source": "https://www.tensorflow.org/datasets/catalog/mnist"
+  },
+  {
+    "dataset": "CIFAR-10",
+    "rows": 60000,
+    "test": 10000,
+    "model": "CNN · NumPy",
+    "accuracy": 0.5729,
+    "metric_name": "Macro-F1",
+    "metric": 0.5726662442499408,
+    "origin": "assignment 4/DATA/outputs/metrics/cifar10_scratch_metrics.json",
+    "source": "https://cave.cs.toronto.edu/kriz/cifar.html"
+  },
+  {
+    "dataset": "CIFAR-10",
+    "rows": 60000,
+    "test": 10000,
+    "model": "CNN · PyTorch",
+    "accuracy": 0.5737,
+    "metric_name": "Macro-F1",
+    "metric": 0.564701228122507,
+    "origin": "assignment 4/DATA/outputs/metrics/cifar10_pytorch_metrics.json",
+    "source": "https://cave.cs.toronto.edu/kriz/cifar.html"
+  },
+  {
+    "dataset": "CIFAR-10",
+    "rows": 60000,
+    "test": 10000,
+    "model": "CNN · Keras",
+    "accuracy": 0.5681,
+    "metric_name": "Macro-F1",
+    "metric": 0.5638154846842502,
+    "origin": "assignment 4/DATA/outputs/metrics/cifar10_keras_metrics.json",
+    "source": "https://cave.cs.toronto.edu/kriz/cifar.html"
+  },
+  {
+    "dataset": "Pima",
+    "rows": 768,
+    "test": 116,
+    "model": "MLP",
+    "accuracy": 0.7327586206896551,
+    "metric_name": "ROC-AUC",
+    "metric": 0.8536585365853658,
+    "origin": "diabetes_multi_agent/results/pima-3db3f0cb3e6d/metrics.json"
+  },
+  {
+    "dataset": "Pima",
+    "rows": 768,
+    "test": 116,
+    "model": "Logistic",
+    "accuracy": 0.7672413793103449,
+    "metric_name": "ROC-AUC",
+    "metric": 0.8608130081300813,
+    "origin": "diabetes_multi_agent/results/pima-3db3f0cb3e6d/metrics.json"
+  }
+]

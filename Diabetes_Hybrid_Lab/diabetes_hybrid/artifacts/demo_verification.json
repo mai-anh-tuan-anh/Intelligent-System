@@ -1,0 +1,551 @@
+{
+  "qa_cases": 39,
+  "retrieval_cases": 30,
+  "hits_at_1": 25,
+  "hits_at_3": 30,
+  "median_ms": 12.95,
+  "p95_ms": 30.93,
+  "reference_precision_at_3": 0.3333333333333333,
+  "cases": [
+    {
+      "question": "nguy cơ?",
+      "expected": "ok",
+      "expected_passage": "p05",
+      "actual": "ok",
+      "retrieved": [
+        "p05"
+      ],
+      "elapsed_ms": 35.99
+    },
+    {
+      "question": "nguy co",
+      "expected": "ok",
+      "expected_passage": "p05",
+      "actual": "ok",
+      "retrieved": [
+        "p05"
+      ],
+      "elapsed_ms": 16.73
+    },
+    {
+      "question": "Ai dễ mắc đái tháo đường típ 2?",
+      "expected": "ok",
+      "expected_passage": "p05",
+      "actual": "ok",
+      "retrieved": [
+        "p05"
+      ],
+      "elapsed_ms": 15.96
+    },
+    {
+      "question": "Tiền sử gia đình có liên quan đến type 2?",
+      "expected": "ok",
+      "expected_passage": "p05",
+      "actual": "ok",
+      "retrieved": [
+        "p05"
+      ],
+      "elapsed_ms": 15.76
+    },
+    {
+      "question": "Làm sao giảm nguy cơ mắc típ 2?",
+      "expected": "ok",
+      "expected_passage": "p06",
+      "actual": "ok",
+      "retrieved": [
+        "p06",
+        "p16"
+      ],
+      "elapsed_ms": 16.41
+    },
+    {
+      "question": "Phòng bệnh type 2 thế nào?",
+      "expected": "ok",
+      "expected_passage": "p06",
+      "actual": "ok",
+      "retrieved": [
+        "p06",
+        "p16"
+      ],
+      "elapsed_ms": 20.99
+    },
+    {
+      "question": "HBA1C phản ánh điều gì?",
+      "expected": "ok",
+      "expected_passage": "p07",
+      "actual": "ok",
+      "retrieved": [
+        "p07"
+      ],
+      "elapsed_ms": 22.27
+    },
+    {
+      "question": "Đường huyết trung bình là xét nghiệm gì?",
+      "expected": "ok",
+      "expected_passage": "p07",
+      "actual": "ok",
+      "retrieved": [
+        "p08",
+        "p03",
+        "p07"
+      ],
+      "elapsed_ms": 30.93
+    },
+    {
+      "question": "Xét nghiệm glucose huyết tương lúc đói",
+      "expected": "ok",
+      "expected_passage": "p08",
+      "actual": "ok",
+      "retrieved": [
+        "p08",
+        "p03"
+      ],
+      "elapsed_ms": 15.29
+    },
+    {
+      "question": "Chẩn đoán tiểu đường type 1 bằng xét nghiệm nào?",
+      "expected": "ok",
+      "expected_passage": "p02",
+      "actual": "ok",
+      "retrieved": [
+        "p03",
+        "p02"
+      ],
+      "elapsed_ms": 21.22
+    },
+    {
+      "question": "Tự kháng thể dùng làm gì trong tiểu đường típ 1?",
+      "expected": "ok",
+      "expected_passage": "p03",
+      "actual": "ok",
+      "retrieved": [
+        "p03"
+      ],
+      "elapsed_ms": 13.62
+    },
+    {
+      "question": "Tiểu đường type 1 là gì?",
+      "expected": "ok",
+      "expected_passage": "p01",
+      "actual": "ok",
+      "retrieved": [
+        "p01",
+        "p02",
+        "p09"
+      ],
+      "elapsed_ms": 12.87
+    },
+    {
+      "question": "Tiểu đường type 2 là gì?",
+      "expected": "ok",
+      "expected_passage": "p04",
+      "actual": "ok",
+      "retrieved": [
+        "p04",
+        "p11",
+        "p09"
+      ],
+      "elapsed_ms": 17.31
+    },
+    {
+      "question": "Phân biệt tiểu đường type 1 và 2",
+      "expected": "ok",
+      "expected_passage": "p04",
+      "actual": "ok",
+      "retrieved": [
+        "p01",
+        "p04",
+        "p02"
+      ],
+      "elapsed_ms": 17.68
+    },
+    {
+      "question": "Khát nước có phải dấu hiệu chung của tiểu đường?",
+      "expected": "ok",
+      "expected_passage": "p09",
+      "actual": "ok",
+      "retrieved": [
+        "p09",
+        "p15",
+        "p19"
+      ],
+      "elapsed_ms": 11.91
+    },
+    {
+      "question": "Tiểu đường có biến chứng gì?",
+      "expected": "ok",
+      "expected_passage": "p10",
+      "actual": "ok",
+      "retrieved": [
+        "p17",
+        "p10"
+      ],
+      "elapsed_ms": 13.41
+    },
+    {
+      "question": "Tiền đái tháo đường là gì?",
+      "expected": "ok",
+      "expected_passage": "p11",
+      "actual": "ok",
+      "retrieved": [
+        "p11"
+      ],
+      "elapsed_ms": 11.69
+    },
+    {
+      "question": "BRFSS 2015 đo gì?",
+      "expected": "ok",
+      "expected_passage": "p12",
+      "actual": "ok",
+      "retrieved": [
+        "p12",
+        "p13"
+      ],
+      "elapsed_ms": 10.62
+    },
+    {
+      "question": "Tài liệu CDC về BRFSS",
+      "expected": "ok",
+      "expected_passage": "p12",
+      "actual": "ok",
+      "retrieved": [
+        "p12",
+        "p13"
+      ],
+      "elapsed_ms": 12.0
+    },
+    {
+      "question": "Sàng lọc tiểu đường thai kỳ khi nào?",
+      "expected": "ok",
+      "expected_passage": "p18",
+      "actual": "ok",
+      "retrieved": [
+        "p18",
+        "p27",
+        "p19"
+      ],
+      "elapsed_ms": 12.95
+    },
+    {
+      "question": "Tiểu đường thai kỳ là gì?",
+      "expected": "ok",
+      "expected_passage": "p27",
+      "actual": "ok",
+      "retrieved": [
+        "p27",
+        "p18",
+        "p19"
+      ],
+      "elapsed_ms": 11.95
+    },
+    {
+      "question": "Tiểu đường thai kỳ có dấu hiệu rõ không?",
+      "expected": "ok",
+      "expected_passage": "p19",
+      "actual": "ok",
+      "retrieved": [
+        "p19"
+      ],
+      "elapsed_ms": 15.87
+    },
+    {
+      "question": "Xét nghiệm HbA1c có cần nhịn ăn không?",
+      "expected": "ok",
+      "expected_passage": "p20",
+      "actual": "ok",
+      "retrieved": [
+        "p26",
+        "p20"
+      ],
+      "elapsed_ms": 17.68
+    },
+    {
+      "question": "Ngưỡng HbA1c được hiểu thế nào?",
+      "expected": "ok",
+      "expected_passage": "p24",
+      "actual": "ok",
+      "retrieved": [
+        "p24"
+      ],
+      "elapsed_ms": 12.36
+    },
+    {
+      "question": "Hạ đường huyết có dấu hiệu gì?",
+      "expected": "ok",
+      "expected_passage": "p21",
+      "actual": "ok",
+      "retrieved": [
+        "p21"
+      ],
+      "elapsed_ms": 12.36
+    },
+    {
+      "question": "Nhiễm toan ceton là gì?",
+      "expected": "ok",
+      "expected_passage": "p22",
+      "actual": "ok",
+      "retrieved": [
+        "p22"
+      ],
+      "elapsed_ms": 10.97
+    },
+    {
+      "question": "Biến chứng bàn chân và loét chân",
+      "expected": "ok",
+      "expected_passage": "p23",
+      "actual": "ok",
+      "retrieved": [
+        "p23"
+      ],
+      "elapsed_ms": 13.41
+    },
+    {
+      "question": "Theo dõi ngoài đường huyết gồm những gì?",
+      "expected": "ok",
+      "expected_passage": "p25",
+      "actual": "ok",
+      "retrieved": [
+        "p25",
+        "p17"
+      ],
+      "elapsed_ms": 11.4
+    },
+    {
+      "question": "Nhãn 2 trong Diabetes_012 là gì?",
+      "expected": "ok",
+      "expected_passage": "p13",
+      "actual": "ok",
+      "retrieved": [
+        "p13",
+        "p12"
+      ],
+      "elapsed_ms": 11.73
+    },
+    {
+      "question": "Tiểu đường là bệnh gì?",
+      "expected": "ok",
+      "expected_passage": "p14",
+      "actual": "ok",
+      "retrieved": [
+        "p14",
+        "p23",
+        "p15"
+      ],
+      "elapsed_ms": 15.24
+    },
+    {
+      "question": "Chiều nay mấy giờ mưa?",
+      "expected": "insufficient",
+      "expected_passage": null,
+      "actual": "insufficient",
+      "retrieved": [],
+      "elapsed_ms": 4.48
+    },
+    {
+      "question": "Bitcoin và đái tháo đường liên quan gì?",
+      "expected": "insufficient",
+      "expected_passage": null,
+      "actual": "insufficient",
+      "retrieved": [],
+      "elapsed_ms": 0.89
+    },
+    {
+      "question": "Phòng ngừa tiểu đường type 1 thế nào?",
+      "expected": "insufficient",
+      "expected_passage": null,
+      "actual": "insufficient",
+      "retrieved": [],
+      "elapsed_ms": 13.71
+    },
+    {
+      "question": "Tôi có HbA1c 8.1 thì có mắc tiểu đường?",
+      "expected": "blocked",
+      "expected_passage": null,
+      "actual": "blocked",
+      "retrieved": [],
+      "elapsed_ms": 0.5
+    },
+    {
+      "question": "Gần đây khát nhiều và sụt cân. Có bị tiểu đường không?",
+      "expected": "blocked",
+      "expected_passage": null,
+      "actual": "blocked",
+      "retrieved": [],
+      "elapsed_ms": 0.48
+    },
+    {
+      "question": "Em đang mang thai, có cần làm xét nghiệm không?",
+      "expected": "blocked",
+      "expected_passage": null,
+      "actual": "blocked",
+      "retrieved": [],
+      "elapsed_ms": 0.49
+    },
+    {
+      "question": "Insulin nên tiêm bao nhiêu đơn vị?",
+      "expected": "medication",
+      "expected_passage": null,
+      "actual": "medication",
+      "retrieved": [],
+      "elapsed_ms": 0.36
+    },
+    {
+      "question": "Mẹ em đang nôn liên tục và thở gấp",
+      "expected": "urgent",
+      "expected_passage": null,
+      "actual": "urgent",
+      "retrieved": [],
+      "elapsed_ms": 0.5
+    },
+    {
+      "question": "",
+      "expected": "invalid",
+      "expected_passage": null,
+      "actual": "invalid",
+      "retrieved": [],
+      "elapsed_ms": 0.28
+    }
+  ],
+  "graph": {
+    "edges": [
+      {
+        "relation": "FROM_SOURCE",
+        "total": 27
+      },
+      {
+        "relation": "ABOUT",
+        "total": 66
+      },
+      {
+        "relation": "ASSESSED_BY",
+        "total": 4
+      },
+      {
+        "relation": "CLASSIFIED_WITH",
+        "total": 1
+      },
+      {
+        "relation": "HAS_RISK_FACTOR",
+        "total": 2
+      },
+      {
+        "relation": "HAS_PREVENTION_TOPIC",
+        "total": 1
+      },
+      {
+        "relation": "HAS_SYMPTOM_TOPIC",
+        "total": 3
+      },
+      {
+        "relation": "HAS_COMPLICATION_TOPIC",
+        "total": 2
+      },
+      {
+        "relation": "ASSOCIATED_WITH",
+        "total": 1
+      },
+      {
+        "relation": "HAS_ACUTE_COMPLICATION",
+        "total": 2
+      },
+      {
+        "relation": "HAS_INTERPRETATION_TOPIC",
+        "total": 1
+      },
+      {
+        "relation": "HAS_PREPARATION_TOPIC",
+        "total": 1
+      },
+      {
+        "relation": "HAS_MONITORING_TOPIC",
+        "total": 1
+      }
+    ],
+    "nodes": [
+      {
+        "label": "Concept",
+        "total": 21
+      },
+      {
+        "label": "Source",
+        "total": 22
+      },
+      {
+        "label": "Passage",
+        "total": 27
+      }
+    ],
+    "ready": true
+  },
+  "report_checks": {
+    "optional_question": "passed",
+    "structured_report": "passed",
+    "assignment4_reuse": "passed",
+    "separate_grouped_checkpoint": "passed",
+    "synthetic_close_scores": "passed",
+    "synthetic_source_conflict": "passed",
+    "different_scope_and_unapproved_sources": "passed",
+    "live_consistent_claims": "passed",
+    "urgent_route": "passed"
+  },
+  "architecture_probe": [
+    {
+      "method": "Direct retrieval",
+      "requests": 18,
+      "expected_status_matches": 9,
+      "answers_with_sources": 9,
+      "answers": 9,
+      "median_ms": 11.68
+    },
+    {
+      "method": "Multi-agent with rules",
+      "requests": 18,
+      "expected_status_matches": 18,
+      "answers_with_sources": 6,
+      "answers": 6,
+      "median_ms": 4.72
+    },
+    {
+      "method": "Multi-agent without question rules (offline)",
+      "requests": 18,
+      "expected_status_matches": 9,
+      "answers_with_sources": 9,
+      "answers": 9,
+      "median_ms": 10.9
+    }
+  ],
+  "combined_trace_ms": [
+    {
+      "agent": "Coordinator",
+      "elapsed_ms": 0.01
+    },
+    {
+      "agent": "Data Agent",
+      "elapsed_ms": 0.02
+    },
+    {
+      "agent": "DL Prediction Agent",
+      "elapsed_ms": 1.29
+    },
+    {
+      "agent": "Rule Agent",
+      "elapsed_ms": 0.02
+    },
+    {
+      "agent": "Rule Agent",
+      "elapsed_ms": 0.27
+    },
+    {
+      "agent": "KG/RAG Agent",
+      "elapsed_ms": 15.89
+    },
+    {
+      "agent": "Explanation Agent",
+      "elapsed_ms": 0.03
+    },
+    {
+      "agent": "Monitoring Agent",
+      "elapsed_ms": 17.55
+    }
+  ]
+}

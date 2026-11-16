@@ -1,0 +1,7 @@
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.venv/
+!artifacts/mlp.pt
+!artifacts/assignment4_original.pt
+

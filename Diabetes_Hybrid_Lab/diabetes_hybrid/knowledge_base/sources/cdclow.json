@@ -1,0 +1,41 @@
+{
+  "source": {
+    "id": "cdclow",
+    "publisher": "CDC",
+    "title": "Low Blood Sugar (Hypoglycemia)",
+    "title_vi": "Hạ đường huyết · CDC",
+    "url": "https://www.cdc.gov/diabetes/about/low-blood-sugar-hypoglycemia.html",
+    "tier": "Public health",
+    "kind": "Web",
+    "checked": "2026-11-10",
+    "published_or_reviewed": "2024-05-16",
+    "scope": [
+      "hypoglycemia"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p21",
+      "source": "cdclow",
+      "about": [
+        "hypoglycemia",
+        "symptom"
+      ],
+      "focus": [
+        "hypoglycemia"
+      ],
+      "title": "Recognizing low blood sugar",
+      "text": "Low blood sugar may cause shaking, sweating, hunger, or dizziness. Severe episodes may involve confusion, seizures, or loss of consciousness and need immediate help.",
+      "title_vi": "Dấu hiệu hạ đường huyết",
+      "text_vi": "Hạ đường huyết có thể gây run tay, vã mồ hôi, đói hoặc chóng mặt. Trường hợp nặng có thể gây lú lẫn, co giật hoặc mất ý thức và cần được hỗ trợ khẩn cấp."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "hypoglycemia",
+      "to": "symptom",
+      "kind": "HAS_SYMPTOM_TOPIC",
+      "passage": "p21"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "source": {
+    "id": "cdcdka",
+    "publisher": "CDC",
+    "title": "Diabetic Ketoacidosis",
+    "title_vi": "Nhiễm toan ceton · CDC",
+    "url": "https://www.cdc.gov/diabetes/about/diabetic-ketoacidosis.html",
+    "tier": "Public health",
+    "kind": "Web",
+    "checked": "2026-11-10",
+    "published_or_reviewed": "2024-05-15",
+    "scope": [
+      "dka"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p22",
+      "source": "cdcdka",
+      "about": [
+        "dka",
+        "type1",
+        "type2"
+      ],
+      "focus": [
+        "dka"
+      ],
+      "title": "Diabetic ketoacidosis can be an emergency",
+      "text": "Diabetic ketoacidosis is a serious complication linked to insufficient insulin. Persistent vomiting or trouble breathing in a suspected episode warrants emergency care.",
+      "title_vi": "Nhiễm toan ceton có thể là cấp cứu",
+      "text_vi": "Nhiễm toan ceton là biến chứng nghiêm trọng liên quan đến thiếu insulin. Khi nghi ngờ có biến chứng này và đang nôn liên tục hoặc khó thở, cần được đánh giá cấp cứu."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "type1",
+      "to": "dka",
+      "kind": "HAS_ACUTE_COMPLICATION",
+      "passage": "p22"
+    },
+    {
+      "from": "type2",
+      "to": "dka",
+      "kind": "HAS_ACUTE_COMPLICATION",
+      "passage": "p22"
+    }
+  ]
+}

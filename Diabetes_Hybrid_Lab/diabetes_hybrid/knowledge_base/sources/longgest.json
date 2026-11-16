@@ -1,0 +1,37 @@
+{
+  "source": {
+    "id": "longgest",
+    "publisher": "FPT Long Chau",
+    "title": "Gestational diabetes: causes, symptoms and treatment",
+    "title_vi": "Tiểu đường thai kỳ: nguyên nhân, triệu chứng và cách điều trị",
+    "url": "https://nhathuoclongchau.com.vn/benh/tieu-duong-thai-ky.html",
+    "tier": "Supplementary",
+    "kind": "Web",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "gestational",
+      "symptom"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p19",
+      "source": "longgest",
+      "about": [
+        "gestational",
+        "glucose",
+        "symptom"
+      ],
+      "focus": [
+        "gestational",
+        "symptom"
+      ],
+      "title": "Vietnamese overview of gestational screening",
+      "text": "Long Chau describes prenatal glucose screening and notes that gestational diabetes may not have clear symptoms. The prenatal care team should provide instructions for preparation.",
+      "title_vi": "Tầm soát thai kỳ trong chăm sóc trước sinh",
+      "text_vi": "Long Châu giải thích vai trò của tầm soát đường huyết trong thai kỳ. Triệu chứng có thể không rõ. Hãy nhận hướng dẫn chuẩn bị xét nghiệm từ cơ sở theo dõi thai."
+    }
+  ],
+  "relationships": []
+}

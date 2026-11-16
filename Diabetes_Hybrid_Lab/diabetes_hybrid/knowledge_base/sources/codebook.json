@@ -1,0 +1,33 @@
+{
+  "source": {
+    "id": "codebook",
+    "publisher": "CDC",
+    "title": "BRFSS 2015 Codebook Report (page 21)",
+    "kind": "PDF",
+    "url": "https://www.cdc.gov/brfss/annual_data/2015/pdf/codebook15_llcp.pdf#page=21",
+    "title_vi": "BRFSS 2015 Codebook Report (trang 21)",
+    "tier": "Public health",
+    "checked": "2026-11-10",
+    "published_or_reviewed": "2016-08-23",
+    "scope": [
+      "survey"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p12",
+      "source": "codebook",
+      "about": [
+        "survey"
+      ],
+      "focus": [
+        "survey"
+      ],
+      "title": "Original BRFSS survey question",
+      "text": "DIABETE3 records whether respondents report having ever been told they had diabetes. The CDC codebook describes the original survey coding.",
+      "title_vi": "Câu hỏi gốc của khảo sát BRFSS",
+      "text_vi": "Mã DIABETE3 mô tả câu hỏi phỏng vấn về việc người tham gia từng được thông báo có đái tháo đường hay chưa. Codebook CDC mô tả quy ước của khảo sát gốc."
+    }
+  ],
+  "relationships": []
+}

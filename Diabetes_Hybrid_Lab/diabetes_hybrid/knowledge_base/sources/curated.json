@@ -1,0 +1,34 @@
+{
+  "source": {
+    "id": "curated",
+    "publisher": "Alex Teboul",
+    "title": "Diabetes Health Indicators Dataset",
+    "kind": "Dataset",
+    "url": "https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset",
+    "title_vi": "Diabetes Health Indicators Dataset",
+    "tier": "Dataset metadata",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "survey"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p13",
+      "source": "curated",
+      "about": [
+        "survey",
+        "prediabetes"
+      ],
+      "focus": [
+        "survey"
+      ],
+      "title": "Meaning of Diabetes_012",
+      "text": "In the processed dataset, 0, 1, and 2 represent no reported diabetes, reported prediabetes, and reported diabetes. Code 2 does not specify diabetes type.",
+      "title_vi": "Ý nghĩa nhãn Diabetes_012",
+      "text_vi": "Trong bản dữ liệu đã xử lý, nhãn 0, 1 và 2 lần lượt chỉ không báo cáo đái tháo đường, báo cáo tiền đái tháo đường và báo cáo đái tháo đường. Giá trị 2 của nhãn không có nghĩa là đái tháo đường típ 2."
+    }
+  ],
+  "relationships": []
+}

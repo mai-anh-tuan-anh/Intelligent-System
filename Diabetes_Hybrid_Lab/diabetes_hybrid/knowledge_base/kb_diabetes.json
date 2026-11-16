@@ -1,0 +1,1190 @@
+{
+  "name": "kb_diabetes",
+  "schema_version": 1,
+  "concepts": [
+    {
+      "id": "type1",
+      "name": "Type 1 diabetes",
+      "kind": "Disease",
+      "aliases": [
+        "típ 1",
+        "type 1",
+        "tiểu đường 1",
+        "đái tháo đường 1",
+        "loại 1",
+        "type one",
+        "type one diabetes"
+      ],
+      "name_vi": "Đái tháo đường típ 1"
+    },
+    {
+      "id": "type2",
+      "name": "Type 2 diabetes",
+      "kind": "Disease",
+      "aliases": [
+        "típ 2",
+        "type 2",
+        "tiểu đường 2",
+        "đái tháo đường 2",
+        "loại 2",
+        "type two",
+        "type two diabetes"
+      ],
+      "name_vi": "Đái tháo đường típ 2"
+    },
+    {
+      "id": "prediabetes",
+      "name": "Prediabetes",
+      "kind": "Condition",
+      "aliases": [
+        "tiền tiểu đường",
+        "tiền đái tháo đường",
+        "prediabetes",
+        "kháng insulin",
+        "insulin resistance"
+      ],
+      "name_vi": "Tiền đái tháo đường"
+    },
+    {
+      "id": "risk",
+      "name": "Type 2 risk factors",
+      "kind": "Topic",
+      "aliases": [
+        "nguy cơ",
+        "yếu tố nguy cơ",
+        "risk factors",
+        "dễ mắc",
+        "nguy cơ mắc",
+        "rủi ro",
+        "risk",
+        "at risk"
+      ],
+      "name_vi": "Yếu tố nguy cơ típ 2"
+    },
+    {
+      "id": "activity",
+      "name": "Physical activity",
+      "kind": "Factor",
+      "aliases": [
+        "ít vận động",
+        "vận động",
+        "tập thể dục",
+        "hoạt động thể chất",
+        "physical activity",
+        "exercise"
+      ],
+      "name_vi": "Hoạt động thể chất"
+    },
+    {
+      "id": "family",
+      "name": "Family history",
+      "kind": "Factor",
+      "aliases": [
+        "di truyền",
+        "tiền sử gia đình",
+        "gia đình có người",
+        "family history"
+      ],
+      "name_vi": "Tiền sử gia đình"
+    },
+    {
+      "id": "prevention",
+      "name": "Type 2 prevention",
+      "kind": "Topic",
+      "aliases": [
+        "phòng ngừa",
+        "phòng bệnh",
+        "ngăn ngừa",
+        "phòng tránh",
+        "dự phòng",
+        "lối sống",
+        "giảm nguy cơ",
+        "prevent",
+        "prevention",
+        "preventing",
+        "delay"
+      ],
+      "name_vi": "Phòng ngừa típ 2"
+    },
+    {
+      "id": "a1c",
+      "name": "HbA1c",
+      "kind": "Test",
+      "aliases": [
+        "a1c",
+        "hba1c",
+        "hemoglobin glycat hóa",
+        "đường huyết trung bình",
+        "glycated hemoglobin",
+        "average blood sugar"
+      ],
+      "name_vi": "HbA1c"
+    },
+    {
+      "id": "glucose",
+      "name": "Blood glucose testing",
+      "kind": "Test",
+      "aliases": [
+        "xét nghiệm",
+        "đường huyết lúc đói",
+        "glucose huyết tương",
+        "xét nghiệm glucose",
+        "dung nạp glucose",
+        "chẩn đoán",
+        "blood tests",
+        "glucose test",
+        "fasting plasma glucose",
+        "blood glucose test",
+        "diagnosis",
+        "diagnose",
+        "diagnosed",
+        "how is it diagnosed"
+      ],
+      "name_vi": "Xét nghiệm glucose máu"
+    },
+    {
+      "id": "antibody",
+      "name": "Autoantibodies",
+      "kind": "Test",
+      "aliases": [
+        "tự kháng thể",
+        "kháng thể",
+        "autoantibody",
+        "autoantibodies"
+      ],
+      "name_vi": "Tự kháng thể"
+    },
+    {
+      "id": "symptom",
+      "name": "Symptoms",
+      "kind": "Topic",
+      "aliases": [
+        "triệu chứng",
+        "dấu hiệu",
+        "khát nước",
+        "tiểu nhiều",
+        "sụt cân",
+        "symptom",
+        "symptoms",
+        "signs",
+        "thirst",
+        "frequent urination",
+        "đi tiểu nhiều",
+        "mờ mắt"
+      ],
+      "name_vi": "Triệu chứng"
+    },
+    {
+      "id": "complication",
+      "name": "Complications",
+      "kind": "Topic",
+      "aliases": [
+        "biến chứng",
+        "ảnh hưởng đến mắt",
+        "bệnh thận",
+        "tổn thương thần kinh",
+        "complications",
+        "kidney disease"
+      ],
+      "name_vi": "Biến chứng"
+    },
+    {
+      "id": "survey",
+      "name": "BRFSS 2015 survey label",
+      "kind": "Dataset",
+      "aliases": [
+        "brfss",
+        "khảo sát",
+        "diabetes_012",
+        "nhãn mô hình",
+        "nhãn 0",
+        "nhãn 1",
+        "nhãn 2",
+        "tự báo cáo",
+        "diabete3",
+        "survey label",
+        "self reported",
+        "label 2"
+      ],
+      "name_vi": "Nhãn khảo sát BRFSS 2015"
+    },
+    {
+      "id": "diabetes",
+      "name": "Diabetes",
+      "kind": "Topic",
+      "aliases": [
+        "đái tháo đường",
+        "tiểu đường",
+        "diabetes"
+      ],
+      "name_vi": "Đái tháo đường"
+    },
+    {
+      "id": "gestational",
+      "name": "Gestational diabetes",
+      "name_vi": "Đái tháo đường thai kỳ",
+      "kind": "Condition",
+      "aliases": [
+        "thai kỳ",
+        "tiểu đường thai kỳ",
+        "đái tháo đường thai kỳ",
+        "tiểu đường khi mang thai",
+        "gestational",
+        "pregnancy"
+      ]
+    },
+    {
+      "id": "hypoglycemia",
+      "name": "Hypoglycemia",
+      "name_vi": "Hạ đường huyết",
+      "kind": "Complication",
+      "aliases": [
+        "hạ đường huyết",
+        "tụt đường huyết",
+        "đường huyết thấp",
+        "hypoglycemia",
+        "low blood sugar"
+      ]
+    },
+    {
+      "id": "dka",
+      "name": "Diabetic ketoacidosis",
+      "name_vi": "Nhiễm toan ceton do đái tháo đường",
+      "kind": "Complication",
+      "aliases": [
+        "nhiễm toan ceton",
+        "toan ceton",
+        "toan xeton",
+        "dka",
+        "ketoacidosis"
+      ]
+    },
+    {
+      "id": "foot",
+      "name": "Diabetes-related foot problems",
+      "name_vi": "Biến chứng bàn chân",
+      "kind": "Complication",
+      "aliases": [
+        "bàn chân",
+        "loét chân",
+        "loét bàn chân",
+        "diabetic foot",
+        "foot care",
+        "foot ulcer"
+      ]
+    },
+    {
+      "id": "fasting",
+      "name": "Preparation for glucose testing",
+      "name_vi": "Chuẩn bị xét nghiệm",
+      "kind": "Topic",
+      "aliases": [
+        "nhịn ăn",
+        "chuẩn bị xét nghiệm",
+        "fasting before",
+        "need to fast",
+        "fast before",
+        "test preparation"
+      ]
+    },
+    {
+      "id": "threshold",
+      "name": "Diagnostic thresholds",
+      "name_vi": "Ngưỡng xét nghiệm chẩn đoán",
+      "kind": "Topic",
+      "aliases": [
+        "ngưỡng",
+        "tiêu chuẩn",
+        "bao nhiêu là tiểu đường",
+        "bao nhiêu là tiền tiểu đường",
+        "threshold",
+        "cutoff",
+        "diagnostic criteria"
+      ]
+    },
+    {
+      "id": "followup",
+      "name": "Routine diabetes monitoring",
+      "name_vi": "Theo dõi định kỳ",
+      "kind": "Topic",
+      "aliases": [
+        "theo dõi định kỳ",
+        "theo dõi ngoài đường huyết",
+        "theo dõi những gì",
+        "khám định kỳ",
+        "routine monitoring",
+        "regular checks"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "a1c",
+      "publisher": "NIDDK / NIH",
+      "title": "The A1C Test & Diabetes",
+      "kind": "Web",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis/a1c-test",
+      "title_vi": "The A1C Test & Diabetes",
+      "tier": "Public health",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "a1c",
+        "fasting"
+      ]
+    },
+    {
+      "id": "cdcdka",
+      "publisher": "CDC",
+      "title": "Diabetic Ketoacidosis",
+      "title_vi": "Nhiễm toan ceton · CDC",
+      "url": "https://www.cdc.gov/diabetes/about/diabetic-ketoacidosis.html",
+      "tier": "Public health",
+      "kind": "Web",
+      "checked": "2026-11-10",
+      "published_or_reviewed": "2024-05-15",
+      "scope": [
+        "dka"
+      ]
+    },
+    {
+      "id": "cdclow",
+      "publisher": "CDC",
+      "title": "Low Blood Sugar (Hypoglycemia)",
+      "title_vi": "Hạ đường huyết · CDC",
+      "url": "https://www.cdc.gov/diabetes/about/low-blood-sugar-hypoglycemia.html",
+      "tier": "Public health",
+      "kind": "Web",
+      "checked": "2026-11-10",
+      "published_or_reviewed": "2024-05-16",
+      "scope": [
+        "hypoglycemia"
+      ]
+    },
+    {
+      "id": "codebook",
+      "publisher": "CDC",
+      "title": "BRFSS 2015 Codebook Report (page 21)",
+      "kind": "PDF",
+      "url": "https://www.cdc.gov/brfss/annual_data/2015/pdf/codebook15_llcp.pdf#page=21",
+      "title_vi": "BRFSS 2015 Codebook Report (trang 21)",
+      "tier": "Public health",
+      "checked": "2026-11-10",
+      "published_or_reviewed": "2016-08-23",
+      "scope": [
+        "survey"
+      ]
+    },
+    {
+      "id": "curated",
+      "publisher": "Alex Teboul",
+      "title": "Diabetes Health Indicators Dataset",
+      "kind": "Dataset",
+      "url": "https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset",
+      "title_vi": "Diabetes Health Indicators Dataset",
+      "tier": "Dataset metadata",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "survey"
+      ]
+    },
+    {
+      "id": "footguide",
+      "publisher": "NIDDK / NIH",
+      "title": "Diabetes & Foot Problems",
+      "title_vi": "Đái tháo đường và vấn đề bàn chân",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/foot-problems",
+      "tier": "Public health",
+      "kind": "Web",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "foot"
+      ]
+    },
+    {
+      "id": "gestoverview",
+      "publisher": "NIDDK / NIH",
+      "title": "Gestational Diabetes",
+      "title_vi": "Tổng quan đái tháo đường thai kỳ",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/gestational",
+      "tier": "Public health",
+      "kind": "Web",
+      "checked": "2026-11-10",
+      "published_or_reviewed": "2017-05",
+      "scope": [
+        "gestational"
+      ]
+    },
+    {
+      "id": "gesttests",
+      "publisher": "NIDDK / NIH",
+      "title": "Tests & Diagnosis for Gestational Diabetes",
+      "title_vi": "Xét nghiệm đái tháo đường thai kỳ",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/gestational/tests-diagnosis",
+      "tier": "Public health",
+      "kind": "Web",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "gestational"
+      ]
+    },
+    {
+      "id": "longfast",
+      "publisher": "FPT Long Chau",
+      "title": "Does diabetes testing require fasting?",
+      "title_vi": "Trước khi xét nghiệm tiểu đường có cần nhịn ăn?",
+      "url": "https://nhathuoclongchau.com.vn/bai-viet/truoc-khi-xet-nghiem-tieu-duong-co-can-nhin-an-hay-khong.html",
+      "tier": "Supplementary",
+      "kind": "Web",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "fasting"
+      ]
+    },
+    {
+      "id": "longfollow",
+      "publisher": "FPT Long Chau",
+      "title": "What else to monitor to prevent diabetes complications",
+      "title_vi": "Theo dõi những gì ngoài đường huyết để tránh biến chứng?",
+      "url": "https://nhathuoclongchau.com.vn/bai-viet/nguoi-mac-dai-thao-duong-can-theo-doi-nhung-gi-ngoai-duong-huyet-de-tranh-bien-chung.html",
+      "tier": "Supplementary",
+      "kind": "Web",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "followup"
+      ]
+    },
+    {
+      "id": "longgest",
+      "publisher": "FPT Long Chau",
+      "title": "Gestational diabetes: causes, symptoms and treatment",
+      "title_vi": "Tiểu đường thai kỳ: nguyên nhân, triệu chứng và cách điều trị",
+      "url": "https://nhathuoclongchau.com.vn/benh/tieu-duong-thai-ky.html",
+      "tier": "Supplementary",
+      "kind": "Web",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "gestational",
+        "symptom"
+      ]
+    },
+    {
+      "id": "overview",
+      "publisher": "NIDDK / NIH",
+      "title": "What Is Diabetes?",
+      "kind": "Web",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes",
+      "title_vi": "What Is Diabetes?",
+      "tier": "Public health",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "diabetes"
+      ]
+    },
+    {
+      "id": "prediabetes",
+      "publisher": "NIDDK / NIH",
+      "title": "Insulin Resistance & Prediabetes",
+      "kind": "Web",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/prediabetes-insulin-resistance",
+      "title_vi": "Insulin Resistance & Prediabetes",
+      "tier": "Public health",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "prediabetes"
+      ]
+    },
+    {
+      "id": "prevention",
+      "publisher": "NIDDK / NIH",
+      "title": "Your Game Plan to Prevent Type 2 Diabetes",
+      "kind": "Web",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes/game-plan",
+      "title_vi": "Your Game Plan to Prevent Type 2 Diabetes",
+      "tier": "Public health",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "prevention",
+        "activity"
+      ]
+    },
+    {
+      "id": "problems",
+      "publisher": "NIDDK / NIH",
+      "title": "Preventing Diabetes Problems",
+      "kind": "Web",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems",
+      "title_vi": "Preventing Diabetes Problems",
+      "tier": "Public health",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "complication"
+      ]
+    },
+    {
+      "id": "risk",
+      "publisher": "NIDDK / NIH",
+      "title": "Risk Factors for Type 2 Diabetes",
+      "kind": "Web",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/risk-factors-type-2-diabetes",
+      "title_vi": "Risk Factors for Type 2 Diabetes",
+      "tier": "Public health",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "risk",
+        "activity",
+        "family"
+      ]
+    },
+    {
+      "id": "symptoms",
+      "publisher": "NIDDK / NIH",
+      "title": "Symptoms & Causes of Diabetes",
+      "kind": "Web",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/symptoms-causes",
+      "title_vi": "Symptoms & Causes of Diabetes",
+      "tier": "Public health",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "symptom"
+      ]
+    },
+    {
+      "id": "tests",
+      "publisher": "NIDDK / NIH",
+      "title": "Diabetes Tests & Diagnosis",
+      "kind": "Web",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+      "title_vi": "Diabetes Tests & Diagnosis",
+      "tier": "Public health",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "glucose",
+        "threshold"
+      ]
+    },
+    {
+      "id": "type1",
+      "publisher": "NIDDK / NIH",
+      "title": "Type 1 Diabetes",
+      "kind": "Web",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-1-diabetes",
+      "title_vi": "Type 1 Diabetes",
+      "tier": "Public health",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "type1",
+        "antibody",
+        "glucose"
+      ]
+    },
+    {
+      "id": "type2",
+      "publisher": "NIDDK / NIH",
+      "title": "Type 2 Diabetes",
+      "kind": "Web",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes",
+      "title_vi": "Type 2 Diabetes",
+      "tier": "Public health",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "type2"
+      ]
+    },
+    {
+      "id": "vinmec",
+      "publisher": "Vinmec",
+      "title": "Diagnostic criteria for type 1 diabetes",
+      "kind": "Web",
+      "url": "https://www.vinmec.com/vie/bai-viet/tieu-chuan-chan-doan-tieu-duong-type-1-vi",
+      "title_vi": "Tiêu chuẩn chẩn đoán tiểu đường type 1",
+      "tier": "Supplementary",
+      "checked": "2026-11-10",
+      "published_or_reviewed": null,
+      "scope": [
+        "type1"
+      ]
+    },
+    {
+      "id": "who",
+      "publisher": "WHO",
+      "title": "Diabetes",
+      "title_vi": "Đái tháo đường · WHO",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/diabetes",
+      "tier": "Public health",
+      "kind": "Web",
+      "checked": "2026-11-10",
+      "published_or_reviewed": "2026-11-03",
+      "scope": [
+        "symptom",
+        "prevention",
+        "complication",
+        "followup"
+      ]
+    }
+  ],
+  "passages": [
+    {
+      "id": "p07",
+      "source": "a1c",
+      "about": [
+        "a1c"
+      ],
+      "focus": [
+        "a1c"
+      ],
+      "title": "What does HbA1c measure?",
+      "text": "HbA1c reflects average blood glucose over roughly three months. Some conditions affecting red blood cells or hemoglobin can alter its reliability.",
+      "title_vi": "HbA1c phản ánh điều gì?",
+      "text_vi": "HbA1c phản ánh mức glucose máu trung bình trong khoảng ba tháng. Một số tình trạng liên quan đến hồng cầu hoặc hemoglobin có thể ảnh hưởng đến độ tin cậy của kết quả."
+    },
+    {
+      "id": "p26",
+      "claims": [
+        "a1c.standard_test.fasting_required=no"
+      ],
+      "source": "a1c",
+      "about": [
+        "a1c",
+        "fasting"
+      ],
+      "focus": [
+        "fasting"
+      ],
+      "title": "HbA1c usually requires no fasting",
+      "text": "A standard HbA1c test normally does not require fasting. A separate fasting glucose test measures blood glucose at one point and has different preparation.",
+      "title_vi": "HbA1c thường không cần nhịn ăn",
+      "text_vi": "Xét nghiệm HbA1c thông thường không cần nhịn ăn. Xét nghiệm glucose huyết tương lúc đói đo tại một thời điểm và có yêu cầu chuẩn bị khác."
+    },
+    {
+      "id": "p22",
+      "source": "cdcdka",
+      "about": [
+        "dka",
+        "type1",
+        "type2"
+      ],
+      "focus": [
+        "dka"
+      ],
+      "title": "Diabetic ketoacidosis can be an emergency",
+      "text": "Diabetic ketoacidosis is a serious complication linked to insufficient insulin. Persistent vomiting or trouble breathing in a suspected episode warrants emergency care.",
+      "title_vi": "Nhiễm toan ceton có thể là cấp cứu",
+      "text_vi": "Nhiễm toan ceton là biến chứng nghiêm trọng liên quan đến thiếu insulin. Khi nghi ngờ có biến chứng này và đang nôn liên tục hoặc khó thở, cần được đánh giá cấp cứu."
+    },
+    {
+      "id": "p21",
+      "source": "cdclow",
+      "about": [
+        "hypoglycemia",
+        "symptom"
+      ],
+      "focus": [
+        "hypoglycemia"
+      ],
+      "title": "Recognizing low blood sugar",
+      "text": "Low blood sugar may cause shaking, sweating, hunger, or dizziness. Severe episodes may involve confusion, seizures, or loss of consciousness and need immediate help.",
+      "title_vi": "Dấu hiệu hạ đường huyết",
+      "text_vi": "Hạ đường huyết có thể gây run tay, vã mồ hôi, đói hoặc chóng mặt. Trường hợp nặng có thể gây lú lẫn, co giật hoặc mất ý thức và cần được hỗ trợ khẩn cấp."
+    },
+    {
+      "id": "p12",
+      "source": "codebook",
+      "about": [
+        "survey"
+      ],
+      "focus": [
+        "survey"
+      ],
+      "title": "Original BRFSS survey question",
+      "text": "DIABETE3 records whether respondents report having ever been told they had diabetes. The CDC codebook describes the original survey coding.",
+      "title_vi": "Câu hỏi gốc của khảo sát BRFSS",
+      "text_vi": "Mã DIABETE3 mô tả câu hỏi phỏng vấn về việc người tham gia từng được thông báo có đái tháo đường hay chưa. Codebook CDC mô tả quy ước của khảo sát gốc."
+    },
+    {
+      "id": "p13",
+      "source": "curated",
+      "about": [
+        "survey",
+        "prediabetes"
+      ],
+      "focus": [
+        "survey"
+      ],
+      "title": "Meaning of Diabetes_012",
+      "text": "In the processed dataset, 0, 1, and 2 represent no reported diabetes, reported prediabetes, and reported diabetes. Code 2 does not specify diabetes type.",
+      "title_vi": "Ý nghĩa nhãn Diabetes_012",
+      "text_vi": "Trong bản dữ liệu đã xử lý, nhãn 0, 1 và 2 lần lượt chỉ không báo cáo đái tháo đường, báo cáo tiền đái tháo đường và báo cáo đái tháo đường. Giá trị 2 của nhãn không có nghĩa là đái tháo đường típ 2."
+    },
+    {
+      "id": "p23",
+      "source": "footguide",
+      "about": [
+        "foot",
+        "diabetes",
+        "complication"
+      ],
+      "focus": [
+        "foot"
+      ],
+      "title": "Diabetes and foot care",
+      "text": "Nerve damage may make foot injuries harder to notice. Regular inspection is useful. A new sore or a wound that is not healing should be assessed by a health professional.",
+      "title_vi": "Bàn chân và bệnh tiểu đường",
+      "text_vi": "Tổn thương thần kinh có thể khiến vết thương bàn chân khó được nhận ra. Kiểm tra bàn chân đều đặn giúp phát hiện sớm. Nên trao đổi với nhân viên y tế về vết loét mới hoặc vết thương lâu lành."
+    },
+    {
+      "id": "p27",
+      "source": "gestoverview",
+      "about": [
+        "gestational"
+      ],
+      "focus": [
+        "gestational"
+      ],
+      "title": "What is gestational diabetes?",
+      "text": "Gestational diabetes is a form of diabetes that develops during pregnancy. It can affect the health of both the pregnant person and baby. Prenatal screening can identify it even when symptoms are absent.",
+      "title_vi": "Đái tháo đường thai kỳ là gì?",
+      "text_vi": "Đái tháo đường thai kỳ là một dạng đái tháo đường xuất hiện trong thai kỳ. Tình trạng này có thể ảnh hưởng đến sức khỏe của mẹ và bé. Sàng lọc trước sinh giúp phát hiện bệnh ngay cả khi không có triệu chứng."
+    },
+    {
+      "id": "p18",
+      "source": "gesttests",
+      "about": [
+        "gestational",
+        "glucose"
+      ],
+      "focus": [
+        "gestational"
+      ],
+      "title": "Testing during pregnancy",
+      "text": "NIDDK describes routine gestational diabetes testing around weeks 24–28. Testing may occur earlier in selected patients. The test method and interpretation are determined by the prenatal care team.",
+      "title_vi": "Xét nghiệm tiểu đường thai kỳ khi nào?",
+      "text_vi": "NIDDK mô tả việc sàng lọc tiểu đường thai kỳ thường diễn ra ở tuần 24–28. Một số trường hợp được đánh giá sớm hơn. Nhóm chăm sóc thai kỳ quyết định loại xét nghiệm và diễn giải kết quả."
+    },
+    {
+      "id": "p20",
+      "claims": [
+        "a1c.standard_test.fasting_required=no",
+        "fpg.standard_test.fasting_required=yes"
+      ],
+      "source": "longfast",
+      "about": [
+        "fasting",
+        "a1c",
+        "glucose"
+      ],
+      "focus": [
+        "fasting"
+      ],
+      "title": "Whether fasting is required depends on the test",
+      "text": "HbA1c normally requires no fasting. Fasting plasma glucose does require fasting. Confirm the exact test and preparation with the testing site.",
+      "title_vi": "Nhịn ăn tùy theo loại xét nghiệm",
+      "text_vi": "Xét nghiệm HbA1c thường không cần nhịn ăn. Xét nghiệm glucose huyết tương lúc đói cần nhịn ăn. Hãy xác nhận tên xét nghiệm và cách chuẩn bị với cơ sở thực hiện."
+    },
+    {
+      "id": "p25",
+      "source": "longfollow",
+      "about": [
+        "followup",
+        "foot",
+        "complication"
+      ],
+      "focus": [
+        "followup"
+      ],
+      "title": "Monitoring beyond glucose",
+      "text": "Long Chau discusses monitoring blood pressure, kidney and eye health, and the feet. The schedule and targets depend on the individual's care plan.",
+      "title_vi": "Theo dõi gì ngoài đường huyết?",
+      "text_vi": "Long Châu đề cập việc theo dõi huyết áp, chức năng thận, mắt và bàn chân. Lịch theo dõi và mục tiêu cụ thể cần được xác định cùng nhóm điều trị."
+    },
+    {
+      "id": "p19",
+      "source": "longgest",
+      "about": [
+        "gestational",
+        "glucose",
+        "symptom"
+      ],
+      "focus": [
+        "gestational",
+        "symptom"
+      ],
+      "title": "Vietnamese overview of gestational screening",
+      "text": "Long Chau describes prenatal glucose screening and notes that gestational diabetes may not have clear symptoms. The prenatal care team should provide instructions for preparation.",
+      "title_vi": "Tầm soát thai kỳ trong chăm sóc trước sinh",
+      "text_vi": "Long Châu giải thích vai trò của tầm soát đường huyết trong thai kỳ. Triệu chứng có thể không rõ. Hãy nhận hướng dẫn chuẩn bị xét nghiệm từ cơ sở theo dõi thai."
+    },
+    {
+      "id": "p14",
+      "source": "overview",
+      "about": [
+        "diabetes",
+        "type1",
+        "type2"
+      ],
+      "focus": [
+        "diabetes"
+      ],
+      "title": "What is diabetes?",
+      "text": "Diabetes refers to conditions involving elevated blood glucose. Insulin helps glucose enter cells. Glucose can rise when insulin is insufficient or less effective.",
+      "title_vi": "Đái tháo đường là gì?",
+      "text_vi": "Đái tháo đường là một nhóm tình trạng có mức glucose trong máu cao. Insulin giúp glucose từ máu đi vào tế bào. Mức glucose có thể tăng khi cơ thể không tạo đủ insulin hoặc không sử dụng insulin hiệu quả."
+    },
+    {
+      "id": "p11",
+      "source": "prediabetes",
+      "about": [
+        "prediabetes",
+        "type2"
+      ],
+      "focus": [
+        "prediabetes"
+      ],
+      "title": "What is prediabetes?",
+      "text": "Prediabetes means blood glucose is higher than usual but below the diabetes range. It is associated with a higher chance of developing type 2 diabetes.",
+      "title_vi": "Tiền đái tháo đường",
+      "text_vi": "Tiền đái tháo đường là tình trạng glucose máu cao hơn mức bình thường nhưng chưa đạt mức dùng để chẩn đoán đái tháo đường. Tình trạng này liên quan đến nguy cơ tiến triển thành típ 2."
+    },
+    {
+      "id": "p06",
+      "source": "prevention",
+      "about": [
+        "type2",
+        "prevention",
+        "activity"
+      ],
+      "focus": [
+        "prevention",
+        "activity"
+      ],
+      "title": "Preventing or delaying type 2 diabetes",
+      "text": "Lifestyle changes, including greater physical activity and changes in eating habits, can lower the chance of developing type 2 diabetes in some people at risk.",
+      "title_vi": "Phòng ngừa hoặc trì hoãn típ 2",
+      "text_vi": "Thay đổi lối sống, bao gồm tăng hoạt động thể chất và điều chỉnh chế độ ăn, có thể giúp một số người có nguy cơ giảm khả năng tiến triển thành đái tháo đường típ 2."
+    },
+    {
+      "id": "p10",
+      "source": "problems",
+      "about": [
+        "diabetes",
+        "complication"
+      ],
+      "focus": [
+        "complication"
+      ],
+      "title": "Related complications",
+      "text": "Diabetes is associated with cardiovascular, kidney, eye, and nerve problems. Regular follow-up can help detect and manage these complications.",
+      "title_vi": "Biến chứng liên quan",
+      "text_vi": "Đái tháo đường có thể liên quan đến vấn đề ở tim mạch, thận, mắt hoặc thần kinh. Theo dõi và chăm sóc định kỳ giúp phát hiện và quản lý các vấn đề này."
+    },
+    {
+      "id": "p05",
+      "source": "risk",
+      "about": [
+        "type2",
+        "risk",
+        "activity",
+        "family"
+      ],
+      "focus": [
+        "risk",
+        "activity",
+        "family"
+      ],
+      "title": "Type 2 diabetes risk factors",
+      "text": "Family history, overweight or obesity, and low physical activity are associated with type 2 diabetes. A risk factor alone cannot determine whether someone has diabetes.",
+      "title_vi": "Yếu tố nguy cơ típ 2",
+      "text_vi": "Các yếu tố liên quan tới nguy cơ típ 2 gồm tiền sử gia đình, thừa cân hoặc béo phì và ít hoạt động thể chất. Một yếu tố nguy cơ riêng lẻ không xác định một người có mắc bệnh hay không."
+    },
+    {
+      "id": "p09",
+      "source": "symptoms",
+      "about": [
+        "type1",
+        "type2",
+        "symptom"
+      ],
+      "focus": [
+        "symptom"
+      ],
+      "title": "Symptoms that may occur",
+      "text": "Possible symptoms include increased thirst, frequent urination, tiredness, and unintentional weight loss. Type 2 diabetes can develop gradually with few noticeable signs.",
+      "title_vi": "Biểu hiện có thể gặp",
+      "text_vi": "Các biểu hiện có thể gồm khát nhiều, đi tiểu nhiều, mệt mỏi hoặc sụt cân không chủ ý. Đái tháo đường típ 2 có thể tiến triển chậm và ít biểu hiện rõ ràng."
+    },
+    {
+      "id": "p08",
+      "source": "tests",
+      "about": [
+        "glucose",
+        "a1c",
+        "diabetes"
+      ],
+      "focus": [
+        "glucose"
+      ],
+      "title": "Common blood tests",
+      "text": "Tests used to assess blood glucose include HbA1c, fasting plasma glucose, and the oral glucose tolerance test. Health professionals select and interpret tests in context.",
+      "title_vi": "Các xét nghiệm thường dùng",
+      "text_vi": "Các xét nghiệm được sử dụng để đánh giá đường huyết gồm HbA1c, glucose huyết tương lúc đói và nghiệm pháp dung nạp glucose. Nhân viên y tế lựa chọn và diễn giải xét nghiệm theo hoàn cảnh."
+    },
+    {
+      "id": "p24",
+      "source": "tests",
+      "about": [
+        "threshold",
+        "a1c",
+        "glucose",
+        "type2"
+      ],
+      "focus": [
+        "threshold"
+      ],
+      "title": "What do diagnostic thresholds mean?",
+      "text": "NIDDK lists HbA1c of 5.7–6.4% as the prediabetes range and 6.5% or higher as the diabetes range for relevant nonpregnant populations. A clinician may repeat testing to confirm. These categories cannot classify diabetes type or replace clinical interpretation.",
+      "title_vi": "Ngưỡng HbA1c trong xét nghiệm chẩn đoán",
+      "text_vi": "Trong bối cảnh áp dụng cho người không mang thai, NIDDK nêu HbA1c từ 5,7–6,4% thuộc khoảng tiền đái tháo đường và từ 6,5% trở lên thuộc khoảng đái tháo đường. Bác sĩ có thể cần xét nghiệm xác nhận. Các ngưỡng này không xác định típ bệnh và cần được diễn giải trong bối cảnh lâm sàng."
+    },
+    {
+      "id": "p01",
+      "source": "type1",
+      "about": [
+        "type1"
+      ],
+      "focus": [
+        "type1"
+      ],
+      "title": "Type 1 and autoimmunity",
+      "text": "In type 1 diabetes, the immune system destroys insulin-producing beta cells in the pancreas. Type 1 can develop in children or adults.",
+      "title_vi": "Típ 1 và cơ chế tự miễn",
+      "text_vi": "Trong đái tháo đường típ 1, hệ miễn dịch phá hủy các tế bào beta của tuyến tụy sản xuất insulin. Típ 1 có thể xuất hiện ở trẻ em và người trưởng thành."
+    },
+    {
+      "id": "p03",
+      "source": "type1",
+      "about": [
+        "type1",
+        "antibody",
+        "glucose"
+      ],
+      "focus": [
+        "type1",
+        "antibody",
+        "glucose"
+      ],
+      "title": "Blood tests and diabetes classification",
+      "text": "Blood tests can establish diabetes. When type 1 is suspected, health professionals may use autoantibody tests to help classify it.",
+      "title_vi": "Xác định típ bằng xét nghiệm",
+      "text_vi": "Xét nghiệm máu có thể xác định tình trạng đái tháo đường. Khi nghi ngờ típ 1, nhân viên y tế có thể dùng xét nghiệm tự kháng thể để hỗ trợ xác định típ."
+    },
+    {
+      "id": "p04",
+      "source": "type2",
+      "about": [
+        "type2"
+      ],
+      "focus": [
+        "type2"
+      ],
+      "title": "How type 2 diabetes develops",
+      "text": "In type 2 diabetes, insulin is used less effectively or the pancreas cannot make enough to keep blood glucose in the appropriate range.",
+      "title_vi": "Cơ chế của đái tháo đường típ 2",
+      "text_vi": "Ở típ 2, cơ thể sử dụng insulin kém hiệu quả hoặc tuyến tụy không tạo đủ insulin để duy trì đường huyết trong phạm vi phù hợp."
+    },
+    {
+      "id": "p02",
+      "source": "vinmec",
+      "about": [
+        "type1",
+        "glucose"
+      ],
+      "focus": [
+        "type1"
+      ],
+      "title": "Assessment of type 1 diabetes",
+      "text": "Vinmec describes blood glucose tests used to assess diabetes and symptoms that may occur in type 1. Classification requires the clinical context.",
+      "title_vi": "Đánh giá đái tháo đường típ 1",
+      "text_vi": "Bài viết Vinmec mô tả các xét nghiệm đường huyết được dùng khi đánh giá đái tháo đường và đề cập những biểu hiện thường gặp ở típ 1. Việc xác định típ cần được xem xét trong bối cảnh lâm sàng."
+    },
+    {
+      "id": "p15",
+      "source": "who",
+      "about": [
+        "diabetes",
+        "symptom",
+        "type2"
+      ],
+      "focus": [
+        "symptom"
+      ],
+      "title": "Why symptoms may go unnoticed",
+      "text": "WHO notes that type 2 symptoms may be mild. Thirst, frequent urination, blurred vision, or unplanned weight loss can occur. Clinical testing is needed to distinguish diabetes from other causes.",
+      "title_vi": "Vì sao triệu chứng có thể khó nhận biết?",
+      "text_vi": "Theo WHO, triệu chứng típ 2 có thể nhẹ. Người bệnh có thể khát nhiều, tiểu nhiều, nhìn mờ hoặc sụt cân ngoài ý muốn. Cần đánh giá y tế để phân biệt với các nguyên nhân khác."
+    },
+    {
+      "id": "p16",
+      "source": "who",
+      "about": [
+        "type2",
+        "prevention",
+        "activity"
+      ],
+      "focus": [
+        "prevention"
+      ],
+      "title": "Preventing or delaying type 2",
+      "text": "WHO describes physical activity, a healthy diet, maintaining a healthy weight, and avoiding tobacco as ways to help prevent or delay type 2 diabetes.",
+      "title_vi": "Phòng ngừa hoặc trì hoãn típ 2",
+      "text_vi": "WHO nêu vận động thường xuyên, ăn uống lành mạnh, duy trì cân nặng phù hợp và tránh thuốc lá là các cách giúp phòng ngừa hoặc trì hoãn típ 2."
+    },
+    {
+      "id": "p17",
+      "source": "who",
+      "about": [
+        "diabetes",
+        "complication",
+        "followup"
+      ],
+      "focus": [
+        "complication",
+        "followup"
+      ],
+      "title": "Why regular checks matter",
+      "text": "Persistent high blood glucose can harm blood vessels and nerves. Regular screening and management can help detect or delay complications affecting the heart, eyes, kidneys, or feet.",
+      "title_vi": "Vì sao cần theo dõi định kỳ?",
+      "text_vi": "Đường huyết cao kéo dài có thể gây tổn thương mạch máu và thần kinh. Theo dõi và chăm sóc định kỳ giúp phát hiện hoặc làm chậm biến chứng ở tim, mắt, thận hoặc bàn chân."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "a1c",
+      "to": "fasting",
+      "kind": "HAS_PREPARATION_TOPIC",
+      "passage": "p26"
+    },
+    {
+      "from": "type1",
+      "to": "dka",
+      "kind": "HAS_ACUTE_COMPLICATION",
+      "passage": "p22"
+    },
+    {
+      "from": "type2",
+      "to": "dka",
+      "kind": "HAS_ACUTE_COMPLICATION",
+      "passage": "p22"
+    },
+    {
+      "from": "hypoglycemia",
+      "to": "symptom",
+      "kind": "HAS_SYMPTOM_TOPIC",
+      "passage": "p21"
+    },
+    {
+      "from": "diabetes",
+      "to": "foot",
+      "kind": "HAS_COMPLICATION_TOPIC",
+      "passage": "p23"
+    },
+    {
+      "from": "gestational",
+      "to": "glucose",
+      "kind": "ASSESSED_BY",
+      "passage": "p18"
+    },
+    {
+      "from": "prediabetes",
+      "to": "type2",
+      "kind": "ASSOCIATED_WITH",
+      "passage": "p11"
+    },
+    {
+      "from": "type2",
+      "to": "prevention",
+      "kind": "HAS_PREVENTION_TOPIC",
+      "passage": "p06"
+    },
+    {
+      "from": "diabetes",
+      "to": "complication",
+      "kind": "HAS_COMPLICATION_TOPIC",
+      "passage": "p10"
+    },
+    {
+      "from": "type2",
+      "to": "activity",
+      "kind": "HAS_RISK_FACTOR",
+      "passage": "p05"
+    },
+    {
+      "from": "type2",
+      "to": "family",
+      "kind": "HAS_RISK_FACTOR",
+      "passage": "p05"
+    },
+    {
+      "from": "type1",
+      "to": "symptom",
+      "kind": "HAS_SYMPTOM_TOPIC",
+      "passage": "p09"
+    },
+    {
+      "from": "type2",
+      "to": "symptom",
+      "kind": "HAS_SYMPTOM_TOPIC",
+      "passage": "p09"
+    },
+    {
+      "from": "diabetes",
+      "to": "a1c",
+      "kind": "ASSESSED_BY",
+      "passage": "p08"
+    },
+    {
+      "from": "diabetes",
+      "to": "glucose",
+      "kind": "ASSESSED_BY",
+      "passage": "p08"
+    },
+    {
+      "from": "a1c",
+      "to": "threshold",
+      "kind": "HAS_INTERPRETATION_TOPIC",
+      "passage": "p24"
+    },
+    {
+      "from": "type1",
+      "to": "glucose",
+      "kind": "ASSESSED_BY",
+      "passage": "p03"
+    },
+    {
+      "from": "type1",
+      "to": "antibody",
+      "kind": "CLASSIFIED_WITH",
+      "passage": "p03"
+    },
+    {
+      "from": "diabetes",
+      "to": "followup",
+      "kind": "HAS_MONITORING_TOPIC",
+      "passage": "p17"
+    }
+  ]
+}

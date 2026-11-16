@@ -1,0 +1,35 @@
+{
+  "source": {
+    "id": "longfollow",
+    "publisher": "FPT Long Chau",
+    "title": "What else to monitor to prevent diabetes complications",
+    "title_vi": "Theo dõi những gì ngoài đường huyết để tránh biến chứng?",
+    "url": "https://nhathuoclongchau.com.vn/bai-viet/nguoi-mac-dai-thao-duong-can-theo-doi-nhung-gi-ngoai-duong-huyet-de-tranh-bien-chung.html",
+    "tier": "Supplementary",
+    "kind": "Web",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "followup"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p25",
+      "source": "longfollow",
+      "about": [
+        "followup",
+        "foot",
+        "complication"
+      ],
+      "focus": [
+        "followup"
+      ],
+      "title": "Monitoring beyond glucose",
+      "text": "Long Chau discusses monitoring blood pressure, kidney and eye health, and the feet. The schedule and targets depend on the individual's care plan.",
+      "title_vi": "Theo dõi gì ngoài đường huyết?",
+      "text_vi": "Long Châu đề cập việc theo dõi huyết áp, chức năng thận, mắt và bàn chân. Lịch theo dõi và mục tiêu cụ thể cần được xác định cùng nhóm điều trị."
+    }
+  ],
+  "relationships": []
+}

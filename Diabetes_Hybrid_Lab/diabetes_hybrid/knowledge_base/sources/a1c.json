@@ -1,0 +1,57 @@
+{
+  "source": {
+    "id": "a1c",
+    "publisher": "NIDDK / NIH",
+    "title": "The A1C Test & Diabetes",
+    "kind": "Web",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis/a1c-test",
+    "title_vi": "The A1C Test & Diabetes",
+    "tier": "Public health",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "a1c",
+      "fasting"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p07",
+      "source": "a1c",
+      "about": [
+        "a1c"
+      ],
+      "focus": [
+        "a1c"
+      ],
+      "title": "What does HbA1c measure?",
+      "text": "HbA1c reflects average blood glucose over roughly three months. Some conditions affecting red blood cells or hemoglobin can alter its reliability.",
+      "title_vi": "HbA1c phản ánh điều gì?",
+      "text_vi": "HbA1c phản ánh mức glucose máu trung bình trong khoảng ba tháng. Một số tình trạng liên quan đến hồng cầu hoặc hemoglobin có thể ảnh hưởng đến độ tin cậy của kết quả."
+    },
+    {
+      "id": "p26",
+      "claims": ["a1c.standard_test.fasting_required=no"],
+      "source": "a1c",
+      "about": [
+        "a1c",
+        "fasting"
+      ],
+      "focus": [
+        "fasting"
+      ],
+      "title": "HbA1c usually requires no fasting",
+      "text": "A standard HbA1c test normally does not require fasting. A separate fasting glucose test measures blood glucose at one point and has different preparation.",
+      "title_vi": "HbA1c thường không cần nhịn ăn",
+      "text_vi": "Xét nghiệm HbA1c thông thường không cần nhịn ăn. Xét nghiệm glucose huyết tương lúc đói đo tại một thời điểm và có yêu cầu chuẩn bị khác."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "a1c",
+      "to": "fasting",
+      "kind": "HAS_PREPARATION_TOPIC",
+      "passage": "p26"
+    }
+  ]
+}

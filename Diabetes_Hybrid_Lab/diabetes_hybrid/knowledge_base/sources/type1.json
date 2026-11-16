@@ -1,0 +1,66 @@
+{
+  "source": {
+    "id": "type1",
+    "publisher": "NIDDK / NIH",
+    "title": "Type 1 Diabetes",
+    "kind": "Web",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-1-diabetes",
+    "title_vi": "Type 1 Diabetes",
+    "tier": "Public health",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "type1",
+      "antibody",
+      "glucose"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p01",
+      "source": "type1",
+      "about": [
+        "type1"
+      ],
+      "focus": [
+        "type1"
+      ],
+      "title": "Type 1 and autoimmunity",
+      "text": "In type 1 diabetes, the immune system destroys insulin-producing beta cells in the pancreas. Type 1 can develop in children or adults.",
+      "title_vi": "Típ 1 và cơ chế tự miễn",
+      "text_vi": "Trong đái tháo đường típ 1, hệ miễn dịch phá hủy các tế bào beta của tuyến tụy sản xuất insulin. Típ 1 có thể xuất hiện ở trẻ em và người trưởng thành."
+    },
+    {
+      "id": "p03",
+      "source": "type1",
+      "about": [
+        "type1",
+        "antibody",
+        "glucose"
+      ],
+      "focus": [
+        "type1",
+        "antibody",
+        "glucose"
+      ],
+      "title": "Blood tests and diabetes classification",
+      "text": "Blood tests can establish diabetes. When type 1 is suspected, health professionals may use autoantibody tests to help classify it.",
+      "title_vi": "Xác định típ bằng xét nghiệm",
+      "text_vi": "Xét nghiệm máu có thể xác định tình trạng đái tháo đường. Khi nghi ngờ típ 1, nhân viên y tế có thể dùng xét nghiệm tự kháng thể để hỗ trợ xác định típ."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "type1",
+      "to": "glucose",
+      "kind": "ASSESSED_BY",
+      "passage": "p03"
+    },
+    {
+      "from": "type1",
+      "to": "antibody",
+      "kind": "CLASSIFIED_WITH",
+      "passage": "p03"
+    }
+  ]
+}

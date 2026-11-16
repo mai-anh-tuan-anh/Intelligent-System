@@ -1,0 +1,42 @@
+{
+  "source": {
+    "id": "footguide",
+    "publisher": "NIDDK / NIH",
+    "title": "Diabetes & Foot Problems",
+    "title_vi": "Đái tháo đường và vấn đề bàn chân",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/foot-problems",
+    "tier": "Public health",
+    "kind": "Web",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "foot"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p23",
+      "source": "footguide",
+      "about": [
+        "foot",
+        "diabetes",
+        "complication"
+      ],
+      "focus": [
+        "foot"
+      ],
+      "title": "Diabetes and foot care",
+      "text": "Nerve damage may make foot injuries harder to notice. Regular inspection is useful. A new sore or a wound that is not healing should be assessed by a health professional.",
+      "title_vi": "Bàn chân và bệnh tiểu đường",
+      "text_vi": "Tổn thương thần kinh có thể khiến vết thương bàn chân khó được nhận ra. Kiểm tra bàn chân đều đặn giúp phát hiện sớm. Nên trao đổi với nhân viên y tế về vết loét mới hoặc vết thương lâu lành."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "diabetes",
+      "to": "foot",
+      "kind": "HAS_COMPLICATION_TOPIC",
+      "passage": "p23"
+    }
+  ]
+}

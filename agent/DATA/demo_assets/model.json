@@ -1,0 +1,74 @@
+{
+  "model_name": "AGENT02 Tabular Q-learning (baseline)",
+  "model_type": "tabular_q_learning",
+  "not_a_neural_network": true,
+  "state_order": [
+    "demand",
+    "competitor_previous_action"
+  ],
+  "state_values": {
+    "demand": {
+      "0": "low",
+      "1": "high"
+    },
+    "competitor_previous_action": {
+      "0": "no_discount",
+      "1": "discount"
+    }
+  },
+  "action_values": {
+    "0": "no_discount",
+    "1": "discount"
+  },
+  "q_table_axes": [
+    "demand",
+    "competitor_previous_action",
+    "action"
+  ],
+  "q_table": [
+    [
+      [
+        228.3023983357577,
+        178.8494381965078
+      ],
+      [
+        177.9920010504587,
+        207.2051155760043
+      ]
+    ],
+    [
+      [
+        246.87993766168444,
+        235.23383292483732
+      ],
+      [
+        211.41981890830542,
+        242.96286488956815
+      ]
+    ]
+  ],
+  "policy": [
+    {
+      "demand": 0,
+      "competitor_previous_action": 0,
+      "action": 0
+    },
+    {
+      "demand": 0,
+      "competitor_previous_action": 1,
+      "action": 1
+    },
+    {
+      "demand": 1,
+      "competitor_previous_action": 0,
+      "action": 0
+    },
+    {
+      "demand": 1,
+      "competitor_previous_action": 1,
+      "action": 1
+    }
+  ],
+  "tie_breaking": "deterministic argmax for deployed inference; reference evaluation uses RNG tie-breaking",
+  "model_source": "AGENT02 provided reference implementation"
+}

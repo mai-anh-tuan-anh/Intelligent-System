@@ -1,0 +1,34 @@
+{
+  "source": {
+    "id": "vinmec",
+    "publisher": "Vinmec",
+    "title": "Diagnostic criteria for type 1 diabetes",
+    "kind": "Web",
+    "url": "https://www.vinmec.com/vie/bai-viet/tieu-chuan-chan-doan-tieu-duong-type-1-vi",
+    "title_vi": "Tiêu chuẩn chẩn đoán tiểu đường type 1",
+    "tier": "Supplementary",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "type1"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p02",
+      "source": "vinmec",
+      "about": [
+        "type1",
+        "glucose"
+      ],
+      "focus": [
+        "type1"
+      ],
+      "title": "Assessment of type 1 diabetes",
+      "text": "Vinmec describes blood glucose tests used to assess diabetes and symptoms that may occur in type 1. Classification requires the clinical context.",
+      "title_vi": "Đánh giá đái tháo đường típ 1",
+      "text_vi": "Bài viết Vinmec mô tả các xét nghiệm đường huyết được dùng khi đánh giá đái tháo đường và đề cập những biểu hiện thường gặp ở típ 1. Việc xác định típ cần được xem xét trong bối cảnh lâm sàng."
+    }
+  ],
+  "relationships": []
+}

@@ -1,0 +1,72 @@
+{
+  "source": {
+    "id": "tests",
+    "publisher": "NIDDK / NIH",
+    "title": "Diabetes Tests & Diagnosis",
+    "kind": "Web",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+    "title_vi": "Diabetes Tests & Diagnosis",
+    "tier": "Public health",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "glucose",
+      "threshold"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p08",
+      "source": "tests",
+      "about": [
+        "glucose",
+        "a1c",
+        "diabetes"
+      ],
+      "focus": [
+        "glucose"
+      ],
+      "title": "Common blood tests",
+      "text": "Tests used to assess blood glucose include HbA1c, fasting plasma glucose, and the oral glucose tolerance test. Health professionals select and interpret tests in context.",
+      "title_vi": "Các xét nghiệm thường dùng",
+      "text_vi": "Các xét nghiệm được sử dụng để đánh giá đường huyết gồm HbA1c, glucose huyết tương lúc đói và nghiệm pháp dung nạp glucose. Nhân viên y tế lựa chọn và diễn giải xét nghiệm theo hoàn cảnh."
+    },
+    {
+      "id": "p24",
+      "source": "tests",
+      "about": [
+        "threshold",
+        "a1c",
+        "glucose",
+        "type2"
+      ],
+      "focus": [
+        "threshold"
+      ],
+      "title": "What do diagnostic thresholds mean?",
+      "text": "NIDDK lists HbA1c of 5.7–6.4% as the prediabetes range and 6.5% or higher as the diabetes range for relevant nonpregnant populations. A clinician may repeat testing to confirm. These categories cannot classify diabetes type or replace clinical interpretation.",
+      "title_vi": "Ngưỡng HbA1c trong xét nghiệm chẩn đoán",
+      "text_vi": "Trong bối cảnh áp dụng cho người không mang thai, NIDDK nêu HbA1c từ 5,7–6,4% thuộc khoảng tiền đái tháo đường và từ 6,5% trở lên thuộc khoảng đái tháo đường. Bác sĩ có thể cần xét nghiệm xác nhận. Các ngưỡng này không xác định típ bệnh và cần được diễn giải trong bối cảnh lâm sàng."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "diabetes",
+      "to": "a1c",
+      "kind": "ASSESSED_BY",
+      "passage": "p08"
+    },
+    {
+      "from": "diabetes",
+      "to": "glucose",
+      "kind": "ASSESSED_BY",
+      "passage": "p08"
+    },
+    {
+      "from": "a1c",
+      "to": "threshold",
+      "kind": "HAS_INTERPRETATION_TOPIC",
+      "passage": "p24"
+    }
+  ]
+}

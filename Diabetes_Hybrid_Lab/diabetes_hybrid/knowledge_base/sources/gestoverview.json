@@ -1,0 +1,33 @@
+{
+  "source": {
+    "id": "gestoverview",
+    "publisher": "NIDDK / NIH",
+    "title": "Gestational Diabetes",
+    "title_vi": "Tổng quan đái tháo đường thai kỳ",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/gestational",
+    "tier": "Public health",
+    "kind": "Web",
+    "checked": "2026-11-10",
+    "published_or_reviewed": "2017-05",
+    "scope": [
+      "gestational"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p27",
+      "source": "gestoverview",
+      "about": [
+        "gestational"
+      ],
+      "focus": [
+        "gestational"
+      ],
+      "title": "What is gestational diabetes?",
+      "text": "Gestational diabetes is a form of diabetes that develops during pregnancy. It can affect the health of both the pregnant person and baby. Prenatal screening can identify it even when symptoms are absent.",
+      "title_vi": "Đái tháo đường thai kỳ là gì?",
+      "text_vi": "Đái tháo đường thai kỳ là một dạng đái tháo đường xuất hiện trong thai kỳ. Tình trạng này có thể ảnh hưởng đến sức khỏe của mẹ và bé. Sàng lọc trước sinh giúp phát hiện bệnh ngay cả khi không có triệu chứng."
+    }
+  ],
+  "relationships": []
+}

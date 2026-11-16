@@ -1,0 +1,186 @@
+{
+  "metric_unit": "simulated profit per environment time step",
+  "baseline": [
+    {
+      "agent": "RL",
+      "total_reward": 351275.0,
+      "mean_reward_per_step": 35.1275,
+      "no_discount_actions": 10000,
+      "discount_actions": 0,
+      "discount_action_rate": 0.0
+    },
+    {
+      "agent": "Rule-based",
+      "total_reward": 349685.0,
+      "mean_reward_per_step": 34.9685,
+      "no_discount_actions": 10000,
+      "discount_actions": 0,
+      "discount_action_rate": 0.0
+    }
+  ],
+  "baseline_q_greedy_policy": [
+    {
+      "demand": 0,
+      "competitor_previous_action": 0,
+      "action": 0
+    },
+    {
+      "demand": 0,
+      "competitor_previous_action": 1,
+      "action": 1
+    },
+    {
+      "demand": 1,
+      "competitor_previous_action": 0,
+      "action": 0
+    },
+    {
+      "demand": 1,
+      "competitor_previous_action": 1,
+      "action": 1
+    }
+  ],
+  "learning_rate": [
+    {
+      "alpha": 0.01,
+      "rl_mean_reward_per_step": 35.2475,
+      "rl_discount_action_rate": 0.0
+    },
+    {
+      "alpha": 0.1,
+      "rl_mean_reward_per_step": 35.2475,
+      "rl_discount_action_rate": 0.0
+    },
+    {
+      "alpha": 0.5,
+      "rl_mean_reward_per_step": 28.5085,
+      "rl_discount_action_rate": 0.4052
+    }
+  ],
+  "exploration": [
+    {
+      "exploration_setting": "low",
+      "epsilon_start": 0.05,
+      "epsilon_min": 0.02,
+      "epsilon_decay": 0.999,
+      "rl_mean_reward_per_step": 35.1045,
+      "rl_discount_action_rate": 0.0
+    },
+    {
+      "exploration_setting": "baseline",
+      "epsilon_start": 0.2,
+      "epsilon_min": 0.02,
+      "epsilon_decay": 0.995,
+      "rl_mean_reward_per_step": 35.1045,
+      "rl_discount_action_rate": 0.0
+    },
+    {
+      "exploration_setting": "high",
+      "epsilon_start": 0.5,
+      "epsilon_min": 0.05,
+      "epsilon_decay": 0.995,
+      "rl_mean_reward_per_step": 35.1045,
+      "rl_discount_action_rate": 0.0
+    }
+  ],
+  "multi_seed_per_run": [
+    {
+      "seed": 11,
+      "agent": "RL",
+      "mean_reward_per_step": 34.744,
+      "discount_action_rate": 0.0
+    },
+    {
+      "seed": 11,
+      "agent": "Rule-based",
+      "mean_reward_per_step": 34.8265,
+      "discount_action_rate": 0.0
+    },
+    {
+      "seed": 22,
+      "agent": "RL",
+      "mean_reward_per_step": 35.325,
+      "discount_action_rate": 0.0
+    },
+    {
+      "seed": 22,
+      "agent": "Rule-based",
+      "mean_reward_per_step": 35.2945,
+      "discount_action_rate": 0.0
+    },
+    {
+      "seed": 33,
+      "agent": "RL",
+      "mean_reward_per_step": 34.6725,
+      "discount_action_rate": 0.0
+    },
+    {
+      "seed": 33,
+      "agent": "Rule-based",
+      "mean_reward_per_step": 34.7115,
+      "discount_action_rate": 0.0
+    },
+    {
+      "seed": 44,
+      "agent": "RL",
+      "mean_reward_per_step": 35.1165,
+      "discount_action_rate": 0.0
+    },
+    {
+      "seed": 44,
+      "agent": "Rule-based",
+      "mean_reward_per_step": 35.0835,
+      "discount_action_rate": 0.0
+    },
+    {
+      "seed": 55,
+      "agent": "RL",
+      "mean_reward_per_step": 34.6015,
+      "discount_action_rate": 0.0
+    },
+    {
+      "seed": 55,
+      "agent": "Rule-based",
+      "mean_reward_per_step": 34.7445,
+      "discount_action_rate": 0.0
+    }
+  ],
+  "multi_seed_summary": {
+    "RL": {
+      "mean": 34.8919,
+      "sample_std": 0.31319470780969577,
+      "n": 5
+    },
+    "Rule-based": {
+      "mean": 34.932100000000005,
+      "sample_std": 0.24963232963700732,
+      "n": 5
+    }
+  },
+  "robustness_comparison": [
+    {
+      "setting": "20% discount",
+      "agent": "RL",
+      "mean_reward_per_step": 35.1275,
+      "discount_action_rate": 0.0
+    },
+    {
+      "setting": "20% discount",
+      "agent": "Rule-based",
+      "mean_reward_per_step": 34.9685,
+      "discount_action_rate": 0.0
+    },
+    {
+      "setting": "10% discount",
+      "agent": "RL",
+      "mean_reward_per_step": 34.2477,
+      "discount_action_rate": 0.4091
+    },
+    {
+      "setting": "10% discount",
+      "agent": "Rule-based",
+      "mean_reward_per_step": 33.1108,
+      "discount_action_rate": 0.1932
+    }
+  ]
+}

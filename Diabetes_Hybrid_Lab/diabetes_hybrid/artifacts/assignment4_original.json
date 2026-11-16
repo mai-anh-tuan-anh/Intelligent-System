@@ -1,0 +1,51 @@
+{
+  "version": "assignment4-original",
+  "feature_order": [
+    "HighBP",
+    "HighChol",
+    "CholCheck",
+    "BMI",
+    "Smoker",
+    "Stroke",
+    "HeartDiseaseorAttack",
+    "PhysActivity",
+    "Fruits",
+    "Veggies",
+    "HvyAlcoholConsump",
+    "AnyHealthcare",
+    "NoDocbcCost",
+    "GenHlth",
+    "MentHlth",
+    "PhysHlth",
+    "DiffWalk",
+    "Sex",
+    "Age",
+    "Education",
+    "Income"
+  ],
+  "architecture": [
+    21,
+    64,
+    32,
+    3
+  ],
+  "source_weights_sha256": "4e32cf2a40e5ddf5ad906aa44f64703dc61d22b4813c428d27c07a71e82819a5",
+  "source_scaler_sha256": "16a13c59672df31943f23d295daf2aa8eb659d9aab0e5ff99892bc83e99c10d2",
+  "saved_weights_match_original": true,
+  "inference_parity_profiles": 2,
+  "inference_parity_atol": 1e-06,
+  "archived_assignment_metrics": {
+    "accuracy": 0.6399992116051719,
+    "precision_macro": 0.44253337075331983,
+    "recall_macro": 0.5273726636204764,
+    "f1_macro": 0.42524192259672783,
+    "precision_weighted": 0.8523444162400513,
+    "recall_weighted": 0.6399992116051719,
+    "f1_weighted": 0.7122160165681019,
+    "mean_confidence": 0.5916274785995483,
+    "parameters": 3587,
+    "training_time_seconds": 31.13499149999916,
+    "epochs": 5
+  },
+  "note": "Assignment 4 results used its own evaluation protocol, separate from the grouped holdout."
+}

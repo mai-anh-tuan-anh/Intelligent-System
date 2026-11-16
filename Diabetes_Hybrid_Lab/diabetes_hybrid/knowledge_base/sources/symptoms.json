@@ -1,0 +1,48 @@
+{
+  "source": {
+    "id": "symptoms",
+    "publisher": "NIDDK / NIH",
+    "title": "Symptoms & Causes of Diabetes",
+    "kind": "Web",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/symptoms-causes",
+    "title_vi": "Symptoms & Causes of Diabetes",
+    "tier": "Public health",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "symptom"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p09",
+      "source": "symptoms",
+      "about": [
+        "type1",
+        "type2",
+        "symptom"
+      ],
+      "focus": [
+        "symptom"
+      ],
+      "title": "Symptoms that may occur",
+      "text": "Possible symptoms include increased thirst, frequent urination, tiredness, and unintentional weight loss. Type 2 diabetes can develop gradually with few noticeable signs.",
+      "title_vi": "Biểu hiện có thể gặp",
+      "text_vi": "Các biểu hiện có thể gồm khát nhiều, đi tiểu nhiều, mệt mỏi hoặc sụt cân không chủ ý. Đái tháo đường típ 2 có thể tiến triển chậm và ít biểu hiện rõ ràng."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "type1",
+      "to": "symptom",
+      "kind": "HAS_SYMPTOM_TOPIC",
+      "passage": "p09"
+    },
+    {
+      "from": "type2",
+      "to": "symptom",
+      "kind": "HAS_SYMPTOM_TOPIC",
+      "passage": "p09"
+    }
+  ]
+}

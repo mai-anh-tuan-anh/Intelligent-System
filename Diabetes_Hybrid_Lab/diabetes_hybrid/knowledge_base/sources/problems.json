@@ -1,0 +1,41 @@
+{
+  "source": {
+    "id": "problems",
+    "publisher": "NIDDK / NIH",
+    "title": "Preventing Diabetes Problems",
+    "kind": "Web",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems",
+    "title_vi": "Preventing Diabetes Problems",
+    "tier": "Public health",
+    "checked": "2026-11-10",
+    "published_or_reviewed": null,
+    "scope": [
+      "complication"
+    ]
+  },
+  "passages": [
+    {
+      "id": "p10",
+      "source": "problems",
+      "about": [
+        "diabetes",
+        "complication"
+      ],
+      "focus": [
+        "complication"
+      ],
+      "title": "Related complications",
+      "text": "Diabetes is associated with cardiovascular, kidney, eye, and nerve problems. Regular follow-up can help detect and manage these complications.",
+      "title_vi": "Biến chứng liên quan",
+      "text_vi": "Đái tháo đường có thể liên quan đến vấn đề ở tim mạch, thận, mắt hoặc thần kinh. Theo dõi và chăm sóc định kỳ giúp phát hiện và quản lý các vấn đề này."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "diabetes",
+      "to": "complication",
+      "kind": "HAS_COMPLICATION_TOPIC",
+      "passage": "p10"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "task": "AGENT02: Q-learning vs fixed rule-based opponent",
+  "created_utc": "2026-10-28T14:58:15.496906+00:00",
+  "files": {
+    "model_npz": "qlearning_model.npz",
+    "model_json": "model.json",
+    "config": "config.json",
+    "metrics": "metrics.json",
+    "inference": "policy_inference.py",
+    "training_curve": "training_curve.csv",
+    "evaluation_episodes": "evaluation_episodes.csv",
+    "learning_rate": "learning_rate.csv",
+    "exploration": "exploration.csv",
+    "multi_seed": "multi_seed.csv",
+    "robustness": "robustness.csv"
+  },
+  "frontend_hints": {
+    "state_controls": [
+      "demand",
+      "competitor_previous_action"
+    ],
+    "display_metrics": [
+      "mean_reward_per_step",
+      "discount_action_rate",
+      "total_reward"
+    ],
+    "plots": [
+      "training_curve",
+      "learning_rate",
+      "exploration",
+      "multi_seed",
+      "robustness"
+    ]
+  },
+  "note": "This is a toy-market simulation; outputs must not be presented as real business outcomes."
+}
